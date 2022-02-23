@@ -1,5 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+
+library work;
 use work.Common.all;
 
 entity CoraZ7 is
@@ -20,9 +22,6 @@ end CoraZ7;
 architecture Behavioral of CoraZ7 is
 
   component top_level is
-    generic(
-      IPWM_DATA_WIDTH : integer := N
-    );
     port (
       -- INS
       iClk        : in std_logic;
@@ -36,6 +35,14 @@ architecture Behavioral of CoraZ7 is
   end component;
 
   begin
+  inst_top_level : top_level
+		port map(
+			iClk => CLK,
+			iReset => RESET,
+			iPWM_en => PWM_en,
+			iPWM_data => PWM_data,
+			oPWM => PWM
 
+		);
 
 end Behavioral;

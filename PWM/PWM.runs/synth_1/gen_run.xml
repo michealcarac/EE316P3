@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1645130736">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1645560972">
   <File Type="PA-TCL" Name="CoraZ7.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="CoraZ7_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="CoraZ7_reports.tcl"/>
@@ -11,32 +11,30 @@
   <File Type="VDS-TIMING-PB" Name="CoraZ7_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/PWM.src/Common.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/PWM.src/PWM.vhd">
       <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/PWM.src/CoraZ7.vhd">
       <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/PWM.src/top_level.vhd">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/PWM.src/tb_CoraZ7.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/PWM.src/Common.vhd">
-      <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

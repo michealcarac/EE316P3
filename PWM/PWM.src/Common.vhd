@@ -1,6 +1,4 @@
-library IEEE;
-use IEEE.numeric_std.all;
-
+library work;
 package Common is
   constant IPWM_DATA_WIDTH : integer := 8;
 

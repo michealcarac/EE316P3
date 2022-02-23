@@ -1,5 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+
+library work;
 use work.Common.all;
 
 entity top_level is

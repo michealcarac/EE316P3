@@ -1,0 +1,15 @@
+# C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\Lib\site-packages\vunit\sim_if\tcl_read_eval_loop.tcl 
+# invalid command name "C:UsersCameron"
+puts #VUNIT_RETURN
+source "C:/EE316P3/PWM/PWM.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/modelsim/common.do"
+puts #VUNIT_RETURN
+set failed [vunit_load]
+# vsim -L vunit_lib -L lib -modelsimini C:/EE316P3/PWM/PWM.src/testing/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf C:/EE316P3/PWM/PWM.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/modelsim/vsim.wlf {-g/tb_coraz7/runner_cfg="active python runner : true,enabled_test_cases : ,output path : C::/EE316P3/PWM/PWM.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/,tb path : C::/EE316P3/PWM/PWM.src/,use_color : true"} lib.tb_coraz7(tb) 
+# ** Warning: (vsim-8683) Uninitialized out port /tb_coraz7/DUT/PWM has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+# false
+puts #VUNIT_RETURN
+puts #VUNIT_READVAR=$failed
+quit -force -code 0
