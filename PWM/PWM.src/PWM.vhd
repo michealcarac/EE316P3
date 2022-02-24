@@ -41,7 +41,7 @@ begin
         counter <= counter + 1;
         pwm <= '1';
       end if;
-    elsif (iReset = '1') then
+    else
       pwm <= '0';
       counter <= 0;
     end if;

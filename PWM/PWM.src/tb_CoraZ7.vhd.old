@@ -1,39 +1,40 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
 
 library work;
 use work.Common.all;
 
 -- VUnit library and context
 library vunit_lib;
-context vunit_lib.vunit_context;
+--context vunit_lib.vunit_context;
 
--- use vunit_lib.types_pkg.all;
--- use vunit_lib.integer_vector_ptr_pkg.all;
--- use vunit_lib.integer_vector_ptr_pool_pkg.all;
--- use vunit_lib.integer_array_pkg.all;
--- use vunit_lib.queue_pkg.all;
--- use vunit_lib.queue_pool_pkg.all;
--- use vunit_lib.string_ptr_pkg.all;
--- use vunit_lib.string_ptr_pool_pkg.all;
--- use vunit_lib.byte_vector_ptr_pkg.all;
--- use vunit_lib.dict_pkg.all;
+use vunit_lib.types_pkg.all;
+use vunit_lib.integer_vector_ptr_pkg.all;
+use vunit_lib.integer_vector_ptr_pool_pkg.all;
+use vunit_lib.integer_array_pkg.all;
+use vunit_lib.queue_pkg.all;
+use vunit_lib.queue_pool_pkg.all;
+use vunit_lib.string_ptr_pkg.all;
+use vunit_lib.string_ptr_pool_pkg.all;
+use vunit_lib.byte_vector_ptr_pkg.all;
+use vunit_lib.dict_pkg.all;
 
--- use vunit_lib.string_ops.all;
--- use vunit_lib.dictionary.all;
--- use vunit_lib.path.all;
--- use vunit_lib.print_pkg.all;
--- use vunit_lib.log_levels_pkg.all;
--- use vunit_lib.logger_pkg.all;
--- use vunit_lib.log_handler_pkg.all;
--- use vunit_lib.log_deprecated_pkg.all;
--- use vunit_lib.ansi_pkg.all;
--- use vunit_lib.checker_pkg.all;
--- use vunit_lib.check_pkg.all;
--- use vunit_lib.check_deprecated_pkg.all;
--- use vunit_lib.run_types_pkg.all;
--- use vunit_lib.run_pkg.all;
--- use vunit_lib.run_deprecated_pkg.all;
+use vunit_lib.string_ops.all;
+use vunit_lib.dictionary.all;
+use vunit_lib.path.all;
+use vunit_lib.print_pkg.all;
+use vunit_lib.log_levels_pkg.all;
+use vunit_lib.logger_pkg.all;
+use vunit_lib.log_handler_pkg.all;
+use vunit_lib.log_deprecated_pkg.all;
+use vunit_lib.ansi_pkg.all;
+use vunit_lib.checker_pkg.all;
+use vunit_lib.check_pkg.all;
+use vunit_lib.check_deprecated_pkg.all;
+use vunit_lib.run_types_pkg.all;
+use vunit_lib.run_pkg.all;
+use vunit_lib.run_deprecated_pkg.all;
 
 entity tb_CoraZ7 is
   generic (runner_cfg : string);
@@ -70,13 +71,23 @@ begin
     -- BEGIN TEST CODE --
     -- VUnit Code
     test_runner_setup(runner, runner_cfg);
-    report "Hello world!";
-    test_runner_cleanup(runner);
-
+    
     rst <= '1';
     wait for 16 ns;
-    PWM_data <= X"80"; 
+
+    rst <= '0';
+    wait for 16 ns;
+
+    PWM_en <= '0';
+    PWM_data <= X"80";
+    wait for 8 ns;
+    assert(PWM_data = X"80" and PWM_en = '0') report "PWM not set properly" severity failure;
+
+    PWM_en <= '1';
     
+    wait for 80 ns;
+
+    test_runner_cleanup(runner);
     wait;
   end process;
 end tb;

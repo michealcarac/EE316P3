@@ -1,8 +1,8 @@
 from vunit import VUnit
 
 # Create VUnit instance by parsing command line arguments
-vu = VUnit.from_argv();
-#vu = VUnit.from_argv(vhdl_standard="93")
+#vu = VUnit.from_argv();
+vu = VUnit.from_argv(vhdl_standard="93")
 
 # Create library 'lib'
 lib = vu.add_library("lib")
