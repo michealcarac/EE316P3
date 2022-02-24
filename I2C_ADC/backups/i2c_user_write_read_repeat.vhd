@@ -7,7 +7,7 @@ entity i2c_user is
 	port(
 		clk_i    : in    std_logic;                     --clock input
 		reset_n  : in    std_logic;                     --active-low reset
-		data_i 	 : in    std_logic_vector(15 downto 0); -- Data to be sent
+		data_i 	 : in    std_logic_vector(3 downto 0); -- Data to be sent
 		data_o 	 : out   std_logic_vector(7 downto 0);  -- Data to be read
 		
 		sda      : inout std_logic;                     --i2c data
@@ -19,7 +19,7 @@ architecture behavioral of i2c_user is
 	component i2c_master is
 		GENERIC(
 			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-            bus_clk   : INTEGER := 1_000);   --speed the i2c bus (scl) will run at in Hz
+            bus_clk   : INTEGER := 100000);   --speed the i2c bus (scl) will run at in Hz
 		PORT(
 			clk       : IN     STD_LOGIC;                    --system clock
 			reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -51,6 +51,8 @@ architecture behavioral of i2c_user is
 	begin
 	state <= next_state;
 	i2c_address <= x"48"; -- Only doing 1 address
+	i2c_data <= x"4" & data_i;    -- Select one of the inputs
+
 	
 	Inst_i2c_master : i2c_master
 		port map(
@@ -122,17 +124,4 @@ architecture behavioral of i2c_user is
 	end process;
 
 	
-	--Multiplexor for current byte
-	process(byteSel, data_i)
-	begin
-		case byteSel is
-			when 0      => i2c_data <= X"40";
-			when 1      => i2c_data <= X"0"&data_i(15 downto 12);
-			when 2     => i2c_data <= X"0"&data_i(11 downto 8);
-			when 3     => i2c_data <= X"0"&data_i(7  downto 4);
-			when 4     => i2c_data <= X"0"&data_i(3  downto 0);
-			when others => i2c_data <= X"40";
-		end case;
-	end process;
-
 end behavioral;

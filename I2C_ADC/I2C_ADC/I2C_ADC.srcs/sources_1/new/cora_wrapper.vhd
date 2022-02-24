@@ -62,7 +62,7 @@ Inst_top_level: I2C_User
 			reset_n	=> btn_n,
 			clk_i   => clk, 
 			data_i 	=> x"3",	
-			data_o	=> ja(7 downto 0),
+			data_o	=> open,
 			SDA     => jb(3),
 			SCL     => jb(2)
 		);

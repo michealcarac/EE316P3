@@ -37,10 +37,6 @@ set_property src_info {type:XDC file:1 line:39 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { jb[6] }]; #IO_L4P_T0_34 Sch=jb_p[4]
 set_property src_info {type:XDC file:1 line:40 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W13   IOSTANDARD LVCMOS33 } [get_ports { jb[7] }]; #IO_L4N_T0_34 Sch=jb_n[4]
-set_property src_info {type:XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]
-set_property PULLUP true [get_nets {jb[3]}]; #SDA
-set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]
-set_property PULLUP true [get_nets {jb[2]}]; #SCL
 set_property src_info {type:XDC file:1 line:140 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L19   IOSTANDARD LVCMOS33 } [get_ports { user_dio[1] }]; #IO_L9P_T1_DQS_AD3P_35 Sch=user_dio[1]
 set_property src_info {type:XDC file:1 line:141 export:INPUT save:INPUT read:READ} [current_design]

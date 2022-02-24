@@ -1,3 +1,4 @@
+
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -7,7 +8,7 @@ entity i2c_user is
 	port(
 		clk_i    : in    std_logic;                     --clock input
 		reset_n  : in    std_logic;                     --active-low reset
-		data_i 	 : in    std_logic_vector(15 downto 0); -- Data to be sent
+		data_i 	 : in    std_logic_vector(3 downto 0); -- Data to be sent
 		data_o 	 : out   std_logic_vector(7 downto 0);  -- Data to be read
 		
 		sda      : inout std_logic;                     --i2c data
@@ -19,7 +20,7 @@ architecture behavioral of i2c_user is
 	component i2c_master is
 		GENERIC(
 			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-            bus_clk   : INTEGER := 1_000);   --speed the i2c bus (scl) will run at in Hz
+            bus_clk   : INTEGER := 100000);   --speed the i2c bus (scl) will run at in Hz
 		PORT(
 			clk       : IN     STD_LOGIC;                    --system clock
 			reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -38,6 +39,7 @@ architecture behavioral of i2c_user is
 	type stateType is (start, ready, data_valid, busy_high, repeat);
 	signal state, next_state  : stateType := start;            --state machine vars
 	signal byteSel            : integer range 0 to 12 := 0;    --current byte to send
+	signal read_toggle        : std_logic;
 	
 	--i2c master signals
 	signal i2c_enable  : std_logic;                    --enable/start the i2c_master component
@@ -50,6 +52,8 @@ architecture behavioral of i2c_user is
 	begin
 	state <= next_state;
 	i2c_address <= x"48"; -- Only doing 1 address
+	i2c_data <= x"4" & data_i;    -- Select one of the inputs
+
 	
 	Inst_i2c_master : i2c_master
 		port map(
@@ -73,23 +77,34 @@ architecture behavioral of i2c_user is
 			if reset_n = '0' then
 				next_state  <= start; --move to the starting state
 				byteSel     <= 0;     --reset the counter
+				read_toggle <= '0';   -- Initial State
 				i2c_rw      <= '0';   --Write Mode
+				read_en      <= '0';   --Enable Reading = 1, this happens after first write 
+				first_write <= '0';   --Set to Write
 			else
 				case(state) is 
 					when start =>
-						i2c_enable <= '0'; --don't start the i2c transaction
-                        i2c_rw  <= '0';
+						if read_en <= '0' then   -- If Writing
+							i2c_enable <= '0';   -- dont start transaction
+							i2c_rw     <= '0';   -- Write
+						else
+							i2c_rw     <= '1';   -- Read
+						end if;
 						next_state <= ready;
 						
 					when ready =>
 						if i2c_busy = '0' then       --if we can go to the next transaction
-							i2c_enable <= '1';        --enable the i2c controller
+							if read_en <= '0' then   -- If Writing
+								i2c_enable <= '1';   --set the enable signal
+							end if;
 							next_state <= data_valid; --and move to the next state
 						end if;
 						
 					when data_valid =>
 						if i2c_busy = '1' then       --if the transaction has started
-							i2c_enable <= '0';        --reset the enable signal
+							if read_en <= '0' then   -- If Writing
+								i2c_enable <= '0';   --reset the enable signal
+							end if;
 							next_state <= busy_high;  --and move to the next state
 						end if;
 						
@@ -104,6 +119,11 @@ architecture behavioral of i2c_user is
 						else                               --otherwise, this is a normal repeat
 							byteSel <= 0;                   --so go back to the repeating bytes
 						end if;
+						if first_write = '0' then -- Change to read continous after first write
+							i2c_rw <= '1'; -- Only read for now on
+							read_en <= '1'; -- READ ONLY
+							first_write <= '1';
+						end if;
 						next_state <= start;
 					end case;
 			end if;
@@ -111,17 +131,4 @@ architecture behavioral of i2c_user is
 	end process;
 
 	
-	--Multiplexor for current byte
-	process(byteSel, data_i)
-	begin
-		case byteSel is
-			when 0      => i2c_data <= X"40";
-			when 1      => i2c_data <= X"0"&data_i(15 downto 12);
-			when 2     => i2c_data <= X"0"&data_i(11 downto 8);
-			when 3     => i2c_data <= X"0"&data_i(7  downto 4);
-			when 4     => i2c_data <= X"0"&data_i(3  downto 0);
-			when others => i2c_data <= X"40";
-		end case;
-	end process;
-
 end behavioral;

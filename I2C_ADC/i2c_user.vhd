@@ -19,7 +19,7 @@ architecture behavioral of i2c_user is
 	component i2c_master is
 		GENERIC(
 			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-            bus_clk   : INTEGER := 200);   --speed the i2c bus (scl) will run at in Hz
+            bus_clk   : INTEGER := 90000);   --speed the i2c bus (scl) will run at in Hz
 		PORT(
 			clk       : IN     STD_LOGIC;                    --system clock
 			reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -37,8 +37,12 @@ architecture behavioral of i2c_user is
 	--general signals
 	type stateType is (start, ready, data_valid, busy_high, repeat);
 	signal state, next_state  : stateType := start;            --state machine vars
-	signal byteSel            : integer range 0 to 12 := 0;    --current byte to send
-	signal read_toggle        : std_logic;
+	signal cmd                : std_logic_vector(3 downto 0);
+	signal prev_cmd           : std_logic_vector(3 downto 0);
+	signal cmd_change         : std_logic;
+	-- View note in busy high section of the FSM
+	signal byteSel            : integer range 0 to 1 := 0;    --current byte to send (Change the N value)
+	
 	
 	--i2c master signals
 	signal i2c_enable  : std_logic;                    --enable/start the i2c_master component
@@ -47,81 +51,128 @@ architecture behavioral of i2c_user is
 	signal i2c_busy    : std_logic;                    --is the i2c component busy?
 	signal i2c_rw      : std_logic;
 	signal addr        : std_logic_vector(7 downto 0);
+	signal wr_done     : std_logic := '0'; -- Used for the system to decide if it is done writing or not
+	signal read_en     : std_logic := '0'; -- To tell system if its in read only mode
+    signal master_reset_n : std_logic;	
 	
 	begin
-	state <= next_state;
-	i2c_address <= x"48"; -- Only doing 1 address
-	i2c_data <= x"4" & data_i;    -- Select one of the inputs
 
+	state <= next_state;       -- Personal preference naming scheme
+	cmd   <= data_i;           -- To make it more clear
+	i2c_address <= x"48"; 	   -- Default ADC I2C Address
+
+    master_reset_n <= (reset_n AND NOT cmd_change); --Reset Master if reset_n goes low, or if cmd_change goes high
 	
 	Inst_i2c_master : i2c_master
 		port map(
 			clk       => clk_i,
-			reset_n   => reset_n,
+			reset_n   => master_reset_n,
 			ena       => i2c_enable,
 			addr      => i2c_address(6 downto 0),
 			rw        => i2c_rw,         
 			data_wr   => i2c_data,
 			busy      => i2c_busy,
 			data_rd   => data_o,         
-			ack_error => open,     -- To complicated
+			ack_error => open,     -- Not Used
 			sda       => sda,
 			scl       => scl
 		);
 	
+	-- Detect if the command to change ADC Channel changes
+	process(clk_i)
+	begin
+		if rising_edge(clk_i) then
+			prev_cmd <= cmd;
+			if prev_cmd = cmd then
+				cmd_change <= '0';
+			else
+				cmd_change <= '1';
+			end if;
+
+		end if;
+	end process;
+	
 	--Main State Machine
+	--Process: Sends Write Address then Writes the commands as specified in the byteSel Case
+	--Then Sends Read Address and constantly pulls data to data_o. 
+	--This process repeats once the write command is changed, otherwise it reads forever
 	process(clk_i) 
 	begin
 		if rising_edge(clk_i) then
-			if reset_n = '0' then
+			if reset_n = '0' or cmd_change = '1' then
 				next_state  <= start; --move to the starting state
+				-- View note in  busy high section of the FSM
 				byteSel     <= 0;     --reset the counter
-				read_toggle <= '0';   -- Initial State
+				i2c_enable  <= '0';
 				i2c_rw      <= '0';   --Write Mode
+				read_en      <= '0';   --Enable Reading = 1, this happens after first write 
+				wr_done <= '0';   --Set to Write
 			else
 				case(state) is 
 					when start =>
-						i2c_enable <= '0'; --don't start the i2c transaction
-                        if read_toggle = '1' then
-							i2c_rw  <= '1'; -- Read
-						else
-							i2c_rw  <= '0'; -- Write
-						end if;
-						next_state <= ready;
+                        if read_en <= '0' then   -- If Writing
+                            i2c_enable <= '0';   -- dont start transaction
+                            i2c_rw     <= '0';   -- Write
+                        else
+                            i2c_rw     <= '1';   -- Read
+                        end if;
+                        next_state <= ready;
 						
 					when ready =>
 						if i2c_busy = '0' then       --if we can go to the next transaction
-							i2c_enable <= '1';        --enable the i2c controller
+							if read_en <= '0' then   -- If Writing
+								i2c_enable <= '1';   --set the enable signal
+							end if;
 							next_state <= data_valid; --and move to the next state
 						end if;
 						
 					when data_valid =>
 						if i2c_busy = '1' then       --if the transaction has started
-							i2c_enable <= '0';        --reset the enable signal
+							if read_en <= '0' then   -- If Writing
+								i2c_enable <= '0';   --reset the enable signal
+							end if;
 							next_state <= busy_high;  --and move to the next state
 						end if;
 						
 					when busy_high => 
 						if i2c_busy = '0' then       --once the i2c transaction has completed
-							next_state <= repeat;     --move to the next state
+							wr_done <= '1';          -- Indicate write done
+							-- Note: If it is wanted to have a byteSel case statement to send multiple data bytes before constantly reading, simply 
+						    -- Include the byteSel increment below.					
+						    -- It is also most likely suggested to remove the command change functionality, but maybe not if some piece of data
+						    -- in the case statement will be changed on the fly before continously reading.
+						    -- MC => Added to main design, Comment out if not wanted.
+							if byteSel < 1 then               --If we're not at the top (N = size of case statement)
+                                byteSel     <= byteSel + 1;     --increment 
+						        wr_done <= '0';             --Dont allow system to progress to read until all bytes are written
+						    else                            --otherwise, this is a normal repeat
+						        wr_done <= '1';             --Finally, allow system to continue and switch to reading only
+						        byteSel <= 0;               --so go back to the beginning or start
+						    end if;
+							next_state <= repeat;    --move to the next state
 						end if;
 						
 					when repeat =>
-						if byteSel < 0 then               --If we're not at the top
-							byteSel     <= byteSel + 1;     --increment 
-						else                               --otherwise, this is a normal repeat
-							byteSel <= 0;                   --so go back to the repeating bytes
-						end if;
-						if read_toggle = '1' then
-							read_toggle <= '0';
-						else
-							read_toggle <= '1';
-						end if;
+						if wr_done = '1' then --If Writing done
+                          i2c_enable <= '1';  --Enable i2c
+                          i2c_rw     <= '1';  --Read Only
+                          read_en    <= '1';  --System Read Enable
+                        end if;
 						next_state <= start;
 					end case;
 			end if;
 		end if;
 	end process;
 
-	
+    -- View note in busy high section of the FSM, this is an example byteSel case statement
+	-- Multiplexor for current byte
+	process(clk_i)
+	begin
+		case byteSel is
+			when 0      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 1      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when others => i2c_data <= X"00";
+		end case;
+	end process;
+
 end behavioral;
