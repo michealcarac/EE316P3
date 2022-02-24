@@ -1,20 +1,2 @@
-ModelSim> source "C:/EE316P3/PWM/PWM.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/modelsim/common.do"
-The result: #VUNIT_RETURN Type of result:<class 'str'>
-Traceback (most recent call last):
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\test\runner.py", line 244, in _run_test_suite
-    results = test_suite.run(output_path=output_path, read_output=read_output)
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\test\list.py", line 105, in run
-    test_ok = self._test_case.run(*args, **kwargs)
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\test\suites.py", line 72, in run
-    results = self._run.run(*args, **kwargs)
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\test\suites.py", line 178, in run
-    sim_ok = self._simulate(output_path)
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\test\suites.py", line 237, in _simulate
-    return self._simulator_if.simulate(
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\sim_if\vsim_simulator_mixin.py", line 330, in simulate
-    return self._run_persistent(str(common_file_name), load_only=elaborate_only)
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\sim_if\vsim_simulator_mixin.py", line 294, in _run_persistent
-    if self._persistent_shell.read_bool("failed"):
-  File "C:\Users\Cameron Palmer\AppData\Local\Programs\Python\Python310\lib\site-packages\vunit\persistent_tcl_shell.py", line 78, in read_bool
-    assert result in ("true", "false")
-AssertionError
+/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd:73:5:@0ms:(report note): Hello world!
+simulation stopped @0ms with status 0
