@@ -4,9 +4,7 @@ vhdl work  \
 "../../../../PWM.src/PWM.vhd" \
 "../../../../PWM.src/CoraZ7.vhd" \
 "../../../../PWM.src/top_level.vhd" \
-
-vhdl xil_defaultlib  \
-"../../../../PWM.src/tb_CoraZ7.vhd" \
+"../../../../PWM.src/tb_PWM.vhd" \
 
 # Do not sort compile order
 nosort

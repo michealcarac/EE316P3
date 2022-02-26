@@ -1,7 +1,28 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EE316P3/PWM/PWM.src/PWM.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/PWM/PWM.src/Common.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/PWM/PWM.src/PWM.vhd" into library work
 INFO: [VRFC 10-3107] analyzing entity 'PWM'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd" into library xil_defaultlib
-ERROR: [VRFC 10-2987] 'runner_pkg' is not compiled in library 'vunit_lib' [C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd:10]
-INFO: [VRFC 10-3107] analyzing entity 'tb_CoraZ7'
-ERROR: [VRFC 10-3782] unit 'tb_coraz7' ignored due to previous errors [C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd:12]
-INFO: [VRFC 10-3070] VHDL file 'C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd' ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/PWM/PWM.src/CoraZ7.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'CoraZ7'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/PWM/PWM.src/top_level.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'top_level'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd" into library work
+ERROR: [VRFC 10-2987] 'types_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:12]
+ERROR: [VRFC 10-2987] 'integer_vector_ptr_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:13]
+ERROR: [VRFC 10-2987] 'integer_vector_ptr_pool_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:14]
+ERROR: [VRFC 10-2987] 'integer_array_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:15]
+ERROR: [VRFC 10-2987] 'queue_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:16]
+ERROR: [VRFC 10-2987] 'queue_pool_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:17]
+ERROR: [VRFC 10-2987] 'string_ptr_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:18]
+ERROR: [VRFC 10-2987] 'string_ptr_pool_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:19]
+ERROR: [VRFC 10-2987] 'byte_vector_ptr_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:20]
+ERROR: [VRFC 10-2987] 'dict_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:21]
+ERROR: [VRFC 10-2987] 'string_ops' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:23]
+ERROR: [VRFC 10-2987] 'dictionary' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:24]
+ERROR: [VRFC 10-2987] 'path' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:25]
+ERROR: [VRFC 10-2987] 'print_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:26]
+ERROR: [VRFC 10-2987] 'log_levels_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:27]
+ERROR: [VRFC 10-2987] 'logger_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:28]
+ERROR: [VRFC 10-2987] 'log_handler_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:29]
+ERROR: [VRFC 10-2987] 'log_deprecated_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:30]
+ERROR: [VRFC 10-2987] 'ansi_pkg' is not compiled in library 'vunit_lib' [/home/cameron/Projects/EE316P3/PWM/PWM.src/tb_PWM.vhd:31]
+INFO: [#UNDEF] Sorry, too many errors..

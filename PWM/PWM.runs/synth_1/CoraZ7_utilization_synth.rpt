@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Feb 22 15:17:30 2022
-| Host         : DESKTOP-BKIV1NC running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Sat Feb 26 11:45:44 2022
+| Host         : fedora running 64-bit unknown
 | Command      : report_utilization -file CoraZ7_utilization_synth.rpt -pb CoraZ7_utilization_synth.pb
 | Design       : CoraZ7
 | Device       : 7z010clg400-1

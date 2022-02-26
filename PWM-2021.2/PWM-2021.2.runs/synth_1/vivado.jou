@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 25 20:17:42 2022
+# Process ID: 10972
+# Current directory: /home/cameron/Projects/EE316P3/PWM-2021.2/PWM-2021.2.runs/synth_1
+# Command line: vivado -log CoraZ7.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CoraZ7.tcl
+# Log file: /home/cameron/Projects/EE316P3/PWM-2021.2/PWM-2021.2.runs/synth_1/CoraZ7.vds
+# Journal file: /home/cameron/Projects/EE316P3/PWM-2021.2/PWM-2021.2.runs/synth_1/vivado.jou
+# Running On: fedora, OS: Linux, CPU Frequency: 1900.000 MHz, CPU Physical cores: 4, Host memory: 16398 MB
+#-----------------------------------------------------------
+source CoraZ7.tcl -notrace
