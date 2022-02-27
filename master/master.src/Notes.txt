@@ -1,0 +1,25 @@
+i2c_user.vhd functionality:
+
+Sends W Address, Sends Command (writing), continues until byteSel hits max
+
+Sends R Address, Receives data until Write command is changed
+
+When write command is changed, then it repeats this process, otherwise it stays reading constantly
+
+
+
+i2c_user_write_read_repeat.vhd functionality:
+
+Constantly Writes then reads, repeat
+
+
+
+------------------------------------Speed Testing------------------------------------
+I2C Bus Speed/9 bits = Sampling rate of ADC
+
+Scoreboard  |   I2C Bus   |  Sampling Rate  |  Wave Frequency  |  Sampling Ratio  |
+
+Micheal          90kHz            10kHz              1kHz               10:1
+
+Aaron             0kHz             trash             1kHz               trash:1 
+
