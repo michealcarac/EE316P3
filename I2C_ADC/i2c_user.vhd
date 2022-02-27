@@ -19,7 +19,7 @@ architecture behavioral of i2c_user is
 	component i2c_master is
 		GENERIC(
 			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-            bus_clk   : INTEGER := 90000);   --speed the i2c bus (scl) will run at in Hz
+            bus_clk   : INTEGER := 90_000);   --speed the i2c bus (scl) will run at in Hz
 		PORT(
 			clk       : IN     STD_LOGIC;                    --system clock
 			reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -99,7 +99,7 @@ architecture behavioral of i2c_user is
 	process(clk_i) 
 	begin
 		if rising_edge(clk_i) then
-			if reset_n = '0' or cmd_change = '1' then
+			if master_reset_n = '0' then
 				next_state  <= start; --move to the starting state
 				-- View note in  busy high section of the FSM
 				byteSel     <= 0;     --reset the counter
