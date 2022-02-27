@@ -11,7 +11,7 @@ entity i2c_user is
 	port(
 		-- IN
 		clk_i      	: in    std_logic;                     	--clock input
-		reset_n     : in    std_logic;                     	--active-high reset
+		reset_n     : in    std_logic;                     	--active-low reset
 		selectMode	: in    std_logic_vector(3 downto 0); 	-- 00 = LDR, 01 = TEMP, 10 = ANALOG, 11 = POT
 		clockOutput : in    std_logic;   					-- 0 = Blank, 1 = Display "Clock Output"
 
@@ -99,18 +99,8 @@ architecture behavioral of i2c_user is
 
 	
 	-- Data Out Mux (For Nibble Writing)
-	-- process(clk_i)
-	-- begin
-	-- 	if rising_edge(clk_i) then
-	-- 		if nibble_sel = '0' then
-	-- 			i2c_data <= lcd_data(7 downto 4) & lcd_backlight & lcd_EN & lcd_RW & lcd_RS;
-	-- 		else 
-	-- 			i2c_data <= lcd_data(3 downto 0) & lcd_backlight & lcd_EN & lcd_RW & lcd_RS;
-	-- 		end if;
-	-- 	end if;
-	-- end process;
-	i2c_data <= x"0" & lcd_data(7 downto 4) & lcd_backlight & lcd_EN & lcd_RW & lcd_RS when nibble_sel = '0' else
-				x"0" & lcd_data(3 downto 0) & lcd_backlight & lcd_EN & lcd_RW & lcd_RS when nibble_sel = '1' else
+	i2c_data <= lcd_data(7 downto 4) & lcd_backlight & lcd_EN & lcd_RW & lcd_RS when nibble_sel = '0' else
+				lcd_data(3 downto 0) & lcd_backlight & lcd_EN & lcd_RW & lcd_RS when nibble_sel = '1' else
 				(others => '0');
 
 	-- Main State Machine
@@ -166,7 +156,6 @@ architecture behavioral of i2c_user is
 							lcd_en   <= '0'; -- Back to Default State
 							nibble_sel <= NOT nibble_sel; -- Only change when all three data bytes are sent of the first nibble
 						end if;
-						
 						next_state <= start;
 				end case;
 			end if;
