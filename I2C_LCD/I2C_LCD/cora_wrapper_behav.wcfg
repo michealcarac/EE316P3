@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="cora_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="cora_wrapper" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="11174094890000fs"></ZoomStartTime>
+      <ZoomEndTime time="12622094890001fs"></ZoomEndTime>
+      <Cursor1Time time="12085455650000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="148"></NameColumnWidth>
+      <ValueColumnWidth column_width="127"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject type="array" fp_name="/cora_wrapper/user_dio">
+      <obj_property name="ElementShortName">user_dio[11:0]</obj_property>
+      <obj_property name="ObjectShortName">user_dio[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/jb">
+      <obj_property name="ElementShortName">jb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jb[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/ja">
+      <obj_property name="ElementShortName">ja[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ja[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/btn">
+      <obj_property name="ElementShortName">btn[1:0]</obj_property>
+      <obj_property name="ObjectShortName">btn[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/btn_n">
+      <obj_property name="ElementShortName">btn_n</obj_property>
+      <obj_property name="ObjectShortName">btn_n</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/Inst_top_level/selectMode">
+      <obj_property name="ElementShortName">selectMode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">selectMode[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/clockOutput">
+      <obj_property name="ElementShortName">clockOutput</obj_property>
+      <obj_property name="ObjectShortName">clockOutput</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/cora_wrapper/Inst_top_level/state">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/Inst_top_level/i2c_address">
+      <obj_property name="ElementShortName">i2c_address[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i2c_address[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/i2c_enable">
+      <obj_property name="ElementShortName">i2c_enable</obj_property>
+      <obj_property name="ObjectShortName">i2c_enable</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/cora_wrapper/Inst_top_level/byteSel">
+      <obj_property name="ElementShortName">byteSel</obj_property>
+      <obj_property name="ObjectShortName">byteSel</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/nibble_sel">
+      <obj_property name="ElementShortName">nibble_sel</obj_property>
+      <obj_property name="ObjectShortName">nibble_sel</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/Inst_top_level/i2c_data">
+      <obj_property name="ElementShortName">i2c_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i2c_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cora_wrapper/Inst_top_level/lcd_data">
+      <obj_property name="ElementShortName">lcd_data[8:0]</obj_property>
+      <obj_property name="ObjectShortName">lcd_data[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/lcd_EN">
+      <obj_property name="ElementShortName">lcd_EN</obj_property>
+      <obj_property name="ObjectShortName">lcd_EN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/lcd_RS">
+      <obj_property name="ElementShortName">lcd_RS</obj_property>
+      <obj_property name="ObjectShortName">lcd_RS</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/lcd_RW">
+      <obj_property name="ElementShortName">lcd_RW</obj_property>
+      <obj_property name="ObjectShortName">lcd_RW</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/lcd_backlight">
+      <obj_property name="ElementShortName">lcd_backlight</obj_property>
+      <obj_property name="ObjectShortName">lcd_backlight</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/cora_wrapper/Inst_top_level/lcd_count">
+      <obj_property name="ElementShortName">lcd_count</obj_property>
+      <obj_property name="ObjectShortName">lcd_count</obj_property>
+   </wvobject>
+</wave_config>
