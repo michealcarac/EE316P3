@@ -2,11 +2,13 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library work;
+use work.Common.all;
 
 entity i2c_user_adc is
 	generic(
-        input_clk : integer := 125_000_000;
-        bus_clk   : integer := 90_000);
+        input_clk : integer := CLOCK_SPEED ;
+        bus_clk   : integer := ADC_BUS_CLK
+	);
 	port(
 		clk_i    : in    std_logic;                     --clock input
 		reset_n  : in    std_logic;                     --active-low reset

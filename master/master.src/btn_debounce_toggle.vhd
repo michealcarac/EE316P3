@@ -36,19 +36,19 @@ GENERIC (
     Port ( BTN_I 	: in  STD_LOGIC;
            CLK 		: in  STD_LOGIC;
            BTN_O 	: out  STD_LOGIC;
-			  pulse_O :out std_logic;
+		   pulse_O  : out std_logic;
            TOGGLE_O : out  STD_LOGIC);
 end btn_debounce_toggle;
 
 architecture Behavioral of btn_debounce_toggle is
 
 --constant CNTR_MAX : std_logic_vector(15 downto 0) := X"1";
-signal btn_cntr   : unsigned(15 downto 0) := (others => '0');
-signal btn_reg    : std_logic   				  := '0';
-signal btn_toggle : std_logic                     := '0';
-signal btn_sync   : std_logic_vector(1 downto 0)  := (others => '1');
-signal btn_pulse  : std_logic                     := '0';
-signal btn_pulse_f: std_logic							  := '0';
+signal btn_cntr     : unsigned(15 downto 0) := (others => '0');
+signal btn_reg      : std_logic   		    := '0';
+signal btn_toggle   : std_logic             := '0';
+signal btn_sync     : std_logic_vector(1 downto 0)  := (others => '1');
+signal btn_pulse    : std_logic             := '0';
+signal btn_pulse_f  : std_logic				:= '0';
 
 
 begin
