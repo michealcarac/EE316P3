@@ -3,9 +3,6 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/master/m
 INFO: [VRFC 10-3107] analyzing entity 'CoraZ7'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd" into library work
 INFO: [VRFC 10-3107] analyzing entity 'i2c_master'
-WARNING: [VRFC 10-471] case choice must be a locally static expression [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:86]
-WARNING: [VRFC 10-471] case choice must be a locally static expression [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:89]
-WARNING: [VRFC 10-471] case choice must be a locally static expression [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:92]
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/master/master.src/PWM.vhd" into library work
 INFO: [VRFC 10-3107] analyzing entity 'pwm'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd" into library work

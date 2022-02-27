@@ -1,4 +1,28 @@
 v 4
-file / "/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd" "5cb189c8dc732f9e405ddf65416a8fb00adaddbb" "20220227195925.899":
-  entity btn_debounce_toggle at 28( 1338) + 0 on 11;
-  architecture behavioral of btn_debounce_toggle at 42( 1718) + 0 on 12;
+file / "/home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd" "2ee7a280f2f44c5f72788b2d00219443a38d98d2" "20220227203232.597":
+  entity coraz7 at 1( 0) + 0 on 71;
+  architecture behavioral of coraz7 at 19( 320) + 0 on 72;
+file / "/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd" "536367209f05795d7b26b72d2748c10aee6dc204" "20220227203232.291":
+  entity i2c_user_adc at 1( 0) + 0 on 65;
+  architecture behavioral of i2c_user_adc at 23( 703) + 0 on 66;
+file / "/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd" "96906a808420adbcefb5e8d3b35de8b1f426342b" "20220227210021.743":
+  entity top_level at 1( 0) + 0 on 81;
+  architecture behavioral of top_level at 27( 685) + 0 on 82;
+file / "/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd" "91db2464069d89c927fe7b484d87bbd8e5cf4b19" "20220227203232.429":
+  entity i2c_master at 32( 1572) + 0 on 69;
+  architecture logic of i2c_master at 57( 2816) + 0 on 70;
+file / "/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd" "d7a2d9cbaf23f79eb9258166fc7a5d6592cea8b6" "20220227202220.377":
+  entity btn_debounce_toggle at 28( 1338) + 0 on 29;
+  architecture behavioral of btn_debounce_toggle at 43( 1738) + 0 on 30;
+file / "/home/cameron/Projects/EE316P3/master/master.src/Common.vhd" "42cfa28afa573fabb95979fb7deec997b7ac6648" "20220227203232.024":
+  package common at 8( 279) + 0 on 59;
+  package body common at 25( 1015) + 0 on 60;
+file / "/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd" "7e549fe745fd325cb6bccca378de6352883db729" "20220227210021.525":
+  entity i2c_user_lcd at 1( 0) + 0 on 79;
+  architecture behavioral of i2c_user_lcd at 24( 725) + 0 on 80;
+file / "/home/cameron/Projects/EE316P3/master/master.src/PWM.vhd" "620b83bb30a855f72da3b875d6d81b200eda017c" "20220227203232.383":
+  entity pwm at 1( 0) + 0 on 67;
+  architecture behavioral of pwm at 24( 435) + 0 on 68;
+file / "/home/cameron/Projects/EE316P3/master/master.src/tb_CoraZ7.vhd" "d0f204e09b16e4d13184fcd17a97bfaa4bebaeb5" "20220227204003.235":
+  entity tb_coraz7 at 1( 0) + 0 on 77;
+  architecture tb of tb_coraz7 at 46( 1245) + 0 on 78;

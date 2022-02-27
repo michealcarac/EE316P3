@@ -7,6 +7,7 @@
 --   use work.Common.all;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
 
 library work;
 
@@ -16,7 +17,7 @@ package Common is
   constant CP_ns              : integer := 1/CLOCK_SPEED * 10**9;         -- input clock period in nanoseconds
   constant LCD_BUS_CLK        : integer := 50_000;                        -- lcd clock speed
   constant ADC_BUS_CLK        : integer := 90_000;                        -- adc clock speed
-  constant DEBOUNCE_COUNT_MAX : std_logic_vector(15 downto 0) := X"000F"; -- button debouncer counter max, X"000F" for sim, X"FFFF" for impl
+  constant DEBOUNCE_COUNT_MAX : unsigned(15 downto 0) := X"000F"; -- button debouncer counter max, X"000F" for sim, X"FFFF" for impl
 
   type adc_state is (ch0, ch1, ch2, ch3);
 end Common;
