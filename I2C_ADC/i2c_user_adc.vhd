@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 library work;
 
-entity i2c_user is
+entity i2c_user_adc is
 	generic(
         input_clk : integer := 125_000_000;
         bus_clk   : integer := 90_000);
@@ -16,9 +16,9 @@ entity i2c_user is
 		sda      : inout std_logic;                     --i2c data
 		scl      : inout std_logic                      --i2c clock
 	);
-end i2c_user;
+end i2c_user_adc;
 
-architecture behavioral of i2c_user is
+architecture behavioral of i2c_user_adc is
 	component i2c_master is
 		generic(
 			input_clk : integer := 125_000_000; --input clock speed from user logic in Hz

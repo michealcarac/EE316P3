@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.1.3 (win64) Build 2644227 Wed Sep  4 09:45:24 MDT 2019
-| Date         : Tue Feb 22 16:35:55 2022
-| Host         : DESKTOP-0NNGBEI running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Sun Feb 27 16:04:51 2022
+| Host         : fedora running 64-bit Fedora release 35 (Thirty Five)
 | Command      : report_timing_summary -max_paths 10 -file cora_wrapper_timing_summary_routed.rpt -pb cora_wrapper_timing_summary_routed.pb -rpx cora_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : cora_wrapper
 | Device       : 7z010-clg400
@@ -127,7 +127,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      2.876        0.000                      0                   53        0.203        0.000                      0                   53        3.500        0.000                       0                    40  
+      3.324        0.000                      0                   61        0.201        0.000                      0                   61        3.500        0.000                       0                    44  
 
 
 All user specified timing constraints are met.
@@ -150,7 +150,7 @@ sys_clk_pin  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         2.876        0.000                      0                   53        0.203        0.000                      0                   53        3.500        0.000                       0                    40  
+sys_clk_pin         3.324        0.000                      0                   61        0.201        0.000                      0                   61        3.500        0.000                       0                    44  
 
 
 ------------------------------------------------------------------------------------------------
@@ -181,15 +181,15 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        2.876ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.203ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        3.324ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.201ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             2.876ns  (required time - arrival time)
+Slack (MET) :             3.324ns  (required time - arrival time)
   Source:                 Inst_top_level/Inst_i2c_master/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/data_clk_reg/D
@@ -197,12 +197,12 @@ Slack (MET) :             2.876ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.057ns  (logic 2.149ns (42.493%)  route 2.908ns (57.507%))
+  Data Path Delay:        4.644ns  (logic 1.901ns (40.937%)  route 2.743ns (59.063%))
   Logic Levels:           5  (CARRY4=2 LUT5=1 LUT6=2)
-  Clock Path Skew:        -0.060ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.938ns = ( 12.938 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.391ns
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.921ns = ( 12.921 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.429ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -218,24 +218,24 @@ Slack (MET) :             2.876ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.533    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.456     5.845 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
-                         net (fo=2, routed)           0.592     6.438    Inst_top_level/Inst_i2c_master/count[1]
-    SLICE_X36Y46         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.674     7.112 r  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     7.112    Inst_top_level/Inst_i2c_master/count_reg[3]_i_2_n_0
-    SLICE_X36Y47         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     7.351 r  Inst_top_level/Inst_i2c_master/count_reg[7]_i_2/O[2]
-                         net (fo=6, routed)           1.136     8.487    Inst_top_level/Inst_i2c_master/data0[6]
-    SLICE_X37Y47         LUT6 (Prop_lut6_I0_O)        0.302     8.789 r  Inst_top_level/Inst_i2c_master/data_clk_i_5/O
-                         net (fo=1, routed)           0.586     9.375    Inst_top_level/Inst_i2c_master/data_clk_i_5_n_0
-    SLICE_X38Y47         LUT5 (Prop_lut5_I0_O)        0.150     9.525 r  Inst_top_level/Inst_i2c_master/data_clk_i_2/O
-                         net (fo=1, routed)           0.594    10.119    Inst_top_level/Inst_i2c_master/data_clk_i_2_n_0
-    SLICE_X40Y47         LUT6 (Prop_lut6_I0_O)        0.328    10.447 r  Inst_top_level/Inst_i2c_master/data_clk_i_1/O
-                         net (fo=1, routed)           0.000    10.447    Inst_top_level/Inst_i2c_master/data_clk_i_1_n_0
-    SLICE_X40Y47         FDRE                                         r  Inst_top_level/Inst_i2c_master/data_clk_reg/D
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.456     5.831 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
+                         net (fo=2, routed)           0.588     6.419    Inst_top_level/Inst_i2c_master/count[1]
+    SLICE_X42Y52         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.657     7.076 r  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.076    Inst_top_level/Inst_i2c_master/count_reg[3]_i_2_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.315 r  Inst_top_level/Inst_i2c_master/count_reg[7]_i_2/O[2]
+                         net (fo=6, routed)           1.055     8.370    Inst_top_level/Inst_i2c_master/data0[6]
+    SLICE_X41Y53         LUT6 (Prop_lut6_I0_O)        0.301     8.671 r  Inst_top_level/Inst_i2c_master/data_clk_i_5/O
+                         net (fo=1, routed)           0.667     9.338    Inst_top_level/Inst_i2c_master/data_clk_i_5_n_0
+    SLICE_X41Y53         LUT5 (Prop_lut5_I0_O)        0.124     9.462 r  Inst_top_level/Inst_i2c_master/data_clk_i_2/O
+                         net (fo=1, routed)           0.433     9.895    Inst_top_level/Inst_i2c_master/data_clk_i_2_n_0
+    SLICE_X41Y53         LUT6 (Prop_lut6_I0_O)        0.124    10.019 r  Inst_top_level/Inst_i2c_master/data_clk_i_1/O
+                         net (fo=1, routed)           0.000    10.019    Inst_top_level/Inst_i2c_master/data_clk_i_1_n_0
+    SLICE_X41Y53         FDRE                                         r  Inst_top_level/Inst_i2c_master/data_clk_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -245,18 +245,18 @@ Slack (MET) :             2.876ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.267    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.580    12.938    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X40Y47         FDRE                                         r  Inst_top_level/Inst_i2c_master/data_clk_reg/C
-                         clock pessimism              0.391    13.329    
-                         clock uncertainty           -0.035    13.294    
-    SLICE_X40Y47         FDRE (Setup_fdre_C_D)        0.029    13.323    Inst_top_level/Inst_i2c_master/data_clk_reg
+                         net (fo=43, routed)          1.563    12.921    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y53         FDRE                                         r  Inst_top_level/Inst_i2c_master/data_clk_reg/C
+                         clock pessimism              0.429    13.349    
+                         clock uncertainty           -0.035    13.314    
+    SLICE_X41Y53         FDRE (Setup_fdre_C_D)        0.029    13.343    Inst_top_level/Inst_i2c_master/data_clk_reg
   -------------------------------------------------------------------
-                         required time                         13.323    
-                         arrival time                         -10.447    
+                         required time                         13.343    
+                         arrival time                         -10.019    
   -------------------------------------------------------------------
-                         slack                                  2.876    
+                         slack                                  3.324    
 
-Slack (MET) :             3.457ns  (required time - arrival time)
+Slack (MET) :             3.494ns  (required time - arrival time)
   Source:                 Inst_top_level/Inst_i2c_master/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/scl_clk_reg/D
@@ -264,12 +264,12 @@ Slack (MET) :             3.457ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.512ns  (logic 1.774ns (39.317%)  route 2.738ns (60.683%))
-  Logic Levels:           4  (CARRY4=1 LUT3=1 LUT6=2)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.936ns = ( 12.936 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.428ns
+  Data Path Delay:        4.341ns  (logic 1.868ns (43.028%)  route 2.473ns (56.972%))
+  Logic Levels:           5  (CARRY4=3 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.161ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.938ns = ( 12.938 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.276ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -285,21 +285,25 @@ Slack (MET) :             3.457ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.533    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.456     5.845 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
-                         net (fo=2, routed)           0.592     6.438    Inst_top_level/Inst_i2c_master/count[1]
-    SLICE_X36Y46         CARRY4 (Prop_carry4_S[1]_O[3])
-                                                      0.764     7.202 r  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/O[3]
-                         net (fo=5, routed)           1.002     8.204    Inst_top_level/Inst_i2c_master/data0[3]
-    SLICE_X37Y48         LUT6 (Prop_lut6_I2_O)        0.306     8.510 r  Inst_top_level/Inst_i2c_master/stretch_i_6/O
-                         net (fo=2, routed)           0.590     9.100    Inst_top_level/Inst_i2c_master/stretch_i_6_n_0
-    SLICE_X39Y47         LUT6 (Prop_lut6_I1_O)        0.124     9.224 r  Inst_top_level/Inst_i2c_master/scl_clk_i_2/O
-                         net (fo=1, routed)           0.553     9.777    Inst_top_level/Inst_i2c_master/scl_clk_i_2_n_0
-    SLICE_X39Y46         LUT3 (Prop_lut3_I0_O)        0.124     9.901 r  Inst_top_level/Inst_i2c_master/scl_clk_i_1/O
-                         net (fo=1, routed)           0.000     9.901    Inst_top_level/Inst_i2c_master/scl_clk_i_1_n_0
-    SLICE_X39Y46         FDRE                                         r  Inst_top_level/Inst_i2c_master/scl_clk_reg/D
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.456     5.831 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
+                         net (fo=2, routed)           0.588     6.419    Inst_top_level/Inst_i2c_master/count[1]
+    SLICE_X42Y52         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.657     7.076 r  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.076    Inst_top_level/Inst_i2c_master/count_reg[3]_i_2_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.193 r  Inst_top_level/Inst_i2c_master/count_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.193    Inst_top_level/Inst_i2c_master/count_reg[7]_i_2_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     7.412 r  Inst_top_level/Inst_i2c_master/count_reg[10]_i_3/O[0]
+                         net (fo=6, routed)           1.168     8.580    Inst_top_level/Inst_i2c_master/data0[8]
+    SLICE_X41Y52         LUT6 (Prop_lut6_I0_O)        0.295     8.875 r  Inst_top_level/Inst_i2c_master/scl_clk_i_2/O
+                         net (fo=1, routed)           0.717     9.593    Inst_top_level/Inst_i2c_master/scl_clk_i_2_n_0
+    SLICE_X41Y49         LUT3 (Prop_lut3_I0_O)        0.124     9.717 r  Inst_top_level/Inst_i2c_master/scl_clk_i_1/O
+                         net (fo=1, routed)           0.000     9.717    Inst_top_level/Inst_i2c_master/scl_clk_i_1_n_0
+    SLICE_X41Y49         FDRE                                         r  Inst_top_level/Inst_i2c_master/scl_clk_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -309,18 +313,18 @@ Slack (MET) :             3.457ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.267    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.578    12.936    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y46         FDRE                                         r  Inst_top_level/Inst_i2c_master/scl_clk_reg/C
-                         clock pessimism              0.428    13.364    
-                         clock uncertainty           -0.035    13.329    
-    SLICE_X39Y46         FDRE (Setup_fdre_C_D)        0.029    13.358    Inst_top_level/Inst_i2c_master/scl_clk_reg
+                         net (fo=43, routed)          1.580    12.938    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y49         FDRE                                         r  Inst_top_level/Inst_i2c_master/scl_clk_reg/C
+                         clock pessimism              0.276    13.215    
+                         clock uncertainty           -0.035    13.179    
+    SLICE_X41Y49         FDRE (Setup_fdre_C_D)        0.031    13.210    Inst_top_level/Inst_i2c_master/scl_clk_reg
   -------------------------------------------------------------------
-                         required time                         13.358    
-                         arrival time                          -9.901    
+                         required time                         13.210    
+                         arrival time                          -9.717    
   -------------------------------------------------------------------
-                         slack                                  3.457    
+                         slack                                  3.494    
 
-Slack (MET) :             3.547ns  (required time - arrival time)
+Slack (MET) :             3.579ns  (required time - arrival time)
   Source:                 Inst_top_level/Inst_i2c_master/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/stretch_reg/D
@@ -328,12 +332,12 @@ Slack (MET) :             3.547ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.475ns  (logic 1.774ns (39.643%)  route 2.701ns (60.357%))
+  Data Path Delay:        4.390ns  (logic 1.778ns (40.506%)  route 2.612ns (59.494%))
   Logic Levels:           4  (CARRY4=1 LUT5=1 LUT6=2)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.937ns = ( 12.937 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.428ns
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 12.922 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.429ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -349,21 +353,21 @@ Slack (MET) :             3.547ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.533    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.456     5.845 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
-                         net (fo=2, routed)           0.592     6.438    Inst_top_level/Inst_i2c_master/count[1]
-    SLICE_X36Y46         CARRY4 (Prop_carry4_S[1]_O[3])
-                                                      0.764     7.202 f  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/O[3]
-                         net (fo=5, routed)           1.007     8.209    Inst_top_level/Inst_i2c_master/data0[3]
-    SLICE_X37Y48         LUT5 (Prop_lut5_I1_O)        0.306     8.515 r  Inst_top_level/Inst_i2c_master/stretch_i_4/O
-                         net (fo=2, routed)           0.665     9.180    Inst_top_level/Inst_i2c_master/stretch_i_4_n_0
-    SLICE_X37Y48         LUT6 (Prop_lut6_I0_O)        0.124     9.304 r  Inst_top_level/Inst_i2c_master/stretch_i_2/O
-                         net (fo=1, routed)           0.436     9.740    Inst_top_level/Inst_i2c_master/stretch_i_2_n_0
-    SLICE_X38Y47         LUT6 (Prop_lut6_I1_O)        0.124     9.864 r  Inst_top_level/Inst_i2c_master/stretch_i_1/O
-                         net (fo=1, routed)           0.000     9.864    Inst_top_level/Inst_i2c_master/stretch_i_1_n_0
-    SLICE_X38Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/stretch_reg/D
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.456     5.831 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
+                         net (fo=2, routed)           0.588     6.419    Inst_top_level/Inst_i2c_master/count[1]
+    SLICE_X42Y52         CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.767     7.186 f  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/O[3]
+                         net (fo=5, routed)           0.847     8.033    Inst_top_level/Inst_i2c_master/data0[3]
+    SLICE_X41Y52         LUT5 (Prop_lut5_I1_O)        0.307     8.340 r  Inst_top_level/Inst_i2c_master/stretch_i_4/O
+                         net (fo=2, routed)           0.882     9.222    Inst_top_level/Inst_i2c_master/stretch_i_4_n_0
+    SLICE_X40Y52         LUT6 (Prop_lut6_I0_O)        0.124     9.346 r  Inst_top_level/Inst_i2c_master/stretch_i_2/O
+                         net (fo=1, routed)           0.294     9.641    Inst_top_level/Inst_i2c_master/stretch_i_2_n_0
+    SLICE_X41Y52         LUT6 (Prop_lut6_I1_O)        0.124     9.765 r  Inst_top_level/Inst_i2c_master/stretch_i_1/O
+                         net (fo=1, routed)           0.000     9.765    Inst_top_level/Inst_i2c_master/stretch_i_1_n_0
+    SLICE_X41Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/stretch_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -373,31 +377,31 @@ Slack (MET) :             3.547ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.267    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.579    12.937    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X38Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/stretch_reg/C
-                         clock pessimism              0.428    13.365    
-                         clock uncertainty           -0.035    13.330    
-    SLICE_X38Y47         FDCE (Setup_fdce_C_D)        0.081    13.411    Inst_top_level/Inst_i2c_master/stretch_reg
+                         net (fo=43, routed)          1.564    12.922    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/stretch_reg/C
+                         clock pessimism              0.429    13.350    
+                         clock uncertainty           -0.035    13.315    
+    SLICE_X41Y52         FDCE (Setup_fdce_C_D)        0.029    13.344    Inst_top_level/Inst_i2c_master/stretch_reg
   -------------------------------------------------------------------
-                         required time                         13.411    
-                         arrival time                          -9.864    
+                         required time                         13.344    
+                         arrival time                          -9.765    
   -------------------------------------------------------------------
-                         slack                                  3.547    
+                         slack                                  3.579    
 
-Slack (MET) :             3.886ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/count_reg[6]/C
+Slack (MET) :             3.724ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/count_reg[7]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.816ns  (logic 0.992ns (25.995%)  route 2.824ns (74.005%))
-  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.937ns = ( 12.937 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.428ns
+  Data Path Delay:        3.959ns  (logic 1.763ns (44.536%)  route 2.196ns (55.464%))
+  Logic Levels:           3  (CARRY4=2 LUT2=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.921ns = ( 12.921 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.429ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -413,79 +417,20 @@ Slack (MET) :             3.886ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.533    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[6]/C
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.419     5.808 f  Inst_top_level/Inst_i2c_master/count_reg[6]/Q
-                         net (fo=2, routed)           0.952     6.761    Inst_top_level/Inst_i2c_master/count[6]
-    SLICE_X37Y47         LUT4 (Prop_lut4_I0_O)        0.297     7.058 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
-                         net (fo=1, routed)           0.599     7.657    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
-    SLICE_X38Y47         LUT5 (Prop_lut5_I3_O)        0.124     7.781 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
-                         net (fo=15, routed)          0.937     8.718    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
-    SLICE_X39Y47         LUT2 (Prop_lut2_I0_O)        0.152     8.870 r  Inst_top_level/Inst_i2c_master/count[7]_i_1/O
-                         net (fo=1, routed)           0.336     9.205    Inst_top_level/Inst_i2c_master/count_0[7]
-    SLICE_X38Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[7]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      8.000     8.000 r  
-    H16                                               0.000     8.000 r  clk (IN)
-                         net (fo=0)                   0.000     8.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.267    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.579    12.937    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X38Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[7]/C
-                         clock pessimism              0.428    13.365    
-                         clock uncertainty           -0.035    13.330    
-    SLICE_X38Y47         FDCE (Setup_fdce_C_D)       -0.239    13.091    Inst_top_level/Inst_i2c_master/count_reg[7]
-  -------------------------------------------------------------------
-                         required time                         13.091    
-                         arrival time                          -9.205    
-  -------------------------------------------------------------------
-                         slack                                  3.886    
-
-Slack (MET) :             4.433ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/count_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/count_reg[0]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.561ns  (logic 0.964ns (27.072%)  route 2.597ns (72.928%))
-  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.936ns = ( 12.936 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.453ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.533    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.419     5.808 f  Inst_top_level/Inst_i2c_master/count_reg[6]/Q
-                         net (fo=2, routed)           0.952     6.761    Inst_top_level/Inst_i2c_master/count[6]
-    SLICE_X37Y47         LUT4 (Prop_lut4_I0_O)        0.297     7.058 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
-                         net (fo=1, routed)           0.599     7.657    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
-    SLICE_X38Y47         LUT5 (Prop_lut5_I3_O)        0.124     7.781 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
-                         net (fo=15, routed)          1.045     8.826    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
-    SLICE_X37Y46         LUT2 (Prop_lut2_I0_O)        0.124     8.950 r  Inst_top_level/Inst_i2c_master/count[0]_i_1/O
-                         net (fo=1, routed)           0.000     8.950    Inst_top_level/Inst_i2c_master/count_0[0]
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[0]/D
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.456     5.831 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
+                         net (fo=2, routed)           0.588     6.419    Inst_top_level/Inst_i2c_master/count[1]
+    SLICE_X42Y52         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.657     7.076 r  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.076    Inst_top_level/Inst_i2c_master/count_reg[3]_i_2_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.315     7.391 r  Inst_top_level/Inst_i2c_master/count_reg[7]_i_2/O[3]
+                         net (fo=6, routed)           0.809     8.200    Inst_top_level/Inst_i2c_master/data0[7]
+    SLICE_X40Y53         LUT2 (Prop_lut2_I1_O)        0.335     8.535 r  Inst_top_level/Inst_i2c_master/count[7]_i_1/O
+                         net (fo=1, routed)           0.799     9.334    Inst_top_level/Inst_i2c_master/count_0[7]
+    SLICE_X42Y53         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[7]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -495,214 +440,31 @@ Slack (MET) :             4.433ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.267    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.578    12.936    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[0]/C
-                         clock pessimism              0.453    13.389    
-                         clock uncertainty           -0.035    13.354    
-    SLICE_X37Y46         FDCE (Setup_fdce_C_D)        0.029    13.383    Inst_top_level/Inst_i2c_master/count_reg[0]
+                         net (fo=43, routed)          1.563    12.921    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X42Y53         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[7]/C
+                         clock pessimism              0.429    13.349    
+                         clock uncertainty           -0.035    13.314    
+    SLICE_X42Y53         FDCE (Setup_fdce_C_D)       -0.256    13.058    Inst_top_level/Inst_i2c_master/count_reg[7]
   -------------------------------------------------------------------
-                         required time                         13.383    
-                         arrival time                          -8.950    
+                         required time                         13.058    
+                         arrival time                          -9.334    
   -------------------------------------------------------------------
-                         slack                                  4.433    
+                         slack                                  3.724    
 
-Slack (MET) :             4.436ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/count_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/count_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.560ns  (logic 0.964ns (27.079%)  route 2.596ns (72.921%))
-  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.936ns = ( 12.936 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.453ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.533    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.419     5.808 f  Inst_top_level/Inst_i2c_master/count_reg[6]/Q
-                         net (fo=2, routed)           0.952     6.761    Inst_top_level/Inst_i2c_master/count[6]
-    SLICE_X37Y47         LUT4 (Prop_lut4_I0_O)        0.297     7.058 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
-                         net (fo=1, routed)           0.599     7.657    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
-    SLICE_X38Y47         LUT5 (Prop_lut5_I3_O)        0.124     7.781 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
-                         net (fo=15, routed)          1.044     8.825    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
-    SLICE_X37Y46         LUT2 (Prop_lut2_I0_O)        0.124     8.949 r  Inst_top_level/Inst_i2c_master/count[1]_i_1/O
-                         net (fo=1, routed)           0.000     8.949    Inst_top_level/Inst_i2c_master/count_0[1]
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      8.000     8.000 r  
-    H16                                               0.000     8.000 r  clk (IN)
-                         net (fo=0)                   0.000     8.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.267    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.578    12.936    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
-                         clock pessimism              0.453    13.389    
-                         clock uncertainty           -0.035    13.354    
-    SLICE_X37Y46         FDCE (Setup_fdce_C_D)        0.031    13.385    Inst_top_level/Inst_i2c_master/count_reg[1]
-  -------------------------------------------------------------------
-                         required time                         13.385    
-                         arrival time                          -8.949    
-  -------------------------------------------------------------------
-                         slack                                  4.436    
-
-Slack (MET) :             4.451ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/count_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/count_reg[2]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.589ns  (logic 0.992ns (27.641%)  route 2.597ns (72.359%))
-  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.936ns = ( 12.936 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.453ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.533    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.419     5.808 f  Inst_top_level/Inst_i2c_master/count_reg[6]/Q
-                         net (fo=2, routed)           0.952     6.761    Inst_top_level/Inst_i2c_master/count[6]
-    SLICE_X37Y47         LUT4 (Prop_lut4_I0_O)        0.297     7.058 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
-                         net (fo=1, routed)           0.599     7.657    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
-    SLICE_X38Y47         LUT5 (Prop_lut5_I3_O)        0.124     7.781 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
-                         net (fo=15, routed)          1.045     8.826    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
-    SLICE_X37Y46         LUT2 (Prop_lut2_I0_O)        0.152     8.978 r  Inst_top_level/Inst_i2c_master/count[2]_i_1/O
-                         net (fo=1, routed)           0.000     8.978    Inst_top_level/Inst_i2c_master/count_0[2]
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      8.000     8.000 r  
-    H16                                               0.000     8.000 r  clk (IN)
-                         net (fo=0)                   0.000     8.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.267    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.578    12.936    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[2]/C
-                         clock pessimism              0.453    13.389    
-                         clock uncertainty           -0.035    13.354    
-    SLICE_X37Y46         FDCE (Setup_fdce_C_D)        0.075    13.429    Inst_top_level/Inst_i2c_master/count_reg[2]
-  -------------------------------------------------------------------
-                         required time                         13.429    
-                         arrival time                          -8.978    
-  -------------------------------------------------------------------
-                         slack                                  4.451    
-
-Slack (MET) :             4.452ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/count_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/count_reg[8]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.588ns  (logic 0.992ns (27.648%)  route 2.596ns (72.352%))
-  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.936ns = ( 12.936 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.453ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.533    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDCE (Prop_fdce_C_Q)         0.419     5.808 f  Inst_top_level/Inst_i2c_master/count_reg[6]/Q
-                         net (fo=2, routed)           0.952     6.761    Inst_top_level/Inst_i2c_master/count[6]
-    SLICE_X37Y47         LUT4 (Prop_lut4_I0_O)        0.297     7.058 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
-                         net (fo=1, routed)           0.599     7.657    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
-    SLICE_X38Y47         LUT5 (Prop_lut5_I3_O)        0.124     7.781 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
-                         net (fo=15, routed)          1.044     8.825    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
-    SLICE_X37Y46         LUT2 (Prop_lut2_I0_O)        0.152     8.977 r  Inst_top_level/Inst_i2c_master/count[8]_i_1/O
-                         net (fo=1, routed)           0.000     8.977    Inst_top_level/Inst_i2c_master/count_0[8]
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[8]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      8.000     8.000 r  
-    H16                                               0.000     8.000 r  clk (IN)
-                         net (fo=0)                   0.000     8.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.267    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.578    12.936    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y46         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[8]/C
-                         clock pessimism              0.453    13.389    
-                         clock uncertainty           -0.035    13.354    
-    SLICE_X37Y46         FDCE (Setup_fdce_C_D)        0.075    13.429    Inst_top_level/Inst_i2c_master/count_reg[8]
-  -------------------------------------------------------------------
-                         required time                         13.429    
-                         arrival time                          -8.977    
-  -------------------------------------------------------------------
-                         slack                                  4.452    
-
-Slack (MET) :             4.461ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+Slack (MET) :             4.580ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/sda_int_reg/D
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.472ns  (logic 1.061ns (30.559%)  route 2.411ns (69.441%))
-  Logic Levels:           3  (LUT3=1 LUT6=2)
-  Clock Path Skew:        -0.061ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.937ns = ( 12.937 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.389ns
-    Clock Pessimism Removal (CPR):    0.391ns
+  Data Path Delay:        3.415ns  (logic 1.182ns (34.607%)  route 2.233ns (65.393%))
+  Logic Levels:           4  (LUT3=1 LUT6=3)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.938ns = ( 12.938 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.392ns
+    Clock Pessimism Removal (CPR):    0.454ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -718,18 +480,20 @@ Slack (MET) :             4.461ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.533    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.755     5.389    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+                         net (fo=43, routed)          1.758     5.392    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y44         FDPE (Prop_fdpe_C_Q)         0.456     5.845 r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/Q
-                         net (fo=10, routed)          0.849     6.694    Inst_top_level/Inst_i2c_master/bit_cnt[1]
-    SLICE_X41Y44         LUT3 (Prop_lut3_I1_O)        0.154     6.848 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[6]_i_3/O
-                         net (fo=3, routed)           1.129     7.977    Inst_top_level/Inst_i2c_master/FSM_onehot_state[6]_i_3_n_0
-    SLICE_X43Y44         LUT6 (Prop_lut6_I2_O)        0.327     8.304 r  Inst_top_level/Inst_i2c_master/sda_int_i_5/O
-                         net (fo=1, routed)           0.433     8.737    Inst_top_level/Inst_i2c_master/sda_int_i_5_n_0
-    SLICE_X43Y44         LUT6 (Prop_lut6_I4_O)        0.124     8.861 r  Inst_top_level/Inst_i2c_master/sda_int_i_1/O
-                         net (fo=1, routed)           0.000     8.861    Inst_top_level/Inst_i2c_master/sda_int_i_1_n_0
-    SLICE_X43Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/sda_int_reg/D
+    SLICE_X41Y48         FDPE (Prop_fdpe_C_Q)         0.456     5.848 r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/Q
+                         net (fo=12, routed)          0.888     6.736    Inst_top_level/Inst_i2c_master/bit_cnt[0]
+    SLICE_X41Y47         LUT3 (Prop_lut3_I2_O)        0.152     6.888 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[6]_i_3/O
+                         net (fo=3, routed)           0.452     7.340    Inst_top_level/Inst_i2c_master/FSM_onehot_state[6]_i_3_n_0
+    SLICE_X41Y47         LUT6 (Prop_lut6_I4_O)        0.326     7.666 f  Inst_top_level/Inst_i2c_master/sda_int_i_9/O
+                         net (fo=1, routed)           0.317     7.983    Inst_top_level/Inst_i2c_master/sda_int_i_9_n_0
+    SLICE_X39Y48         LUT6 (Prop_lut6_I0_O)        0.124     8.107 r  Inst_top_level/Inst_i2c_master/sda_int_i_5/O
+                         net (fo=1, routed)           0.577     8.684    Inst_top_level/Inst_i2c_master/sda_int_i_5_n_0
+    SLICE_X41Y48         LUT6 (Prop_lut6_I4_O)        0.124     8.808 r  Inst_top_level/Inst_i2c_master/sda_int_i_1/O
+                         net (fo=1, routed)           0.000     8.808    Inst_top_level/Inst_i2c_master/sda_int_i_1_n_0
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/sda_int_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -739,31 +503,90 @@ Slack (MET) :             4.461ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.267    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.579    12.937    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X43Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/sda_int_reg/C
-                         clock pessimism              0.391    13.328    
-                         clock uncertainty           -0.035    13.293    
-    SLICE_X43Y44         FDPE (Setup_fdpe_C_D)        0.029    13.322    Inst_top_level/Inst_i2c_master/sda_int_reg
+                         net (fo=43, routed)          1.580    12.938    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/sda_int_reg/C
+                         clock pessimism              0.454    13.392    
+                         clock uncertainty           -0.035    13.357    
+    SLICE_X41Y48         FDPE (Setup_fdpe_C_D)        0.031    13.388    Inst_top_level/Inst_i2c_master/sda_int_reg
   -------------------------------------------------------------------
-                         required time                         13.322    
-                         arrival time                          -8.861    
+                         required time                         13.388    
+                         arrival time                          -8.808    
   -------------------------------------------------------------------
-                         slack                                  4.461    
+                         slack                                  4.580    
 
-Slack (MET) :             4.467ns  (required time - arrival time)
-  Source:                 Inst_top_level/Inst_i2c_master/count_reg[5]/C
+Slack (MET) :             4.653ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/data_clk_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/D
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.181ns  (logic 0.936ns (29.423%)  route 2.245ns (70.577%))
+  Logic Levels:           2  (LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.938ns = ( 12.938 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.374ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.533    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.740     5.374    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y53         FDRE                                         r  Inst_top_level/Inst_i2c_master/data_clk_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y53         FDRE (Prop_fdre_C_Q)         0.456     5.830 f  Inst_top_level/Inst_i2c_master/data_clk_reg/Q
+                         net (fo=9, routed)           1.435     7.265    Inst_top_level/Inst_i2c_master/data_clk
+    SLICE_X41Y49         LUT2 (Prop_lut2_I1_O)        0.153     7.418 r  Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_2/O
+                         net (fo=2, routed)           0.811     8.228    Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_2_n_0
+    SLICE_X41Y48         LUT6 (Prop_lut6_I1_O)        0.327     8.555 r  Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_1/O
+                         net (fo=1, routed)           0.000     8.555    Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_1_n_0
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      8.000     8.000 r  
+    H16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.267    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.580    12.938    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+                         clock pessimism              0.276    13.215    
+                         clock uncertainty           -0.035    13.179    
+    SLICE_X41Y48         FDPE (Setup_fdpe_C_D)        0.029    13.208    Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]
+  -------------------------------------------------------------------
+                         required time                         13.208    
+                         arrival time                          -8.555    
+  -------------------------------------------------------------------
+                         slack                                  4.653    
+
+Slack (MET) :             4.696ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/count_reg[9]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.548ns  (logic 1.931ns (54.432%)  route 1.617ns (45.568%))
-  Logic Levels:           3  (CARRY4=2 LUT2=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.937ns = ( 12.937 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.390ns
-    Clock Pessimism Removal (CPR):    0.428ns
+  Data Path Delay:        3.318ns  (logic 1.887ns (56.878%)  route 1.431ns (43.122%))
+  Logic Levels:           4  (CARRY4=3 LUT2=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.921ns = ( 12.921 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.429ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -779,20 +602,23 @@ Slack (MET) :             4.467ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.533    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.756     5.390    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X37Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[5]/C
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y47         FDCE (Prop_fdce_C_Q)         0.419     5.809 r  Inst_top_level/Inst_i2c_master/count_reg[5]/Q
-                         net (fo=2, routed)           0.600     6.409    Inst_top_level/Inst_i2c_master/count[5]
-    SLICE_X36Y47         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.849     7.258 r  Inst_top_level/Inst_i2c_master/count_reg[7]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     7.258    Inst_top_level/Inst_i2c_master/count_reg[7]_i_2_n_0
-    SLICE_X36Y48         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     7.592 r  Inst_top_level/Inst_i2c_master/count_reg[10]_i_3/O[1]
-                         net (fo=7, routed)           1.017     8.609    Inst_top_level/Inst_i2c_master/data0[9]
-    SLICE_X39Y47         LUT2 (Prop_lut2_I1_O)        0.329     8.938 r  Inst_top_level/Inst_i2c_master/count[9]_i_1/O
-                         net (fo=1, routed)           0.000     8.938    Inst_top_level/Inst_i2c_master/count_0[9]
-    SLICE_X39Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[9]/D
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.456     5.831 r  Inst_top_level/Inst_i2c_master/count_reg[1]/Q
+                         net (fo=2, routed)           0.588     6.419    Inst_top_level/Inst_i2c_master/count[1]
+    SLICE_X42Y52         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.657     7.076 r  Inst_top_level/Inst_i2c_master/count_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.076    Inst_top_level/Inst_i2c_master/count_reg[3]_i_2_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.193 r  Inst_top_level/Inst_i2c_master/count_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.193    Inst_top_level/Inst_i2c_master/count_reg[7]_i_2_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     7.516 r  Inst_top_level/Inst_i2c_master/count_reg[10]_i_3/O[1]
+                         net (fo=7, routed)           0.843     8.359    Inst_top_level/Inst_i2c_master/data0[9]
+    SLICE_X43Y53         LUT2 (Prop_lut2_I1_O)        0.334     8.693 r  Inst_top_level/Inst_i2c_master/count[9]_i_1/O
+                         net (fo=1, routed)           0.000     8.693    Inst_top_level/Inst_i2c_master/count_0[9]
+    SLICE_X43Y53         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[9]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -802,16 +628,199 @@ Slack (MET) :             4.467ns  (required time - arrival time)
     H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.267    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          1.579    12.937    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y47         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[9]/C
-                         clock pessimism              0.428    13.365    
-                         clock uncertainty           -0.035    13.330    
-    SLICE_X39Y47         FDCE (Setup_fdce_C_D)        0.075    13.405    Inst_top_level/Inst_i2c_master/count_reg[9]
+                         net (fo=43, routed)          1.563    12.921    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y53         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[9]/C
+                         clock pessimism              0.429    13.349    
+                         clock uncertainty           -0.035    13.314    
+    SLICE_X43Y53         FDCE (Setup_fdce_C_D)        0.075    13.389    Inst_top_level/Inst_i2c_master/count_reg[9]
   -------------------------------------------------------------------
-                         required time                         13.405    
-                         arrival time                          -8.938    
+                         required time                         13.389    
+                         arrival time                          -8.693    
   -------------------------------------------------------------------
-                         slack                                  4.467    
+                         slack                                  4.696    
+
+Slack (MET) :             4.774ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/count_reg[5]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/count_reg[10]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.219ns  (logic 0.964ns (29.943%)  route 2.255ns (70.057%))
+  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 12.922 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.454ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.533    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.419     5.794 f  Inst_top_level/Inst_i2c_master/count_reg[5]/Q
+                         net (fo=2, routed)           0.952     6.747    Inst_top_level/Inst_i2c_master/count[5]
+    SLICE_X43Y53         LUT4 (Prop_lut4_I1_O)        0.297     7.044 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
+                         net (fo=1, routed)           0.263     7.307    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
+    SLICE_X43Y53         LUT5 (Prop_lut5_I3_O)        0.124     7.431 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
+                         net (fo=15, routed)          1.040     8.471    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
+    SLICE_X43Y52         LUT2 (Prop_lut2_I0_O)        0.124     8.595 r  Inst_top_level/Inst_i2c_master/count[10]_i_1/O
+                         net (fo=1, routed)           0.000     8.595    Inst_top_level/Inst_i2c_master/count_0[10]
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      8.000     8.000 r  
+    H16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.267    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.564    12.922    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[10]/C
+                         clock pessimism              0.454    13.375    
+                         clock uncertainty           -0.035    13.340    
+    SLICE_X43Y52         FDCE (Setup_fdce_C_D)        0.029    13.369    Inst_top_level/Inst_i2c_master/count_reg[10]
+  -------------------------------------------------------------------
+                         required time                         13.369    
+                         arrival time                          -8.595    
+  -------------------------------------------------------------------
+                         slack                                  4.774    
+
+Slack (MET) :             4.777ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/count_reg[5]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/count_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.218ns  (logic 0.964ns (29.952%)  route 2.254ns (70.048%))
+  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 12.922 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.454ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.533    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.419     5.794 f  Inst_top_level/Inst_i2c_master/count_reg[5]/Q
+                         net (fo=2, routed)           0.952     6.747    Inst_top_level/Inst_i2c_master/count[5]
+    SLICE_X43Y53         LUT4 (Prop_lut4_I1_O)        0.297     7.044 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
+                         net (fo=1, routed)           0.263     7.307    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
+    SLICE_X43Y53         LUT5 (Prop_lut5_I3_O)        0.124     7.431 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
+                         net (fo=15, routed)          1.039     8.470    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
+    SLICE_X43Y52         LUT2 (Prop_lut2_I0_O)        0.124     8.594 r  Inst_top_level/Inst_i2c_master/count[1]_i_1/O
+                         net (fo=1, routed)           0.000     8.594    Inst_top_level/Inst_i2c_master/count_0[1]
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      8.000     8.000 r  
+    H16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.267    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.564    12.922    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[1]/C
+                         clock pessimism              0.454    13.375    
+                         clock uncertainty           -0.035    13.340    
+    SLICE_X43Y52         FDCE (Setup_fdce_C_D)        0.031    13.371    Inst_top_level/Inst_i2c_master/count_reg[1]
+  -------------------------------------------------------------------
+                         required time                         13.371    
+                         arrival time                          -8.594    
+  -------------------------------------------------------------------
+                         slack                                  4.777    
+
+Slack (MET) :             4.792ns  (required time - arrival time)
+  Source:                 Inst_top_level/Inst_i2c_master/count_reg[5]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/count_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.247ns  (logic 0.992ns (30.547%)  route 2.255ns (69.453%))
+  Logic Levels:           3  (LUT2=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 12.922 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.375ns
+    Clock Pessimism Removal (CPR):    0.454ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.457     1.457 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.533    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.634 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.741     5.375    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y52         FDCE (Prop_fdce_C_Q)         0.419     5.794 f  Inst_top_level/Inst_i2c_master/count_reg[5]/Q
+                         net (fo=2, routed)           0.952     6.747    Inst_top_level/Inst_i2c_master/count[5]
+    SLICE_X43Y53         LUT4 (Prop_lut4_I1_O)        0.297     7.044 r  Inst_top_level/Inst_i2c_master/count[10]_i_4/O
+                         net (fo=1, routed)           0.263     7.307    Inst_top_level/Inst_i2c_master/count[10]_i_4_n_0
+    SLICE_X43Y53         LUT5 (Prop_lut5_I3_O)        0.124     7.431 r  Inst_top_level/Inst_i2c_master/count[10]_i_2/O
+                         net (fo=15, routed)          1.040     8.471    Inst_top_level/Inst_i2c_master/count[10]_i_2_n_0
+    SLICE_X43Y52         LUT2 (Prop_lut2_I0_O)        0.152     8.623 r  Inst_top_level/Inst_i2c_master/count[2]_i_1/O
+                         net (fo=1, routed)           0.000     8.623    Inst_top_level/Inst_i2c_master/count_0[2]
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      8.000     8.000 r  
+    H16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         1.387     9.387 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.267    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          1.564    12.922    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X43Y52         FDCE                                         r  Inst_top_level/Inst_i2c_master/count_reg[2]/C
+                         clock pessimism              0.454    13.375    
+                         clock uncertainty           -0.035    13.340    
+    SLICE_X43Y52         FDCE (Setup_fdce_C_D)        0.075    13.415    Inst_top_level/Inst_i2c_master/count_reg[2]
+  -------------------------------------------------------------------
+                         required time                         13.415    
+                         arrival time                          -8.623    
+  -------------------------------------------------------------------
+                         slack                                  4.792    
 
 
 
@@ -819,271 +828,16 @@ Slack (MET) :             4.467ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.203ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.339ns  (logic 0.186ns (54.836%)  route 0.153ns (45.164%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.852    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.594     1.472    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X41Y45         FDPE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X41Y45         FDPE (Prop_fdpe_C_Q)         0.141     1.613 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/Q
-                         net (fo=6, routed)           0.153     1.766    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[0]
-    SLICE_X42Y45         LUT6 (Prop_lut6_I0_O)        0.045     1.811 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[1]_i_1/O
-                         net (fo=1, routed)           0.000     1.811    Inst_top_level/Inst_i2c_master/FSM_onehot_state[1]_i_1_n_0
-    SLICE_X42Y45         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.096    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.863     1.988    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X42Y45         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
-                         clock pessimism             -0.500     1.488    
-    SLICE_X42Y45         FDCE (Hold_fdce_C_D)         0.120     1.608    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.608    
-                         arrival time                           1.811    
-  -------------------------------------------------------------------
-                         slack                                  0.203    
-
-Slack (MET) :             0.224ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.315ns  (logic 0.186ns (58.965%)  route 0.129ns (41.035%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.516ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.852    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.594     1.472    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X41Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X41Y44         FDCE (Prop_fdce_C_Q)         0.141     1.613 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/Q
-                         net (fo=8, routed)           0.129     1.742    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[4]
-    SLICE_X41Y44         LUT6 (Prop_lut6_I2_O)        0.045     1.787 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[4]_i_1/O
-                         net (fo=1, routed)           0.000     1.787    Inst_top_level/Inst_i2c_master/FSM_onehot_state[4]_i_1_n_0
-    SLICE_X41Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.096    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.863     1.988    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X41Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/C
-                         clock pessimism             -0.516     1.472    
-    SLICE_X41Y44         FDCE (Hold_fdce_C_D)         0.091     1.563    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]
-  -------------------------------------------------------------------
-                         required time                         -1.563    
-                         arrival time                           1.787    
-  -------------------------------------------------------------------
-                         slack                                  0.224    
-
-Slack (MET) :             0.226ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[6]/C
+Slack (MET) :             0.201ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/D
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.352ns  (logic 0.186ns (52.847%)  route 0.166ns (47.153%))
+  Data Path Delay:        0.306ns  (logic 0.186ns (60.827%)  route 0.120ns (39.173%))
   Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.034ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.986ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.480ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.852    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.594     1.472    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X41Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X41Y44         FDCE (Prop_fdce_C_Q)         0.141     1.613 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[6]/Q
-                         net (fo=9, routed)           0.166     1.779    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[6]
-    SLICE_X39Y44         LUT6 (Prop_lut6_I2_O)        0.045     1.824 r  Inst_top_level/Inst_i2c_master/bit_cnt[0]_i_1/O
-                         net (fo=1, routed)           0.000     1.824    Inst_top_level/Inst_i2c_master/bit_cnt[0]_i_1_n_0
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.096    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.861     1.986    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
-                         clock pessimism             -0.480     1.506    
-    SLICE_X39Y44         FDPE (Hold_fdpe_C_D)         0.092     1.598    Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.598    
-                         arrival time                           1.824    
-  -------------------------------------------------------------------
-                         slack                                  0.226    
-
-Slack (MET) :             0.228ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/D
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.353ns  (logic 0.186ns (52.697%)  route 0.167ns (47.303%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.034ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.986ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.480ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.852    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.594     1.472    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X41Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X41Y44         FDCE (Prop_fdce_C_Q)         0.141     1.613 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[6]/Q
-                         net (fo=9, routed)           0.167     1.780    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[6]
-    SLICE_X39Y44         LUT6 (Prop_lut6_I2_O)        0.045     1.825 r  Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_1/O
-                         net (fo=1, routed)           0.000     1.825    Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_1_n_0
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.096    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.861     1.986    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
-                         clock pessimism             -0.480     1.506    
-    SLICE_X39Y44         FDPE (Hold_fdpe_C_D)         0.091     1.597    Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.597    
-                         arrival time                           1.825    
-  -------------------------------------------------------------------
-                         slack                                  0.228    
-
-Slack (MET) :             0.239ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/D
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.331ns  (logic 0.186ns (56.225%)  route 0.145ns (43.775%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.986ns
-    Source Clock Delay      (SCD):    1.470ns
-    Clock Pessimism Removal (CPR):    0.516ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.852    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.592     1.470    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X39Y44         FDPE (Prop_fdpe_C_Q)         0.141     1.611 r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/Q
-                         net (fo=10, routed)          0.145     1.756    Inst_top_level/Inst_i2c_master/bit_cnt[1]
-    SLICE_X39Y44         LUT4 (Prop_lut4_I0_O)        0.045     1.801 r  Inst_top_level/Inst_i2c_master/bit_cnt[2]_i_1/O
-                         net (fo=1, routed)           0.000     1.801    Inst_top_level/Inst_i2c_master/bit_cnt[2]_i_1_n_0
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.096    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.861     1.986    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/C
-                         clock pessimism             -0.516     1.470    
-    SLICE_X39Y44         FDPE (Hold_fdpe_C_D)         0.092     1.562    Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -1.562    
-                         arrival time                           1.801    
-  -------------------------------------------------------------------
-                         slack                                  0.239    
-
-Slack (MET) :             0.239ns  (arrival time - required time)
-  Source:                 Inst_top_level/FSM_onehot_next_state_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/i2c_enable_reg/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.373ns  (logic 0.231ns (61.863%)  route 0.142ns (38.137%))
-  Logic Levels:           2  (LUT4=1 LUT5=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.989ns
     Source Clock Delay      (SCD):    1.473ns
@@ -1098,16 +852,14 @@ Slack (MET) :             0.239ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.852    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.595     1.473    Inst_top_level/clk_IBUF_BUFG
-    SLICE_X43Y48         FDRE                                         r  Inst_top_level/FSM_onehot_next_state_reg[1]/C
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X43Y48         FDRE (Prop_fdre_C_Q)         0.141     1.614 r  Inst_top_level/FSM_onehot_next_state_reg[1]/Q
-                         net (fo=4, routed)           0.089     1.702    Inst_top_level/FSM_onehot_next_state_reg_n_0_[1]
-    SLICE_X42Y48         LUT4 (Prop_lut4_I1_O)        0.045     1.747 r  Inst_top_level/i2c_enable_i_2/O
-                         net (fo=1, routed)           0.054     1.801    Inst_top_level/Inst_i2c_master/i2c_enable
-    SLICE_X42Y48         LUT5 (Prop_lut5_I0_O)        0.045     1.846 r  Inst_top_level/Inst_i2c_master/i2c_enable_i_1/O
-                         net (fo=1, routed)           0.000     1.846    Inst_top_level/Inst_i2c_master_n_0
-    SLICE_X42Y48         FDRE                                         r  Inst_top_level/i2c_enable_reg/D
+    SLICE_X40Y48         FDCE (Prop_fdce_C_Q)         0.141     1.614 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/Q
+                         net (fo=8, routed)           0.120     1.734    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[2]
+    SLICE_X41Y48         LUT6 (Prop_lut6_I1_O)        0.045     1.779 r  Inst_top_level/Inst_i2c_master/bit_cnt[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.779    Inst_top_level/Inst_i2c_master/bit_cnt[0]_i_1_n_0
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1117,30 +869,81 @@ Slack (MET) :             0.239ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.096    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.864     1.989    Inst_top_level/clk_IBUF_BUFG
-    SLICE_X42Y48         FDRE                                         r  Inst_top_level/i2c_enable_reg/C
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
                          clock pessimism             -0.503     1.486    
-    SLICE_X42Y48         FDRE (Hold_fdre_C_D)         0.121     1.607    Inst_top_level/i2c_enable_reg
+    SLICE_X41Y48         FDPE (Hold_fdpe_C_D)         0.092     1.578    Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.607    
-                         arrival time                           1.846    
+                         required time                         -1.578    
+                         arrival time                           1.779    
   -------------------------------------------------------------------
-                         slack                                  0.239    
+                         slack                                  0.201    
 
-Slack (MET) :             0.250ns  (arrival time - required time)
-  Source:                 Inst_top_level/first_write_reg/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+Slack (MET) :             0.201ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/D
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.305ns  (logic 0.186ns (61.026%)  route 0.119ns (38.974%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.852    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y48         FDCE (Prop_fdce_C_Q)         0.141     1.614 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/Q
+                         net (fo=8, routed)           0.119     1.733    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[2]
+    SLICE_X41Y48         LUT6 (Prop_lut6_I3_O)        0.045     1.778 r  Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_1/O
+                         net (fo=1, routed)           0.000     1.778    Inst_top_level/Inst_i2c_master/bit_cnt[1]_i_1_n_0
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.096    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+                         clock pessimism             -0.503     1.486    
+    SLICE_X41Y48         FDPE (Hold_fdpe_C_D)         0.091     1.577    Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.577    
+                         arrival time                           1.778    
+  -------------------------------------------------------------------
+                         slack                                  0.201    
+
+Slack (MET) :             0.210ns  (arrival time - required time)
+  Source:                 Inst_top_level/FSM_onehot_next_state_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/i2c_rw_reg/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.381ns  (logic 0.207ns (54.330%)  route 0.174ns (45.670%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.989ns
-    Source Clock Delay      (SCD):    1.473ns
-    Clock Pessimism Removal (CPR):    0.516ns
+  Data Path Delay:        0.315ns  (logic 0.209ns (66.264%)  route 0.106ns (33.736%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.987ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.503ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1151,65 +954,14 @@ Slack (MET) :             0.250ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.852    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.595     1.473    Inst_top_level/clk_IBUF_BUFG
-    SLICE_X42Y48         FDRE                                         r  Inst_top_level/first_write_reg/C
+                         net (fo=43, routed)          0.593     1.471    Inst_top_level/clk_IBUF_BUFG
+    SLICE_X38Y47         FDSE                                         r  Inst_top_level/FSM_onehot_next_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y48         FDRE (Prop_fdre_C_Q)         0.164     1.637 r  Inst_top_level/first_write_reg/Q
-                         net (fo=4, routed)           0.174     1.811    Inst_top_level/read_en
-    SLICE_X42Y48         LUT5 (Prop_lut5_I2_O)        0.043     1.854 r  Inst_top_level/i2c_rw_i_1/O
-                         net (fo=1, routed)           0.000     1.854    Inst_top_level/i2c_rw_i_1_n_0
-    SLICE_X42Y48         FDRE                                         r  Inst_top_level/i2c_rw_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.096    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.864     1.989    Inst_top_level/clk_IBUF_BUFG
-    SLICE_X42Y48         FDRE                                         r  Inst_top_level/i2c_rw_reg/C
-                         clock pessimism             -0.516     1.473    
-    SLICE_X42Y48         FDRE (Hold_fdre_C_D)         0.131     1.604    Inst_top_level/i2c_rw_reg
-  -------------------------------------------------------------------
-                         required time                         -1.604    
-                         arrival time                           1.854    
-  -------------------------------------------------------------------
-                         slack                                  0.250    
-
-Slack (MET) :             0.254ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.423ns  (logic 0.189ns (44.681%)  route 0.234ns (55.319%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.038ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.470ns
-    Clock Pessimism Removal (CPR):    0.480ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    H16                                               0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.852    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.592     1.470    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X39Y44         FDPE (Prop_fdpe_C_Q)         0.141     1.611 f  Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/Q
-                         net (fo=9, routed)           0.234     1.845    Inst_top_level/Inst_i2c_master/bit_cnt[2]
-    SLICE_X42Y44         LUT4 (Prop_lut4_I3_O)        0.048     1.893 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[7]_i_1/O
-                         net (fo=1, routed)           0.000     1.893    Inst_top_level/Inst_i2c_master/FSM_onehot_state[7]_i_1_n_0
-    SLICE_X42Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]/D
+    SLICE_X38Y47         FDSE (Prop_fdse_C_Q)         0.164     1.635 r  Inst_top_level/FSM_onehot_next_state_reg[0]/Q
+                         net (fo=5, routed)           0.106     1.741    Inst_top_level/FSM_onehot_next_state_reg_n_0_[0]
+    SLICE_X39Y47         LUT6 (Prop_lut6_I2_O)        0.045     1.786 r  Inst_top_level/i2c_rw_i_1/O
+                         net (fo=1, routed)           0.000     1.786    Inst_top_level/i2c_rw_i_1_n_0
+    SLICE_X39Y47         FDRE                                         r  Inst_top_level/i2c_rw_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1219,30 +971,30 @@ Slack (MET) :             0.254ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.096    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.863     1.988    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X42Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]/C
-                         clock pessimism             -0.480     1.508    
-    SLICE_X42Y44         FDCE (Hold_fdce_C_D)         0.131     1.639    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]
+                         net (fo=43, routed)          0.862     1.987    Inst_top_level/clk_IBUF_BUFG
+    SLICE_X39Y47         FDRE                                         r  Inst_top_level/i2c_rw_reg/C
+                         clock pessimism             -0.503     1.484    
+    SLICE_X39Y47         FDRE (Hold_fdre_C_D)         0.092     1.576    Inst_top_level/i2c_rw_reg
   -------------------------------------------------------------------
-                         required time                         -1.639    
-                         arrival time                           1.893    
+                         required time                         -1.576    
+                         arrival time                           1.786    
   -------------------------------------------------------------------
-                         slack                                  0.254    
+                         slack                                  0.210    
 
-Slack (MET) :             0.255ns  (arrival time - required time)
-  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
+Slack (MET) :             0.223ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.400ns  (logic 0.189ns (47.217%)  route 0.211ns (52.783%))
+  Data Path Delay:        0.343ns  (logic 0.189ns (55.030%)  route 0.154ns (44.970%))
   Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.038ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.470ns
-    Clock Pessimism Removal (CPR):    0.480ns
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.503ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1253,14 +1005,14 @@ Slack (MET) :             0.255ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.852    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.592     1.470    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X39Y44         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y44         FDPE (Prop_fdpe_C_Q)         0.141     1.611 f  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/Q
-                         net (fo=11, routed)          0.211     1.822    Inst_top_level/Inst_i2c_master/bit_cnt[0]
-    SLICE_X40Y44         LUT4 (Prop_lut4_I1_O)        0.048     1.870 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[3]_i_1/O
-                         net (fo=1, routed)           0.000     1.870    Inst_top_level/Inst_i2c_master/FSM_onehot_state[3]_i_1_n_0
-    SLICE_X40Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/D
+    SLICE_X41Y48         FDPE (Prop_fdpe_C_Q)         0.141     1.614 f  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/Q
+                         net (fo=11, routed)          0.154     1.768    Inst_top_level/Inst_i2c_master/bit_cnt[1]
+    SLICE_X40Y48         LUT4 (Prop_lut4_I2_O)        0.048     1.816 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.816    Inst_top_level/Inst_i2c_master/FSM_onehot_state[3]_i_1_n_0
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1270,26 +1022,230 @@ Slack (MET) :             0.255ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.096    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.863     1.988    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
-    SLICE_X40Y44         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/C
-                         clock pessimism             -0.480     1.508    
-    SLICE_X40Y44         FDCE (Hold_fdce_C_D)         0.107     1.615    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/C
+                         clock pessimism             -0.503     1.486    
+    SLICE_X40Y48         FDCE (Hold_fdce_C_D)         0.107     1.593    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]
   -------------------------------------------------------------------
-                         required time                         -1.615    
-                         arrival time                           1.870    
+                         required time                         -1.593    
+                         arrival time                           1.816    
   -------------------------------------------------------------------
-                         slack                                  0.255    
+                         slack                                  0.223    
 
-Slack (MET) :             0.258ns  (arrival time - required time)
-  Source:                 Inst_top_level/FSM_onehot_next_state_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            Inst_top_level/FSM_onehot_next_state_reg[4]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+Slack (MET) :             0.225ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.333ns  (logic 0.141ns (42.290%)  route 0.192ns (57.710%))
-  Logic Levels:           0  
+  Data Path Delay:        0.345ns  (logic 0.190ns (55.001%)  route 0.155ns (44.999%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.852    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y48         FDPE (Prop_fdpe_C_Q)         0.141     1.614 f  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/Q
+                         net (fo=11, routed)          0.155     1.769    Inst_top_level/Inst_i2c_master/bit_cnt[1]
+    SLICE_X40Y48         LUT4 (Prop_lut4_I2_O)        0.049     1.818 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[7]_i_1/O
+                         net (fo=1, routed)           0.000     1.818    Inst_top_level/Inst_i2c_master/FSM_onehot_state[7]_i_1_n_0
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.096    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]/C
+                         clock pessimism             -0.503     1.486    
+    SLICE_X40Y48         FDCE (Hold_fdce_C_D)         0.107     1.593    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.593    
+                         arrival time                           1.818    
+  -------------------------------------------------------------------
+                         slack                                  0.225    
+
+Slack (MET) :             0.228ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/D
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.364ns  (logic 0.186ns (51.152%)  route 0.178ns (48.848%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.852    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y48         FDPE (Prop_fdpe_C_Q)         0.141     1.614 r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[0]/Q
+                         net (fo=12, routed)          0.178     1.792    Inst_top_level/Inst_i2c_master/bit_cnt[0]
+    SLICE_X42Y48         LUT4 (Prop_lut4_I1_O)        0.045     1.837 r  Inst_top_level/Inst_i2c_master/bit_cnt[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.837    Inst_top_level/Inst_i2c_master/bit_cnt[2]_i_1_n_0
+    SLICE_X42Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.096    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X42Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]/C
+                         clock pessimism             -0.500     1.489    
+    SLICE_X42Y48         FDPE (Hold_fdpe_C_D)         0.120     1.609    Inst_top_level/Inst_i2c_master/bit_cnt_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.609    
+                         arrival time                           1.837    
+  -------------------------------------------------------------------
+                         slack                                  0.228    
+
+Slack (MET) :             0.236ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.340ns  (logic 0.186ns (54.634%)  route 0.154ns (45.366%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.852    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y48         FDPE (Prop_fdpe_C_Q)         0.141     1.614 r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/Q
+                         net (fo=11, routed)          0.154     1.768    Inst_top_level/Inst_i2c_master/bit_cnt[1]
+    SLICE_X40Y48         LUT5 (Prop_lut5_I2_O)        0.045     1.813 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.813    Inst_top_level/Inst_i2c_master/FSM_onehot_state[2]_i_1_n_0
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.096    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
+                         clock pessimism             -0.503     1.486    
+    SLICE_X40Y48         FDCE (Hold_fdce_C_D)         0.091     1.577    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.577    
+                         arrival time                           1.813    
+  -------------------------------------------------------------------
+                         slack                                  0.236    
+
+Slack (MET) :             0.236ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[5]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.341ns  (logic 0.186ns (54.474%)  route 0.155ns (45.526%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.852    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X41Y48         FDPE                                         r  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y48         FDPE (Prop_fdpe_C_Q)         0.141     1.614 f  Inst_top_level/Inst_i2c_master/bit_cnt_reg[1]/Q
+                         net (fo=11, routed)          0.155     1.769    Inst_top_level/Inst_i2c_master/bit_cnt[1]
+    SLICE_X40Y48         LUT4 (Prop_lut4_I2_O)        0.045     1.814 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[5]_i_1/O
+                         net (fo=1, routed)           0.000     1.814    Inst_top_level/Inst_i2c_master/FSM_onehot_state[5]_i_1_n_0
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.096    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y48         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[5]/C
+                         clock pessimism             -0.503     1.486    
+    SLICE_X40Y48         FDCE (Hold_fdce_C_D)         0.092     1.578    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.578    
+                         arrival time                           1.814    
+  -------------------------------------------------------------------
+                         slack                                  0.236    
+
+Slack (MET) :             0.241ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/D
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.332ns  (logic 0.227ns (68.425%)  route 0.105ns (31.575%))
+  Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.989ns
     Source Clock Delay      (SCD):    1.473ns
@@ -1304,12 +1260,14 @@ Slack (MET) :             0.258ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.852    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.595     1.473    Inst_top_level/clk_IBUF_BUFG
-    SLICE_X43Y48         FDRE                                         r  Inst_top_level/FSM_onehot_next_state_reg[3]/C
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y49         FDCE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[8]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X43Y48         FDRE (Prop_fdre_C_Q)         0.141     1.614 r  Inst_top_level/FSM_onehot_next_state_reg[3]/Q
-                         net (fo=3, routed)           0.192     1.806    Inst_top_level/FSM_onehot_next_state_reg_n_0_[3]
-    SLICE_X43Y48         FDRE                                         r  Inst_top_level/FSM_onehot_next_state_reg[4]/D
+    SLICE_X40Y49         FDCE (Prop_fdce_C_Q)         0.128     1.601 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[8]/Q
+                         net (fo=5, routed)           0.105     1.706    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[8]
+    SLICE_X40Y49         LUT3 (Prop_lut3_I0_O)        0.099     1.805 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.805    Inst_top_level/Inst_i2c_master/FSM_onehot_state[0]_i_1_n_0
+    SLICE_X40Y49         FDPE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1319,15 +1277,66 @@ Slack (MET) :             0.258ns  (arrival time - required time)
     H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.096    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
-                         net (fo=39, routed)          0.864     1.989    Inst_top_level/clk_IBUF_BUFG
-    SLICE_X43Y48         FDRE                                         r  Inst_top_level/FSM_onehot_next_state_reg[4]/C
+                         net (fo=43, routed)          0.864     1.989    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y49         FDPE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
                          clock pessimism             -0.516     1.473    
-    SLICE_X43Y48         FDRE (Hold_fdre_C_D)         0.075     1.548    Inst_top_level/FSM_onehot_next_state_reg[4]
+    SLICE_X40Y49         FDPE (Hold_fdpe_C_D)         0.091     1.564    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.548    
-                         arrival time                           1.806    
+                         required time                         -1.564    
+                         arrival time                           1.805    
   -------------------------------------------------------------------
-                         slack                                  0.258    
+                         slack                                  0.241    
+
+Slack (MET) :             0.241ns  (arrival time - required time)
+  Source:                 Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            Inst_top_level/Inst_i2c_master/addr_rw_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.366ns  (logic 0.186ns (50.787%)  route 0.180ns (49.213%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.034ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.987ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.480ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.225     0.225 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.852    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.878 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.595     1.473    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X40Y49         FDPE                                         r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y49         FDPE (Prop_fdpe_C_Q)         0.141     1.614 r  Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/Q
+                         net (fo=6, routed)           0.180     1.794    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg_n_0_[0]
+    SLICE_X39Y48         LUT6 (Prop_lut6_I3_O)        0.045     1.839 r  Inst_top_level/Inst_i2c_master/addr_rw[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.839    Inst_top_level/Inst_i2c_master/addr_rw[0]_i_1_n_0
+    SLICE_X39Y48         FDRE                                         r  Inst_top_level/Inst_i2c_master/addr_rw_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    H16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    H16                  IBUF (Prop_ibuf_I_O)         0.413     0.413 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.096    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.125 r  clk_IBUF_BUFG_inst/O
+                         net (fo=43, routed)          0.862     1.987    Inst_top_level/Inst_i2c_master/clk_IBUF_BUFG
+    SLICE_X39Y48         FDRE                                         r  Inst_top_level/Inst_i2c_master/addr_rw_reg[0]/C
+                         clock pessimism             -0.480     1.507    
+    SLICE_X39Y48         FDRE (Hold_fdre_C_D)         0.091     1.598    Inst_top_level/Inst_i2c_master/addr_rw_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.598    
+                         arrival time                           1.839    
+  -------------------------------------------------------------------
+                         slack                                  0.241    
 
 
 
@@ -1342,35 +1351,35 @@ Sources:            { clk }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I   n/a            2.155         8.000       5.845      BUFGCTRL_X0Y16  clk_IBUF_BUFG_inst/I
-Min Period        n/a     FDSE/C   n/a            1.000         8.000       7.000      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[0]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[1]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[2]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[3]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[4]/C
-Min Period        n/a     FDPE/C   n/a            1.000         8.000       7.000      SLICE_X41Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X42Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X40Y44    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X40Y44    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/C
-Low Pulse Width   Slow    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[0]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[1]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[2]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[3]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[4]/C
-Low Pulse Width   Slow    FDPE/C   n/a            0.500         4.000       3.500      SLICE_X41Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
-Low Pulse Width   Fast    FDPE/C   n/a            0.500         4.000       3.500      SLICE_X41Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X42Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X42Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y44    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
-High Pulse Width  Fast    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[0]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[1]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[2]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[3]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y48    Inst_top_level/FSM_onehot_next_state_reg[4]/C
-High Pulse Width  Fast    FDPE/C   n/a            0.500         4.000       3.500      SLICE_X41Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X42Y45    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y44    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y44    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X41Y44    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/C
+Min Period        n/a     FDSE/C   n/a            1.000         8.000       7.000      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[2]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[3]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[4]/C
+Min Period        n/a     FDPE/C   n/a            1.000         8.000       7.000      SLICE_X40Y49    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X40Y46    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X40Y48    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X40Y48    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y53    Inst_top_level/Inst_i2c_master/count_reg[0]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    Inst_top_level/Inst_i2c_master/count_reg[10]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    Inst_top_level/Inst_i2c_master/count_reg[1]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    Inst_top_level/Inst_i2c_master/count_reg[2]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    Inst_top_level/Inst_i2c_master/count_reg[3]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y53    Inst_top_level/Inst_i2c_master/count_reg[4]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    Inst_top_level/Inst_i2c_master/count_reg[5]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y53    Inst_top_level/Inst_i2c_master/count_reg[6]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X42Y53    Inst_top_level/Inst_i2c_master/count_reg[7]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    Inst_top_level/Inst_i2c_master/count_reg[8]/C
+High Pulse Width  Fast    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[1]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[2]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[3]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X38Y47    Inst_top_level/FSM_onehot_next_state_reg[4]/C
+High Pulse Width  Fast    FDPE/C   n/a            0.500         4.000       3.500      SLICE_X40Y49    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[0]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y46    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[1]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y48    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[2]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y48    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[3]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X40Y46    Inst_top_level/Inst_i2c_master/FSM_onehot_state_reg[4]/C
 
 
 

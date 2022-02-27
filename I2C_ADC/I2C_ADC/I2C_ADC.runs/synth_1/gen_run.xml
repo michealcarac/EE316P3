@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1645565502">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1645995774">
+  <File Type="VDS-TIMING-PB" Name="cora_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="cora_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="cora_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="cora_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="cora_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="cora_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="cora_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="cora_wrapper_reports.tcl"/>
   <File Type="PA-TCL" Name="cora_wrapper.tcl"/>
-  <File Type="RDS-DCP" Name="cora_wrapper.dcp"/>
-  <File Type="RDS-RDS" Name="cora_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="cora_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="cora_wrapper_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../I2C_Master.vhd">
@@ -14,7 +17,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../i2c_user.vhd">
+    <File Path="$PPRDIR/../i2c_user_adc.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -22,6 +25,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/cora_wrapper.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../i2c_user.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

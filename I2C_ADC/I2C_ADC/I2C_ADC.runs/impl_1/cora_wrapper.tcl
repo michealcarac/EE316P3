@@ -60,106 +60,14 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
-
-start_step init_design
-set ACTIVE_STEP init_design
-set rc [catch {
-  create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache C:/Users/sixpe/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9792-DESKTOP-0NNGBEI/incrSyn
-  set_param xicom.use_bs_reader 1
-  create_project -in_memory -part xc7z010clg400-1
-  set_property board_part digilentinc.com:cora-z7-10:part0:1.0 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.cache/wt [current_project]
-  set_property parent.project_path C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.xpr [current_project]
-  set_property ip_output_repo C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.runs/synth_1/cora_wrapper.dcp
-  read_xdc C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/Cora-Z7-10-Master.xdc
-  link_design -top cora_wrapper -part xc7z010clg400-1
-  close_msg_db -file init_design.pb
-} RESULT]
-if {$rc} {
-  step_failed init_design
-  return -code error $RESULT
-} else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force cora_wrapper_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file cora_wrapper_drc_opted.rpt -pb cora_wrapper_drc_opted.pb -rpx cora_wrapper_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
-    implement_debug_core 
-  } 
-  place_design 
-  write_checkpoint -force cora_wrapper_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file cora_wrapper_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file cora_wrapper_utilization_placed.rpt -pb cora_wrapper_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file cora_wrapper_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force cora_wrapper_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file cora_wrapper_drc_routed.rpt -pb cora_wrapper_drc_routed.pb -rpx cora_wrapper_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file cora_wrapper_methodology_drc_routed.rpt -pb cora_wrapper_methodology_drc_routed.pb -rpx cora_wrapper_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file cora_wrapper_power_routed.rpt -pb cora_wrapper_power_summary_routed.pb -rpx cora_wrapper_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file cora_wrapper_route_status.rpt -pb cora_wrapper_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file cora_wrapper_timing_summary_routed.rpt -pb cora_wrapper_timing_summary_routed.pb -rpx cora_wrapper_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file cora_wrapper_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file cora_wrapper_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file cora_wrapper_bus_skew_routed.rpt -pb cora_wrapper_bus_skew_routed.pb -rpx cora_wrapper_bus_skew_routed.rpx"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force cora_wrapper_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
-  unset ACTIVE_STEP 
-}
 
 start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_param chipscope.maxJobs 2
+  open_checkpoint cora_wrapper_routed.dcp
+  set_property webtalk.parent_dir /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.cache/wt [current_project]
   catch { write_mem_info -force cora_wrapper.mmi }
   write_bitstream -force cora_wrapper.bit 
   catch {write_debug_probes -quiet -force cora_wrapper}

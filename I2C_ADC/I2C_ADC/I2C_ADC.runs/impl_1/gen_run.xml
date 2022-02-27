@@ -1,55 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1645565503">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1645995835">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="cora_wrapper.drc"/>
+  <File Type="BG-BGN" Name="cora_wrapper.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="cora_wrapper.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="cora_wrapper.ltx"/>
+  <File Type="BITSTR-MMI" Name="cora_wrapper.mmi"/>
+  <File Type="BITSTR-BMM" Name="cora_wrapper_bd.bmm"/>
   <File Type="BITSTR-NKY" Name="cora_wrapper.nky"/>
   <File Type="BITSTR-RBT" Name="cora_wrapper.rbt"/>
+  <File Type="BITSTR-MSK" Name="cora_wrapper.msk"/>
+  <File Type="BG-BIN" Name="cora_wrapper.bin"/>
   <File Type="BG-BIT" Name="cora_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="cora_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="cora_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="cora_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="cora_wrapper.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="cora_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="cora_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="cora_wrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="cora_wrapper_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="cora_wrapper_postroute_physopt.dcp"/>
   <File Type="ROUTE-BUS-SKEW" Name="cora_wrapper_bus_skew_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="cora_wrapper_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="cora_wrapper.vdi"/>
+  <File Type="ROUTE-SIMILARITY" Name="cora_wrapper_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-TIMING-RPX" Name="cora_wrapper_timing_summary_routed.rpx"/>
   <File Type="ROUTE-TIMING-PB" Name="cora_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="cora_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="cora_wrapper_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="cora_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="cora_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="cora_wrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="cora_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="cora_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="cora_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="cora_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="cora_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="cora_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="cora_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="cora_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="cora_wrapper_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="cora_wrapper_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="cora_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="cora_wrapper_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="cora_wrapper_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="cora_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="cora_wrapper_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="cora_wrapper_timing_summary_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="cora_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="cora_wrapper_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-CTRL" Name="cora_wrapper_control_sets_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="cora_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="cora_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="cora_wrapper_clock_utilization_placed.rpt"/>
   <File Type="PLACE-IO" Name="cora_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="cora_wrapper_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="cora_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="cora_wrapper_drc_pwropted.rpt"/>
   <File Type="PWROPT-DCP" Name="cora_wrapper_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="cora_wrapper_timing_summary_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="cora_wrapper.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="cora_wrapper_methodology_drc_opted.rpt"/>
   <File Type="OPT-DRC" Name="cora_wrapper_drc_opted.rpt"/>
-  <File Type="BG-BGN" Name="cora_wrapper.bgn"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="cora_wrapper_routed_bb.dcp"/>
+  <File Type="OPT-DCP" Name="cora_wrapper_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="cora_wrapper_timing_summary_init.rpt"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="cora_wrapper_bus_skew_routed.rpx"/>
   <File Type="REPORTS-TCL" Name="cora_wrapper_reports.tcl"/>
-  <File Type="PLACE-UTIL" Name="cora_wrapper_utilization_placed.rpt"/>
-  <File Type="BITSTR-BMM" Name="cora_wrapper_bd.bmm"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="cora_wrapper_bus_skew_routed.pb"/>
   <File Type="PA-TCL" Name="cora_wrapper.tcl"/>
-  <File Type="BITSTR-MSK" Name="cora_wrapper.msk"/>
-  <File Type="ROUTE-PWR" Name="cora_wrapper_power_routed.rpt"/>
-  <File Type="OPT-DCP" Name="cora_wrapper_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="cora_wrapper_placed.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="cora_wrapper_power_summary_routed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="cora_wrapper_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="cora_wrapper.bin"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="cora_wrapper_timing_summary_routed.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="cora_wrapper_physopt.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="cora_wrapper_routed_error.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="cora_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-DCP" Name="cora_wrapper_routed.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="cora_wrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="cora_wrapper_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="cora_wrapper_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="cora_wrapper.ltx"/>
-  <File Type="ROUTE-DRC-RPX" Name="cora_wrapper_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="cora_wrapper.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="cora_wrapper_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="cora_wrapper_route_status.pb"/>
-  <File Type="BITSTR-SYSDEF" Name="cora_wrapper.sysdef"/>
-  <File Type="ROUTE-PWR-RPX" Name="cora_wrapper_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="cora_wrapper_route_status.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../I2C_Master.vhd">
@@ -58,7 +77,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../i2c_user.vhd">
+    <File Path="$PPRDIR/../i2c_user_adc.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -66,6 +85,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/cora_wrapper.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../i2c_user.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
