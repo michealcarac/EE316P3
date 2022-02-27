@@ -1,0 +1,4 @@
+v 4
+file / "/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd" "5cb189c8dc732f9e405ddf65416a8fb00adaddbb" "20220227195925.899":
+  entity btn_debounce_toggle at 28( 1338) + 0 on 11;
+  architecture behavioral of btn_debounce_toggle at 42( 1718) + 0 on 12;
