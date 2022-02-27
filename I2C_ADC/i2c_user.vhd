@@ -4,6 +4,9 @@ use ieee.std_logic_1164.all;
 library work;
 
 entity i2c_user is
+	generic(
+        input_clk : integer := 125_000_000;
+        bus_clk   : integer := 90_000);
 	port(
 		clk_i    : in    std_logic;                     --clock input
 		reset_n  : in    std_logic;                     --active-low reset
@@ -17,22 +20,22 @@ end i2c_user;
 
 architecture behavioral of i2c_user is
 	component i2c_master is
-		GENERIC(
-			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-            bus_clk   : INTEGER := 90_000);   --speed the i2c bus (scl) will run at in Hz
-		PORT(
-			clk       : IN     STD_LOGIC;                    --system clock
-			reset_n   : IN     STD_LOGIC;                    --active low reset
-			ena       : IN     STD_LOGIC;                    --latch in command
-			addr      : IN     STD_LOGIC_VECTOR(6 DOWNTO 0); --address of target slave
-			rw        : IN     STD_LOGIC;                    --'0' is write, '1' is read
-			data_wr   : IN     STD_LOGIC_VECTOR(7 DOWNTO 0); --data to write to slave
-			busy      : OUT    STD_LOGIC;                    --indicates transaction in progress
-			data_rd   : OUT    STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
-			ack_error : BUFFER STD_LOGIC;                    --flag if improper acknowledge from slave
-			sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
-			scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
-	END component;
+		generic(
+			input_clk : integer := 125_000_000; --input clock speed from user logic in Hz
+            bus_clk   : integer := 90_000);   --speed the i2c bus (scl) will run at in Hz
+		port(
+			clk       : in     std_logic;                    --system clock
+			reset_n   : in     std_logic;                    --active low reset
+			ena       : in     std_logic;                    --latch in command
+			addr      : in     std_logic_vector(6 DOWNTO 0); --address of target slave
+			rw        : in     std_logic;             		 --'0' is write, '1' is read
+			data_wr   : in     std_logic_vector(7 DOWNTO 0); --data to write to slave
+			busy      : out    std_logic;              		 --indicates transaction in progress
+			data_rd   : out    std_logic_vector(7 DOWNTO 0); --data read from slave
+			ack_error : buffer std_logic;                    --flag if improper acknowledge from slave
+			sda       : inout  std_logic;                    --serial data output of i2c bus
+			scl       : inout  std_logic);                   --serial clock output of i2c bus
+	end component;
 
 	--general signals
 	type stateType is (start, ready, data_valid, busy_high, repeat);
@@ -41,7 +44,7 @@ architecture behavioral of i2c_user is
 	signal prev_cmd           : std_logic_vector(3 downto 0);
 	signal cmd_change         : std_logic;
 	-- View note in busy high section of the FSM
-	signal byteSel            : integer range 0 to 1 := 0;    --current byte to send (Change the N value)
+	signal byteSel            : integer range 0 to 7 := 0;    --current byte to send (Change the N value)
 	
 	
 	--i2c master signals
@@ -64,7 +67,10 @@ architecture behavioral of i2c_user is
     master_reset_n <= (reset_n AND NOT cmd_change); --Reset Master if reset_n goes low, or if cmd_change goes high
 	
 	Inst_i2c_master : i2c_master
-		port map(
+	generic map(
+			input_clk => input_clk,	 			 --input clock speed from user logic in Hz
+			bus_clk   => bus_clk)    			 --speed the i2c bus (scl) will run at in Hz	
+	port map(
 			clk       => clk_i,
 			reset_n   => master_reset_n,
 			ena       => i2c_enable,
@@ -79,18 +85,18 @@ architecture behavioral of i2c_user is
 		);
 	
 	-- Detect if the command to change ADC Channel changes
-	process(clk_i)
-	begin
-		if rising_edge(clk_i) then
-			prev_cmd <= cmd;
-			if prev_cmd = cmd then
-				cmd_change <= '0';
-			else
-				cmd_change <= '1';
-			end if;
+	 process(clk_i)
+	 begin
+	 	if rising_edge(clk_i) then
+	 		prev_cmd <= cmd;
+	 		if prev_cmd = cmd then
+	 			cmd_change <= '0';
+	 		else
+	 			cmd_change <= '1';
+	 		end if;
+	 	end if;
+	 end process;
 
-		end if;
-	end process;
 	
 	--Main State Machine
 	--Process: Sends Write Address then Writes the commands as specified in the byteSel Case
@@ -142,7 +148,7 @@ architecture behavioral of i2c_user is
 						    -- It is also most likely suggested to remove the command change functionality, but maybe not if some piece of data
 						    -- in the case statement will be changed on the fly before continously reading.
 						    -- MC => Added to main design, Comment out if not wanted.
-							if byteSel < 1 then               --If we're not at the top (N = size of case statement)
+							if byteSel < 7 then               --If we're not at the top (N = size of case statement)
                                 byteSel     <= byteSel + 1;     --increment 
 						        wr_done <= '0';             --Dont allow system to progress to read until all bytes are written
 						    else                            --otherwise, this is a normal repeat
@@ -171,6 +177,12 @@ architecture behavioral of i2c_user is
 		case byteSel is
 			when 0      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
 			when 1      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 2      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 3      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 4      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 5      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 6      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
+			when 7      => i2c_data <= x"4" & cmd;    -- cmd is hex 0x0-0x3, selects one of the four analog inputs of the ADC;
 			when others => i2c_data <= X"00";
 		end case;
 	end process;

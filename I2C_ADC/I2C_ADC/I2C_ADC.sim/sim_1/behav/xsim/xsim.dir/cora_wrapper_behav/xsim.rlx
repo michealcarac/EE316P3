@@ -1,11 +1,11 @@
 
 { 
-    crc :  11245843006680884246  , 
+    crc :  4717511534332379224  , 
     ccp_crc :  0  , 
-    cmdline : " -wto a77c0f67263f46c4a7de1b3990d2d7c9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cora_wrapper_behav xil_defaultlib.cora_wrapper" , 
-    buildDate : "Sep  4 2019" , 
-    buildTime : "09:57:52" , 
-    linkCmd : "C:\\Xilinx\\Vivado\\2019.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/cora_wrapper_behav/xsimk.exe\"   \"xsim.dir/cora_wrapper_behav/obj/xsim_0.win64.obj\" \"xsim.dir/cora_wrapper_behav/obj/xsim_1.win64.obj\" -L\"C:\\Xilinx\\Vivado\\2019.1\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    cmdline : " -wto a77c0f67263f46c4a7de1b3990d2d7c9 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cora_wrapper_behav xil_defaultlib.cora_wrapper" , 
+    buildDate : "May 24 2019" , 
+    buildTime : "14:51:52" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/cora_wrapper_behav/xsimk\"   \"xsim.dir/cora_wrapper_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/cora_wrapper_behav/obj/xsim_1.lnx64.o\" -L\"/home/spixy/XILINX/Vivado/2019.1/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
     aggregate_nets : 
     [ 
     ] 

@@ -1,7 +1,7 @@
 0.6
 2019.1
-Sep  4 2019
-09:57:52
-C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.srcs/sources_1/new/cora_wrapper.vhd,1645562608,vhdl,,,,cora_wrapper,,,,,,,,
-C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/I2C_Master.vhd,1644343979,vhdl,,,,i2c_master,,,,,,,,
-C:/Users/sixpe/Documents/quartus/EE316P3/I2C_ADC/i2c_user.vhd,1645687559,vhdl,,,,i2c_user,,,,,,,,
+May 24 2019
+14:51:52
+/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.srcs/sources_1/new/cora_wrapper.vhd,1645949955,vhdl,,,,cora_wrapper,,,,,,,,
+/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_Master.vhd,1645936000,vhdl,,,,i2c_master,,,,,,,,
+/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/i2c_user.vhd,1645950730,vhdl,,,,i2c_user,,,,,,,,

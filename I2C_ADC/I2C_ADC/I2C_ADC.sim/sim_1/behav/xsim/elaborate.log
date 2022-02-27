@@ -1,7 +1,7 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto a77c0f67263f46c4a7de1b3990d2d7c9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cora_wrapper_behav xil_defaultlib.cora_wrapper -log elaborate.log 
-Using 2 slave threads.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto a77c0f67263f46c4a7de1b3990d2d7c9 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cora_wrapper_behav xil_defaultlib.cora_wrapper -log elaborate.log 
+Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis

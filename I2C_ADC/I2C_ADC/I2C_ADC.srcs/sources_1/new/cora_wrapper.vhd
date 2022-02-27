@@ -43,6 +43,9 @@ end cora_wrapper;
 architecture Behavioral of cora_wrapper is
 
 component I2C_User is
+        generic(
+            input_clk : integer := 125_000_000;  -- System Clock Speed
+            bus_clk   : integer := 90_000);      -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
 		port(
         clk_i       : in  std_logic; --Clock In
         reset_n     : in  std_logic; --Asynchronous Reset Active Low  
@@ -58,6 +61,9 @@ begin
 
 btn_n <= not btn(0);
 Inst_top_level: I2C_User
+        generic map(
+            input_clk => 125_000_000,   -- System Clock Speed
+            bus_clk   => 90_000)        -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
 		port map (
 			reset_n	=> btn_n,
 			clk_i   => clk, 
