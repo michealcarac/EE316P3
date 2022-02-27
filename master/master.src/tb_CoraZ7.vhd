@@ -78,7 +78,7 @@ begin
     btn(0) <= '0';
     wait for 20*8 ns;
 
-    wait for 50*8 ns;
+    wait for 1000*8 ns;
    
 
     --wait for 64*8 ns;

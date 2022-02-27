@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
 
 library work;
 use work.Common.all;
@@ -34,7 +35,7 @@ architecture Behavioral of top_level is
       -- IN
       clk_i      	: in    std_logic;                     	-- clock input
       reset_n     : in    std_logic;                     	-- active-high reset
-      selectMode	: in    std_logic_vector(1 downto 0); 	-- 00 = LDR, 01 = TEMP, 10 = ANALOG, 11 = POT
+      selectMode	: in    std_logic_vector(3 downto 0); 	-- 0x0 = LDR, 0x1 = TEMP, 0x2 = ANALOG, 0x3 = POT
       clockOutput : in    std_logic;   					          -- 0 = Blank, 1 = Display "Clock Output"
 
       -- INOUT
@@ -78,7 +79,7 @@ architecture Behavioral of top_level is
 
   component btn_debounce_toggle is
     generic(
-      constant CNTR_MAX : std_logic_vector(15 downto 0) := DEBOUNCE_COUNT_MAX
+      constant CNTR_MAX : unsigned(15 downto 0) := DEBOUNCE_COUNT_MAX
     );
     port ( 
       BTN_I 	 : in  std_logic;
@@ -94,7 +95,7 @@ architecture Behavioral of top_level is
   signal reset_n_sig : std_logic;
 
   -- lcd signals
-  signal lcd_selectMode_sig  : std_logic_vector(1 downto 0);
+  signal lcd_selectMode_sig  : std_logic_vector(3 downto 0);
   signal lcd_clockOutput_sig : std_logic;
   signal lcd_sda_sig         : std_logic;
   signal lcd_scl_sig         : std_logic;
@@ -195,19 +196,19 @@ begin
     if (iClk'EVENT and iClk = '1') then
       case adc_state_sig is
         when ch0 =>
-          lcd_selectMode_sig <= b"00";
+          lcd_selectMode_sig <= X"0";
           adc_data_i_sig <= X"0";
           oPWM <= pwm_o_sig;
         when ch1 =>
-          lcd_selectMode_sig <= b"01";
+          lcd_selectMode_sig <= X"1";
           adc_data_i_sig <= X"1";
           oPWM <= pwm_o_sig;
         when ch2 =>
-          lcd_selectMode_sig <= b"10";
+          lcd_selectMode_sig <= X"2";
           adc_data_i_sig <= X"2";
           oPWM_LP <= pwm_o_sig;
         when ch3 =>
-          lcd_selectMode_sig <= b"11";
+          lcd_selectMode_sig <= X"3";
           adc_data_i_sig <= X"3";
           oPWM <= pwm_o_sig;
 

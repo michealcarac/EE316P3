@@ -27,11 +27,12 @@
 ----------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.std_logic_unsigned.all;
+--use IEEE.std_logic_unsigned.all;
+use IEEE.numeric_std.all;
 
 entity btn_debounce_toggle is
 GENERIC (
-	CONSTANT CNTR_MAX : std_logic_vector(15 downto 0) := X"FFFF");
+	CONSTANT CNTR_MAX : unsigned(15 downto 0) := X"FFFF");
     Port ( BTN_I 	: in  STD_LOGIC;
            CLK 		: in  STD_LOGIC;
            BTN_O 	: out  STD_LOGIC;
@@ -42,7 +43,7 @@ end btn_debounce_toggle;
 architecture Behavioral of btn_debounce_toggle is
 
 --constant CNTR_MAX : std_logic_vector(15 downto 0) := X"1";
-signal btn_cntr   : std_logic_vector(15 downto 0) := (others => '0');
+signal btn_cntr   : unsigned(15 downto 0) := (others => '0');
 signal btn_reg    : std_logic   				  := '0';
 signal btn_toggle : std_logic                     := '0';
 signal btn_sync   : std_logic_vector(1 downto 0)  := (others => '1');
