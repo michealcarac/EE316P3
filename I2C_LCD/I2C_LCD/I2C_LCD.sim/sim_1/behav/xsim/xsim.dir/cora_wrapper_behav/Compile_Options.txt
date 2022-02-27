@@ -1,0 +1,1 @@
+-wto "9d562179ba7b4c56807760a9f2f140a4" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "cora_wrapper_behav" "xil_defaultlib.cora_wrapper" -log "elaborate.log" 

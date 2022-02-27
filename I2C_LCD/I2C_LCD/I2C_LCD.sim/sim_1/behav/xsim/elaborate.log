@@ -1,6 +1,6 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 9d562179ba7b4c56807760a9f2f140a4 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot i2c_user_behav xil_defaultlib.i2c_user -log elaborate.log 
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 9d562179ba7b4c56807760a9f2f140a4 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cora_wrapper_behav xil_defaultlib.cora_wrapper -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -14,5 +14,6 @@ Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling architecture logic of entity xil_defaultlib.i2c_master [\i2c_master(input_clk=125000000,...]
-Compiling architecture behavioral of entity xil_defaultlib.i2c_user
-Built simulation snapshot i2c_user_behav
+Compiling architecture behavioral of entity xil_defaultlib.i2c_user [\i2c_user(bus_clk=90000)\]
+Compiling architecture behavioral of entity xil_defaultlib.cora_wrapper
+Built simulation snapshot cora_wrapper_behav
