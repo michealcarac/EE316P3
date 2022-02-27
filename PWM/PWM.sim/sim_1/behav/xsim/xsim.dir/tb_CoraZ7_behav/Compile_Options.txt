@@ -1,0 +1,1 @@
+-wto "84a35f44ddf9431893fa773d727487e1" --incr --debug "typical" --relax --mt "2" -L "work" -L "xil_defaultlib" -L "secureip" --snapshot "tb_CoraZ7_behav" "xil_defaultlib.tb_CoraZ7" -log "elaborate.log" 

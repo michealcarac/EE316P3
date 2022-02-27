@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl work  \
+"../../../../PWM.src/Common.vhd" \
+"../../../../PWM.src/PWM.vhd" \
+"../../../../PWM.src/CoraZ7.vhd" \
+"../../../../PWM.src/top_level.vhd" \
+"../../../../PWM.src/tb_PWM.vhd" \
+
+# Do not sort compile order
+nosort
