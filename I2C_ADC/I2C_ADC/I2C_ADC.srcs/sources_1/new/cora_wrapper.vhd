@@ -22,14 +22,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+library work;
+use work.Common.all;
 
 entity cora_wrapper is
     port(
@@ -44,15 +38,15 @@ architecture Behavioral of cora_wrapper is
 
 component I2C_User_adc is
         generic(
-            input_clk : integer := 125_000_000;  -- System Clock Speed
-            bus_clk   : integer := 90_000);      -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
+            input_clk : integer := CLOCK_SPEED;  -- System Clock Speed
+            bus_clk   : integer := ADC_BUS_CLK); -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
 		port(
-        clk_i       : in  std_logic; --Clock In
-        reset_n     : in  std_logic; --Asynchronous Reset Active Low  
-        data_i      : in  std_logic_vector(3 downto 0);  --To be transmitted off master
-		data_o      : out std_logic_vector(7 downto 0); --Read over I2C
-        SDA         : inout std_logic;   --Data/Address Line
-        SCL         : inout std_logic    --Clock Line
+            clk_i       : in  std_logic; --Clock In
+            reset_n     : in  std_logic; --Asynchronous Reset Active Low  
+            data_i      : in  std_logic_vector(3 downto 0);  --To be transmitted off master
+		    data_o      : out std_logic_vector(7 downto 0); --Read over I2C
+            SDA         : inout std_logic;   --Data/Address Line
+            SCL         : inout std_logic    --Clock Line
         -- If en is high at the conclsion of transaction, then a new address read/write command and data is latched
 	  );
 end component;
@@ -62,8 +56,8 @@ begin
 btn_n <= not btn(0);
 Inst_top_level: I2C_User_adc
         generic map(
-            input_clk => 125_000_000,   -- System Clock Speed
-            bus_clk   => 90_000)        -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
+            input_clk => CLOCK_SPEED,   -- System Clock Speed
+            bus_clk   => ADC_BUS_CLK)   -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
 		port map (
 			reset_n	=> btn_n,
 			clk_i   => clk, 

@@ -6,9 +6,8 @@ use work.Common.all;
 
 entity i2c_user_adc is
 	generic(
-        input_clk : integer := CLOCK_SPEED ;
-        bus_clk   : integer := ADC_BUS_CLK
-	);
+        input_clk : integer := 125_000_000; -- System Clock Speed
+        bus_clk   : integer := 90_000);     -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
 	port(
 		clk_i    : in    std_logic;                     --clock input
 		reset_n  : in    std_logic;                     --active-low reset

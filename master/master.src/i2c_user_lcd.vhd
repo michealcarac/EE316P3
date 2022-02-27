@@ -2,14 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-library work;
-use work.Common.all;
-
 entity i2c_user_lcd is
     generic(
-        input_clk : integer := CLOCK_SPEED;
-        bus_clk   : integer := LCD_BUS_CLK
-	);
+        input_clk : integer := 125_000_000; -- System Clock Speed
+        bus_clk   : integer := 50_000);
 	port(
 		-- IN
 		clk_i      	: in    std_logic;                     	--clock input

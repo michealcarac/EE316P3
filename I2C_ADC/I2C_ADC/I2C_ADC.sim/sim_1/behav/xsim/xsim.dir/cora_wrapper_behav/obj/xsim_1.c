@@ -44,21 +44,21 @@
 #endif
 typedef void (*funcp)(char *, char *);
 extern void execute_10(char*, char *);
-extern void execute_12(char*, char *);
-extern void execute_13(char*, char *);
 extern void execute_14(char*, char *);
 extern void execute_15(char*, char *);
-extern void execute_29(char*, char *);
-extern void execute_30(char*, char *);
+extern void execute_16(char*, char *);
+extern void execute_17(char*, char *);
 extern void execute_31(char*, char *);
-extern void execute_24(char*, char *);
-extern void execute_25(char*, char *);
+extern void execute_32(char*, char *);
+extern void execute_33(char*, char *);
 extern void execute_26(char*, char *);
 extern void execute_27(char*, char *);
 extern void execute_28(char*, char *);
+extern void execute_29(char*, char *);
+extern void execute_30(char*, char *);
 extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void transaction_4(char*, char*, unsigned, unsigned, unsigned);
-funcp funcTab[15] = {(funcp)execute_10, (funcp)execute_12, (funcp)execute_13, (funcp)execute_14, (funcp)execute_15, (funcp)execute_29, (funcp)execute_30, (funcp)execute_31, (funcp)execute_24, (funcp)execute_25, (funcp)execute_26, (funcp)execute_27, (funcp)execute_28, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_4};
+funcp funcTab[15] = {(funcp)execute_10, (funcp)execute_14, (funcp)execute_15, (funcp)execute_16, (funcp)execute_17, (funcp)execute_31, (funcp)execute_32, (funcp)execute_33, (funcp)execute_26, (funcp)execute_27, (funcp)execute_28, (funcp)execute_29, (funcp)execute_30, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_4};
 const int NumRelocateId= 15;
 
 void relocate(char *dp)

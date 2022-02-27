@@ -5,89 +5,90 @@
    <db_ref_list>
       <db_ref path="cora_wrapper_behav.wdb" id="1">
          <top_modules>
+            <top_module name="common" />
             <top_module name="cora_wrapper" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2859990313960fs"></ZoomStartTime>
-      <ZoomEndTime time="3518801937208fs"></ZoomEndTime>
-      <Cursor1Time time="3409000000000fs"></Cursor1Time>
+      <ZoomStartTime time="978895740000fs"></ZoomStartTime>
+      <ZoomEndTime time="2422895740001fs"></ZoomEndTime>
+      <Cursor1Time time="5001000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="178"></NameColumnWidth>
-      <ValueColumnWidth column_width="103"></ValueColumnWidth>
+      <ValueColumnWidth column_width="99"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="18" />
-   <wvobject fp_name="/cora_wrapper/user_dio" type="array">
+   <wvobject type="array" fp_name="/cora_wrapper/user_dio">
       <obj_property name="ElementShortName">user_dio[11:0]</obj_property>
       <obj_property name="ObjectShortName">user_dio[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/jb" type="array">
+   <wvobject type="array" fp_name="/cora_wrapper/jb">
       <obj_property name="ElementShortName">jb[7:0]</obj_property>
       <obj_property name="ObjectShortName">jb[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/ja" type="array">
+   <wvobject type="array" fp_name="/cora_wrapper/ja">
       <obj_property name="ElementShortName">ja[7:0]</obj_property>
       <obj_property name="ObjectShortName">ja[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/btn" type="array">
+   <wvobject type="array" fp_name="/cora_wrapper/btn">
       <obj_property name="ElementShortName">btn[1:0]</obj_property>
       <obj_property name="ObjectShortName">btn[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/clk" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/btn_n" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/btn_n">
       <obj_property name="ElementShortName">btn_n</obj_property>
       <obj_property name="ObjectShortName">btn_n</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/sda" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/sda">
       <obj_property name="ElementShortName">sda</obj_property>
       <obj_property name="ObjectShortName">sda</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/scl" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/scl">
       <obj_property name="ElementShortName">scl</obj_property>
       <obj_property name="ObjectShortName">scl</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/Inst_i2c_master/ena" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/Inst_i2c_master/ena">
       <obj_property name="ElementShortName">ena</obj_property>
       <obj_property name="ObjectShortName">ena</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/Inst_i2c_master/rw" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/Inst_i2c_master/rw">
       <obj_property name="ElementShortName">rw</obj_property>
       <obj_property name="ObjectShortName">rw</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/i2c_rw" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/i2c_rw">
       <obj_property name="ElementShortName">i2c_rw</obj_property>
       <obj_property name="ObjectShortName">i2c_rw</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/i2c_enable" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/i2c_enable">
       <obj_property name="ElementShortName">i2c_enable</obj_property>
       <obj_property name="ObjectShortName">i2c_enable</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/i2c_busy" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/i2c_busy">
       <obj_property name="ElementShortName">i2c_busy</obj_property>
       <obj_property name="ObjectShortName">i2c_busy</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/next_state" type="other">
+   <wvobject type="other" fp_name="/cora_wrapper/Inst_top_level/next_state">
       <obj_property name="ElementShortName">next_state</obj_property>
       <obj_property name="ObjectShortName">next_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/master_reset_n" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/master_reset_n">
       <obj_property name="ElementShortName">master_reset_n</obj_property>
       <obj_property name="ObjectShortName">master_reset_n</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/data_i" type="array">
+   <wvobject type="array" fp_name="/cora_wrapper/Inst_top_level/data_i">
       <obj_property name="ElementShortName">data_i[3:0]</obj_property>
       <obj_property name="ObjectShortName">data_i[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/i2c_data" type="array">
+   <wvobject type="array" fp_name="/cora_wrapper/Inst_top_level/i2c_data">
       <obj_property name="ElementShortName">i2c_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">i2c_data[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cora_wrapper/Inst_top_level/Inst_i2c_master/busy" type="logic">
+   <wvobject type="logic" fp_name="/cora_wrapper/Inst_top_level/Inst_i2c_master/busy">
       <obj_property name="ElementShortName">busy</obj_property>
       <obj_property name="ObjectShortName">busy</obj_property>
    </wvobject>

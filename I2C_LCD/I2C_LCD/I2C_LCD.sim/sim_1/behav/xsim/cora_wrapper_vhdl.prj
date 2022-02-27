@@ -1,7 +1,8 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
+"../../../../../Common.vhd" \
 "../../../../../I2C_Master.vhd" \
-"../../../../../i2c_user.vhd" \
+"../../../../../i2c_user_lcd.vhd" \
 "../../../../I2C_LCD.srcs/sources_1/new/cora_wrapper.vhd" \
 
 # Do not sort compile order

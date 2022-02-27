@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb 27 16:37:47 2022
+# Process ID: 100325
+# Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC
+# Command line: vivado /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.xpr
+# Log file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/vivado.log
+# Journal file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/Common.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/i2c_user.vhd] -no_script -reset -force -quiet
+remove_files  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/i2c_user.vhd
+launch_simulation
+open_wave_config /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/cora_wrapper_behav.wcfg
+source cora_wrapper.tcl
+add_force {/cora_wrapper/btn_n} -radix hex {1 0ns}
+add_force {/cora_wrapper/clk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 5000 us
+save_wave_config {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/cora_wrapper_behav.wcfg}
+save_wave_config {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/cora_wrapper_behav.wcfg}
+close_sim
+close_project
+open_project /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/Common.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/cora_wrapper_behav.wcfg
+source cora_wrapper.tcl
+close_sim
+open_project /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_ADC/I2C_ADC/I2C_ADC.xpr
+update_compile_order -fileset sources_1
+current_project I2C_LCD
+launch_simulation
+open_wave_config /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/cora_wrapper_behav.wcfg
+source cora_wrapper.tcl
+add_force {/cora_wrapper/btn_n} -radix hex {1 0ns}
+add_force {/cora_wrapper/clk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 5000 us
