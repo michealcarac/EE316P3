@@ -1,0 +1,7 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/EE316P3/PWM/PWM.src/PWM.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'PWM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-2987] 'runner_pkg' is not compiled in library 'vunit_lib' [C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd:10]
+INFO: [VRFC 10-3107] analyzing entity 'tb_CoraZ7'
+ERROR: [VRFC 10-3782] unit 'tb_coraz7' ignored due to previous errors [C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd:12]
+INFO: [VRFC 10-3070] VHDL file 'C:/EE316P3/PWM/PWM.src/tb_CoraZ7.vhd' ignored due to errors

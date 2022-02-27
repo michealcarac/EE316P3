@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Thu Feb 24 21:08:33 2022
+[*]
+[dumpfile] "/home/cameron/Projects/EE316P3/PWM/PWM.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/ghdl/wave.ghw"
+[dumpfile_mtime] "Thu Feb 24 21:08:14 2022"
+[dumpfile_size] 2899
+[savefile] "/home/cameron/Projects/EE316P3/PWM/PWM.src/testing/config.gtkw"
+[timestart] 0
+[size] 1920 1001
+[pos] -27 -24
+*-27.599998 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb_coraz7.
+[sst_width] 273
+[signals_width] 235
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@28
+top.tb_coraz7.clk
+@29
+top.tb_coraz7.rst
+@420
+top.tb_coraz7.dut.counter
+@28
+top.tb_coraz7.dut.pwm
+@22
+#{top.tb_coraz7.pwm_data[7:0]} top.tb_coraz7.pwm_data[7] top.tb_coraz7.pwm_data[6] top.tb_coraz7.pwm_data[5] top.tb_coraz7.pwm_data[4] top.tb_coraz7.pwm_data[3] top.tb_coraz7.pwm_data[2] top.tb_coraz7.pwm_data[1] top.tb_coraz7.pwm_data[0]
+@28
+top.tb_coraz7.pwm_en
+[pattern_trace] 1
+[pattern_trace] 0
