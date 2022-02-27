@@ -1,0 +1,12 @@
+
+{ 
+    crc :  6304525985838701677  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 9d562179ba7b4c56807760a9f2f140a4 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot i2c_user_behav xil_defaultlib.i2c_user" , 
+    buildDate : "May 24 2019" , 
+    buildTime : "14:51:52" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/i2c_user_behav/xsimk\"   \"xsim.dir/i2c_user_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/i2c_user_behav/obj/xsim_1.lnx64.o\" -L\"/home/spixy/XILINX/Vivado/2019.1/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
