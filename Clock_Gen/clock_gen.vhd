@@ -25,13 +25,11 @@ architecture behavioral of clock_gen is
 
 	--general signals
     constant length      : integer   := 2**data_width -1;   -- 2^width -1
-    constant ratio       : integer   := integer(real(high_freq-low_freq)/real(length)); -- (low - high)/length to get a multiply ratio
+    constant ratio       : integer   := integer(real(high_freq-low_freq)/real(length)); -- (low - high)/length to get a multiply ratio, this gets rounded
     signal   clk_freq    : integer   := low_freq; -- low_freq to high_freq 
     signal   clk_divider : integer   := 0; -- Initial 0
     signal   count       : integer   := 0; -- Initial 0
     signal   temp        : std_logic := '0'; -- Initial '0'
-	
-	
 	
 	begin
 	
