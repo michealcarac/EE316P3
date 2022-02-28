@@ -12,6 +12,10 @@ use IEEE.numeric_std.all;
 library work;
 
 package Common is
+  constant GEN_WIDTH      : integer := 8;
+  constant GEN_CLK_FREQ   : integer := 125_000_000;
+  constant GEN_LOW_FREQ   : integer := 500;
+  constant GEN_HIGH_FREQ  : integer := 1500;
   constant IPWM_DATA_WIDTH    : integer := 8;
   constant CLOCK_SPEED        : integer := 125_000_000;                   -- input clock speed in Hz
   constant CP_ns              : integer := 1/CLOCK_SPEED * 10**9;         -- input clock period in nanoseconds
