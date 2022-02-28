@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb 27 20:28:09 2022
+# Process ID: 151402
+# Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.runs/synth_1
+# Command line: vivado -log clock_gen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clock_gen.tcl
+# Log file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.runs/synth_1/clock_gen.vds
+# Journal file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source clock_gen.tcl -notrace

@@ -1,0 +1,4 @@
+Running: xsim.dir/clock_gen_behav/xsimk -simmode gui -wdb clock_gen_behav.wdb -simrunnum 0 -socket 46049
+Design successfully loaded
+Design Loading Memory Usage: 32880 KB (Peak: 32880 KB)
+Design Loading CPU Usage: 20 ms

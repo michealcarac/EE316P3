@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb 27 18:27:10 2022
+# Process ID: 132785
+# Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen
+# Command line: vivado /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.xpr
+# Log file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/vivado.log
+# Journal file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source clock_gen.tcl
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {FF 0ns}
+run 1 s
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_sim
+launch_simulation
+source clock_gen.tcl
+close_sim
+launch_simulation
+source clock_gen.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+run all
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+source clock_gen.tcl
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 1 s
+add_force {/clock_gen/data_i} -radix hex {FF 0ns}
+run 1 s
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
