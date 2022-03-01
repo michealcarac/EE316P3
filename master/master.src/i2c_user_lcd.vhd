@@ -173,7 +173,9 @@ architecture behavioral of i2c_user_lcd is
                             lcd_delay <= lcd_delay + 1;
                             next_state <= pause;               -- Stay in Pause State
                         else
+							-- If at lower nibble or skipping the nibble, increment the bytesel, else invert nibble selection
                             if nibble_sel = '1' or skip_nibble = '1' then
+								-- Incrementing Stage 
                                 if byteSel < 41 then             --If we're not at the top
                                     byteSel <= byteSel + 1;      --increment 
                                 else                             --otherwise, this is a normal repeat

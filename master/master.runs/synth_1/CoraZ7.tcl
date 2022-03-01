@@ -17,30 +17,32 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 2
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/cameron/Projects/EE316P3/master/master.cache/wt [current_project]
-set_property parent.project_path /home/cameron/Projects/EE316P3/master/master.xpr [current_project]
+set_property webtalk.parent_dir /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.cache/wt [current_project]
+set_property parent.project_path /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part_repo_paths {/root/.Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+set_property board_part_repo_paths {/home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
 set_property board_part digilentinc.com:cora-z7-10:part0:1.0 [current_project]
-set_property ip_output_repo /home/cameron/Projects/EE316P3/master/master.cache/ip [current_project]
+set_property ip_output_repo /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library work {
-  /home/cameron/Projects/EE316P3/master/master.src/Common.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/PWM.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/top_level.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Common.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/PWM.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/btn_debounce_toggle.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/clock_gen.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd
+  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/CoraZ7.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -50,8 +52,8 @@ read_vhdl -library work {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/cameron/Projects/EE316P3/master/master.src/Cora-Z7-10-Master.xdc
-set_property used_in_implementation false [get_files /home/cameron/Projects/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]
+read_xdc /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Cora-Z7-10-Master.xdc
+set_property used_in_implementation false [get_files /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

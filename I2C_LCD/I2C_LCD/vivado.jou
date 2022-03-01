@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Mar  1 12:43:28 2022
+# Process ID: 228723
+# Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD
+# Command line: vivado /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.xpr
+# Log file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/vivado.log
+# Journal file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+launch_simulation
+open_wave_config /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/cora_wrapper_behav.wcfg
+source cora_wrapper.tcl
+add_force {/cora_wrapper/clk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/cora_wrapper/btn_n} -radix hex {1 0ns}
+run 1 ms
+run 1 ms
+run 1 ms
+run 100 ms
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.runs/impl_1/cora_wrapper.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.runs/impl_1/cora_wrapper.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.runs/impl_1/cora_wrapper.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.runs/impl_1/cora_wrapper.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]

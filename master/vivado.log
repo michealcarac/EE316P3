@@ -1,0 +1,152 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Mar  1 12:52:41 2022
+# Process ID: 235477
+# Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master
+# Command line: vivado /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.xpr
+# Log file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/vivado.log
+# Journal file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.xpr
+INFO: [Project 1-313] Project file moved from '/home/cameron/Projects/EE316P3/master' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory '/home/spixy/Documents/root/.Xilinx/Vivado/2019.1/xhub/board_store', nor could it be found using path '/root/.Xilinx/Vivado/2019.1/xhub/board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/spixy/XILINX/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:11 . Memory (MB): peak = 6750.746 ; gain = 223.801 ; free physical = 137 ; free virtual = 7954
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar  1 12:53:26 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/runme.log
+[Tue Mar  1 12:53:26 2022] Launched impl_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210370AD5263A
+open_hw_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7768.453 ; gain = 912.035 ; free physical = 659 ; free virtual = 6294
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar  1 13:04:20 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/runme.log
+[Tue Mar  1 13:04:20 2022] Launched impl_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar  1 13:05:18 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/runme.log
+[Tue Mar  1 13:05:18 2022] Launched impl_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar  1 13:16:02 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/runme.log
+[Tue Mar  1 13:16:02 2022] Launched impl_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Netlist 29-17] Analyzing 30 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+open_run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 8110.816 ; gain = 193.273 ; free physical = 1518 ; free virtual = 5508
+INFO: [Common 17-344] 'open_run' was cancelled
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar  1 13:22:02 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/runme.log
+[Tue Mar  1 13:22:02 2022] Launched impl_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar  1 13:28:07 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/runme.log
+[Tue Mar  1 13:28:08 2022] Launched impl_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/impl_1/CoraZ7.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.

@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="/home/cameron/Projects/EE316P3/master/master.xpr">
+<Project Version="7" Minor="40" Path="/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="bade65d856d84da2aa0cba8b2edf716b"/>

@@ -52,10 +52,10 @@ architecture Behavioral of CoraZ7 is
       oClk_gen    => ja(2),
   
       -- INOUTS
-      LCD_SDA     => jb(0),
-      LCD_SCL     => jb(1),
-      ADC_SDA     => jb(2),
-      ADC_SCL     => jb(3) 
+      LCD_SDA     => jb(1),
+      LCD_SCL     => jb(0),
+      ADC_SDA     => jb(3),
+      ADC_SCL     => jb(2) 
 
 		);
 

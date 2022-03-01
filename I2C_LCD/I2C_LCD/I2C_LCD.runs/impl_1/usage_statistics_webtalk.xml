@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Mar  1 12:03:58 2022'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Mar  1 12:47:27 2022'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2552052" description="" />
-  <keyValuePair key="date_generated" value="Tue Mar  1 12:03:58 2022" description="" />
+  <keyValuePair key="date_generated" value="Tue Mar  1 12:47:27 2022" description="" />
   <keyValuePair key="os_platform" value="LIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2019.1 (64-bit)" description="" />
   <keyValuePair key="project_id" value="9d562179ba7b4c56807760a9f2f140a4" description="" />
-  <keyValuePair key="project_iteration" value="28" description="" />
+  <keyValuePair key="project_iteration" value="29" description="" />
   <keyValuePair key="random_id" value="28e60c626a5d57b3a713f14d7638e63e" description="" />
   <keyValuePair key="registration_id" value="28e60c626a5d57b3a713f14d7638e63e" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -20,7 +20,7 @@
  </section>
  <section name="user_environment" level="1" order="2" description="">
   <keyValuePair key="cpu_name" value="AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx" description="" />
-  <keyValuePair key="cpu_speed" value="1400.000 MHz" description="" />
+  <keyValuePair key="cpu_speed" value="1700.000 MHz" description="" />
   <keyValuePair key="os_name" value="Fedora" description="" />
   <keyValuePair key="os_release" value="Fedora release 35 (Thirty Five)" description="" />
   <keyValuePair key="system_ram" value="10.000 GB" description="" />
@@ -132,7 +132,7 @@
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
    <keyValuePair key="package" value="clg400" description="" />
-   <keyValuePair key="pct_clock_constrained" value="0.410000" description="" />
+   <keyValuePair key="pct_clock_constrained" value="0.390000" description="" />
    <keyValuePair key="pct_inputs_defined" value="25" description="" />
    <keyValuePair key="platform" value="lin64" description="" />
    <keyValuePair key="process" value="typical" description="" />
@@ -490,10 +490,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:29s" description="" />
+   <keyValuePair key="elapsed" value="00:00:33s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="577.398MB" description="" />
-   <keyValuePair key="memory_peak" value="2271.336MB" description="" />
+   <keyValuePair key="memory_gain" value="579.430MB" description="" />
+   <keyValuePair key="memory_peak" value="2272.926MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="8" description="">
@@ -539,8 +539,8 @@
    <keyValuePair key="addsrcwizard_specify_or_create_constraint_files" value="1" description="" />
    <keyValuePair key="addsrcwizard_specify_simulation_specific_hdl_files" value="1" description="" />
    <keyValuePair key="basedialog_cancel" value="24" description="" />
-   <keyValuePair key="basedialog_ok" value="181" description="" />
-   <keyValuePair key="basedialog_yes" value="49" description="" />
+   <keyValuePair key="basedialog_ok" value="183" description="" />
+   <keyValuePair key="basedialog_yes" value="50" description="" />
    <keyValuePair key="boardchooser_board_table" value="2" description="" />
    <keyValuePair key="boardchooser_update_board_repositories" value="1" description="" />
    <keyValuePair key="cmdmsgdialog_ok" value="20" description="" />
@@ -549,7 +549,7 @@
    <keyValuePair key="constraintschooserpanel_add_files" value="2" description="" />
    <keyValuePair key="createsrcfiledialog_file_name" value="1" description="" />
    <keyValuePair key="createsrcfiledialog_file_type" value="1" description="" />
-   <keyValuePair key="filesetpanel_file_set_panel_tree" value="73" description="" />
+   <keyValuePair key="filesetpanel_file_set_panel_tree" value="74" description="" />
    <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="71" description="" />
    <keyValuePair key="gettingstartedview_create_new_project" value="1" description="" />
    <keyValuePair key="graphicalview_zoom_fit" value="52" description="" />
@@ -568,19 +568,19 @@
    <keyValuePair key="pacommandnames_auto_connect_target" value="5" description="" />
    <keyValuePair key="pacommandnames_auto_update_hier" value="2" description="" />
    <keyValuePair key="pacommandnames_log_window" value="1" description="" />
-   <keyValuePair key="pacommandnames_open_hardware_manager" value="6" description="" />
+   <keyValuePair key="pacommandnames_open_hardware_manager" value="7" description="" />
    <keyValuePair key="pacommandnames_open_project" value="2" description="" />
-   <keyValuePair key="pacommandnames_run_bitgen" value="39" description="" />
+   <keyValuePair key="pacommandnames_run_bitgen" value="41" description="" />
    <keyValuePair key="pacommandnames_run_implementation" value="2" description="" />
    <keyValuePair key="pacommandnames_run_synthesis" value="3" description="" />
    <keyValuePair key="pacommandnames_simulation_live_break" value="3" description="" />
    <keyValuePair key="pacommandnames_simulation_live_run" value="187" description="" />
    <keyValuePair key="pacommandnames_simulation_relaunch" value="23" description="" />
    <keyValuePair key="pacommandnames_simulation_run_behavioral" value="31" description="" />
-   <keyValuePair key="paviews_project_summary" value="30" description="" />
+   <keyValuePair key="paviews_project_summary" value="31" description="" />
    <keyValuePair key="programdebugtab_open_target" value="4" description="" />
-   <keyValuePair key="programdebugtab_program_device" value="33" description="" />
-   <keyValuePair key="programfpgadialog_program" value="38" description="" />
+   <keyValuePair key="programdebugtab_program_device" value="35" description="" />
+   <keyValuePair key="programfpgadialog_program" value="40" description="" />
    <keyValuePair key="progressdialog_cancel" value="1" description="" />
    <keyValuePair key="projectnamechooser_choose_project_location" value="1" description="" />
    <keyValuePair key="projectnamechooser_project_name" value="1" description="" />
@@ -616,13 +616,13 @@
    <keyValuePair key="addsources" value="3" description="" />
    <keyValuePair key="autoconnecttarget" value="5" description="" />
    <keyValuePair key="editdelete" value="1" description="" />
-   <keyValuePair key="launchprogramfpga" value="29" description="" />
+   <keyValuePair key="launchprogramfpga" value="30" description="" />
    <keyValuePair key="newproject" value="1" description="" />
-   <keyValuePair key="openhardwaremanager" value="17" description="" />
+   <keyValuePair key="openhardwaremanager" value="18" description="" />
    <keyValuePair key="openproject" value="2" description="" />
    <keyValuePair key="openrecenttarget" value="3" description="" />
    <keyValuePair key="programdevice" value="4" description="" />
-   <keyValuePair key="runbitgen" value="37" description="" />
+   <keyValuePair key="runbitgen" value="38" description="" />
    <keyValuePair key="runimplementation" value="3" description="" />
    <keyValuePair key="runsynthesis" value="9" description="" />
    <keyValuePair key="savefileproxyhandler" value="7" description="" />
@@ -637,7 +637,7 @@
    <keyValuePair key="waveformsaveconfiguration" value="1" description="" />
   </section>
   <section name="other_data" level="2" order="3" description="">
-   <keyValuePair key="guimode" value="10" description="" />
+   <keyValuePair key="guimode" value="11" description="" />
   </section>
   <section name="project_data" level="2" order="4" description="">
    <keyValuePair key="constraintsetcount" value="1" description="" />
@@ -672,7 +672,7 @@
  </section>
  <section name="xsim" level="1" order="10" description="">
   <section name="command_line_options" level="2" order="1" description="">
-   <keyValuePair key="-sim_mode" value="behavioral" description="" />
+   <keyValuePair key="-sim_mode" value="default::behavioral" description="" />
    <keyValuePair key="-sim_type" value="default::" description="" />
   </section>
  </section>
