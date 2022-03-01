@@ -4,10 +4,12 @@ vhdl work  \
 "../../../../master.src/I2C_Master.vhd" \
 "../../../../master.src/PWM.vhd" \
 "../../../../master.src/btn_debounce_toggle.vhd" \
+"../../../../master.src/clock_gen.vhd" \
 "../../../../master.src/i2c_user_adc.vhd" \
 "../../../../master.src/i2c_user_lcd.vhd" \
 "../../../../master.src/top_level.vhd" \
 "../../../../master.src/CoraZ7.vhd" \
+"../../../../master.src/vivado_tb_CoraZ7.vhd" \
 
 # Do not sort compile order
 nosort

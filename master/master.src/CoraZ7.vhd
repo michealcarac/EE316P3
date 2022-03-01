@@ -28,6 +28,7 @@ architecture Behavioral of CoraZ7 is
     -- OUTS
     oPWM        : out std_logic;   -- Tie this to a regular output pin
     oPWM_LP     : out std_logic;   -- Tie this to an output pin that leads to the low-pass filter (used when ADC CH2 is being read)
+    oClk_gen    : out std_logic;   -- Clock generation output
 
     -- INOUTS
     LCD_SDA     : inout std_logic;
@@ -48,6 +49,7 @@ architecture Behavioral of CoraZ7 is
       -- OUTS
       oPWM        => ja(0),
       oPWM_LP     => ja(1),
+      oClk_gen    => ja(2),
   
       -- INOUTS
       LCD_SDA     => jb(0),
