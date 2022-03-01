@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Tue Mar  1 13:30:07 2022
+| Date         : Tue Mar  1 14:27:09 2022
 | Host         : fedora running 64-bit Fedora release 35 (Thirty Five)
 | Command      : report_methodology -file CoraZ7_methodology_drc_routed.rpt -pb CoraZ7_methodology_drc_routed.pb -rpx CoraZ7_methodology_drc_routed.rpx
 | Design       : CoraZ7
@@ -35,7 +35,7 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state[8]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[1]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[2]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[3]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[4]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[5]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[6]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[7]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[8]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[0]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[10]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[11]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[1]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[2]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[3]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[4]/CLR (the first 15 of 36 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state[8]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[1]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[2]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[3]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[4]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[5]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[6]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[7]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_state_reg[8]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[0]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[10]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[1]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[2]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[3]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[4]/CLR, inst_top_level/inst_i2c_user_adc/Inst_i2c_master/count_reg[5]/CLR (the first 15 of 35 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning

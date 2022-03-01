@@ -9,7 +9,6 @@ vhdl work  \
 "../../../../master.src/i2c_user_lcd.vhd" \
 "../../../../master.src/top_level.vhd" \
 "../../../../master.src/CoraZ7.vhd" \
-"../../../../master.src/vivado_tb_CoraZ7.vhd" \
 
 # Do not sort compile order
 nosort

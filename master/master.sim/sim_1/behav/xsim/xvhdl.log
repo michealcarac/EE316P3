@@ -1,0 +1,9 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'i2c_master'
+WARNING: [VRFC 10-471] case choice must be a locally static expression [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:97]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:100]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:103]
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'i2c_user_adc'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'i2c_user_lcd'
