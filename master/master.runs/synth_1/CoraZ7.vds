@@ -2,9 +2,15 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+<<<<<<< HEAD
 # Start of session at: Tue Mar  1 15:58:00 2022
 # Process ID: 552199
 # Current directory: /home/cameron/Projects/EE316P3/master/master.runs/synth_1
+=======
+# Start of session at: Tue Mar  1 14:25:38 2022
+# Process ID: 284815
+# Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 # Command line: vivado -log CoraZ7.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CoraZ7.tcl
 # Log file: /home/cameron/Projects/EE316P3/master/master.runs/synth_1/CoraZ7.vds
 # Journal file: /home/cameron/Projects/EE316P3/master/master.runs/synth_1/vivado.jou
@@ -16,9 +22,15 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
+<<<<<<< HEAD
 INFO: Helper process launched with PID 552242 
 ---------------------------------------------------------------------------------
 Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1972.324 ; gain = 154.688 ; free physical = 796 ; free virtual = 13753
+=======
+INFO: Helper process launched with PID 284899 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2049.961 ; gain = 151.719 ; free physical = 137 ; free virtual = 4399
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'CoraZ7' [/home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd:19]
 INFO: [Synth 8-3491] module 'top_level' declared at '/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:8' bound to instance 'inst_top_level' of component 'top_level' [/home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd:42]
@@ -35,12 +47,21 @@ INFO: [Synth 8-3491] module 'i2c_master' declared at '/home/cameron/Projects/EE3
 INFO: [Synth 8-638] synthesizing module 'i2c_master' [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:57]
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 100000 - type: integer 
+<<<<<<< HEAD
 INFO: [Synth 8-256] done synthesizing module 'i2c_master' (1#1) [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:57]
 WARNING: [Synth 8-614] signal 'first_line' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
 WARNING: [Synth 8-614] signal 'selectMode' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
 WARNING: [Synth 8-614] signal 'second_line' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
 WARNING: [Synth 8-614] signal 'clockOutput' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
 INFO: [Synth 8-256] done synthesizing module 'i2c_user_lcd' (2#1) [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:23]
+=======
+INFO: [Synth 8-256] done synthesizing module 'i2c_master' (1#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:57]
+WARNING: [Synth 8-614] signal 'first_line' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+WARNING: [Synth 8-614] signal 'selectMode' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+WARNING: [Synth 8-614] signal 'second_line' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+WARNING: [Synth 8-614] signal 'clockOutput' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+INFO: [Synth 8-256] done synthesizing module 'i2c_user_lcd' (2#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:23]
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 100000 - type: integer 
 INFO: [Synth 8-3491] module 'i2c_user_adc' declared at '/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:7' bound to instance 'inst_i2c_user_adc' of component 'i2c_user_adc' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:188]
@@ -97,7 +118,11 @@ WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[6]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[5]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[4]
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2028.074 ; gain = 210.438 ; free physical = 813 ; free virtual = 13770
+=======
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2104.711 ; gain = 206.469 ; free physical = 207 ; free virtual = 4418
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -110,10 +135,17 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2031.043 ; gain = 213.406 ; free physical = 789 ; free virtual = 13769
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2031.043 ; gain = 213.406 ; free physical = 789 ; free virtual = 13769
+=======
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2107.680 ; gain = 209.438 ; free physical = 207 ; free virtual = 4417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2107.680 ; gain = 209.438 ; free physical = 207 ; free virtual = 4417
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -125,6 +157,7 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/CoraZ7_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
+<<<<<<< HEAD
 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2214.699 ; gain = 0.000 ; free physical = 704 ; free virtual = 13671
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
@@ -132,19 +165,36 @@ No Unisim elements were transformed.
 Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2214.699 ; gain = 0.000 ; free physical = 704 ; free virtual = 13671
 ---------------------------------------------------------------------------------
 Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 782 ; free virtual = 13745
+=======
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2293.305 ; gain = 0.000 ; free physical = 127 ; free virtual = 4310
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2293.305 ; gain = 0.000 ; free physical = 127 ; free virtual = 4310
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 193 ; free virtual = 4376
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 782 ; free virtual = 13745
+=======
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 193 ; free virtual = 4376
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 782 ; free virtual = 13745
+=======
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 193 ; free virtual = 4376
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_master'
 INFO: [Synth 8-802] inferred FSM for state register 'next_state_reg' in module 'i2c_user_adc'
@@ -184,7 +234,11 @@ INFO: [Synth 8-3354] encoded FSM with state register 'next_state_reg' using enco
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'adc_state_sig_reg' using encoding 'one-hot' in module 'top_level'
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 769 ; free virtual = 13733
+=======
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 183 ; free virtual = 4366
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -430,7 +484,11 @@ INFO: [Synth 8-3886] merging instance 'inst_top_level/inst_i2c_user_adc/Inst_i2c
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_top_level/inst_i2c_user_adc/Inst_i2c_master/addr_rw_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_top_level/inst_i2c_user_adc/Inst_i2c_master/addr_rw_reg[5] )
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 750 ; free virtual = 13717
+=======
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 163 ; free virtual = 4351
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -442,13 +500,21 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 657 ; free virtual = 13600
+=======
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 132 ; free virtual = 4234
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 630 ; free virtual = 13573
+=======
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 150 ; free virtual = 4202
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -462,7 +528,11 @@ Start Technology Mapping
 WARNING: [Synth 8-3332] Sequential element (inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/FSM_onehot_state_reg[7]) is unused and will be removed from module CoraZ7.
 WARNING: [Synth 8-3332] Sequential element (inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/FSM_onehot_state_reg[6]) is unused and will be removed from module CoraZ7.
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13573
+=======
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 145 ; free virtual = 4197
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -486,7 +556,11 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
+=======
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -499,7 +573,11 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
+=======
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -511,25 +589,41 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
+=======
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
+=======
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
+=======
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
+=======
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -548,6 +642,7 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |   202|
 |3     |LUT1   |    13|
+<<<<<<< HEAD
 |4     |LUT2   |   515|
 |5     |LUT3   |    92|
 |6     |LUT4   |   147|
@@ -562,12 +657,28 @@ Report Cell Usage:
 |15    |IOBUF  |     3|
 |16    |OBUF   |     3|
 |17    |OBUFT  |     6|
+=======
+|4     |LUT2   |   123|
+|5     |LUT3   |    40|
+|6     |LUT4   |    63|
+|7     |LUT5   |    34|
+|8     |LUT6   |   105|
+|9     |FDCE   |    48|
+|10    |FDPE   |    12|
+|11    |FDRE   |   147|
+|12    |FDSE   |     1|
+|13    |IBUF   |     3|
+|14    |IOBUF  |     3|
+|15    |OBUF   |     2|
+|16    |OBUFT  |     7|
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------+----------------------+------+
 |      |Instance                 |Module                |Cells |
 +------+-------------------------+----------------------+------+
+<<<<<<< HEAD
 |1     |top                      |                      |  1510|
 |2     |  inst_top_level         |top_level             |  1494|
 |3     |    inst_clock_gen       |clock_gen             |   658|
@@ -586,12 +697,34 @@ Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:3
 Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
 Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2214.699 ; gain = 213.406 ; free physical = 685 ; free virtual = 13627
 Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 685 ; free virtual = 13627
+=======
+|1     |top                      |                      |   629|
+|2     |  inst_top_level         |top_level             |   613|
+|3     |    inst_control_btn_deb |btn_debounce_toggle   |    48|
+|4     |    inst_i2c_user_adc    |i2c_user_adc          |   163|
+|5     |      Inst_i2c_master    |i2c_master_1          |   137|
+|6     |    inst_i2c_user_lcd    |i2c_user_lcd          |   323|
+|7     |      Inst_i2c_master    |i2c_master            |   167|
+|8     |    inst_pwm             |pwm                   |    24|
+|9     |    inst_reset_deb       |btn_debounce_toggle_0 |    44|
++------+-------------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 144 ; free virtual = 4196
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2293.305 ; gain = 209.438 ; free physical = 204 ; free virtual = 4256
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2293.305 ; gain = 395.062 ; free physical = 204 ; free virtual = 4256
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 206 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+<<<<<<< HEAD
 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2225.676 ; gain = 0.000 ; free physical = 645 ; free virtual = 13588
+=======
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2293.305 ; gain = 0.000 ; free physical = 141 ; free virtual = 4194
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 3 instances
@@ -599,10 +732,19 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 94 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
+<<<<<<< HEAD
 synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2225.676 ; gain = 630.281 ; free physical = 741 ; free virtual = 13684
 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2225.676 ; gain = 0.000 ; free physical = 741 ; free virtual = 13684
+=======
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2293.305 ; gain = 622.148 ; free physical = 238 ; free virtual = 4290
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2293.305 ; gain = 0.000 ; free physical = 238 ; free virtual = 4290
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/cameron/Projects/EE316P3/master/master.runs/synth_1/CoraZ7.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CoraZ7_utilization_synth.rpt -pb CoraZ7_utilization_synth.pb
+<<<<<<< HEAD
 INFO: [Common 17-206] Exiting Vivado at Tue Mar  1 15:58:46 2022...
+=======
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  1 14:26:16 2022...
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7

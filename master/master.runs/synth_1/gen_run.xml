@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1646168278">
+=======
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1646162736">
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
   <File Type="VDS-TIMING-PB" Name="CoraZ7_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="CoraZ7_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="CoraZ7.dcp"/>

@@ -1,8 +1,13 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+<<<<<<< HEAD
 | Date         : Tue Mar  1 15:58:46 2022
 | Host         : fedora running 64-bit unknown
+=======
+| Date         : Tue Mar  1 14:26:16 2022
+| Host         : fedora running 64-bit Fedora release 35 (Thirty Five)
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 | Command      : report_utilization -file CoraZ7_utilization_synth.rpt -pb CoraZ7_utilization_synth.pb
 | Design       : CoraZ7
 | Device       : 7z010clg400-1
@@ -30,11 +35,19 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
+<<<<<<< HEAD
 | Slice LUTs*             |  889 |     0 |     17600 |  5.05 |
 |   LUT as Logic          |  889 |     0 |     17600 |  5.05 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
 | Slice Registers         |  263 |     0 |     35200 |  0.75 |
 |   Register as Flip Flop |  263 |     0 |     35200 |  0.75 |
+=======
+| Slice LUTs*             |  278 |     0 |     17600 |  1.58 |
+|   LUT as Logic          |  278 |     0 |     17600 |  1.58 |
+|   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
+| Slice Registers         |  208 |     0 |     35200 |  0.59 |
+|   Register as Flip Flop |  208 |     0 |     35200 |  0.59 |
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 |   Register as Latch     |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                |    1 |     0 |      8800 |  0.01 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -55,9 +68,15 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 12    |          Yes |           - |          Set |
+<<<<<<< HEAD
 | 81    |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
 | 168   |          Yes |       Reset |            - |
+=======
+| 48    |          Yes |           - |        Reset |
+| 1     |          Yes |         Set |            - |
+| 147   |          Yes |       Reset |            - |
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 +-------+--------------+-------------+--------------+
 
 
@@ -146,6 +165,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+<<<<<<< HEAD
 | LUT2     |  515 |                 LUT |
 | CARRY4   |  202 |          CarryLogic |
 | FDRE     |  168 |        Flop & Latch |
@@ -154,6 +174,16 @@ Table of Contents
 | LUT6     |  128 |                 LUT |
 | LUT3     |   92 |                 LUT |
 | FDCE     |   81 |        Flop & Latch |
+=======
+| FDRE     |  147 |        Flop & Latch |
+| LUT2     |  123 |                 LUT |
+| LUT6     |  105 |                 LUT |
+| LUT4     |   63 |                 LUT |
+| FDCE     |   48 |        Flop & Latch |
+| LUT3     |   40 |                 LUT |
+| LUT5     |   34 |                 LUT |
+| CARRY4   |   27 |          CarryLogic |
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
 | LUT1     |   13 |                 LUT |
 | FDPE     |   12 |        Flop & Latch |
 | OBUFT    |    9 |                  IO |

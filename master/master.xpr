@@ -36,7 +36,11 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="cora-z7-10"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
+<<<<<<< HEAD
     <Option Name="WTXSimLaunchSim" Val="62"/>
+=======
+    <Option Name="WTXSimLaunchSim" Val="30"/>
+>>>>>>> 123e0ccc77394f6bdb55165de9ac7c8831e798b7
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -154,13 +158,6 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/master.src/vivado_tb_CoraZ7.vhd">
-        <FileInfo>
-          <Attr Name="Library" Val="work"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSIMDIR/sim_1/vivado_tb_CoraZ7_behav.wcfg">
         <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
