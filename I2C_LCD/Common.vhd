@@ -13,7 +13,7 @@ library work;
 
 package Common is
   constant CLOCK_SPEED        : integer := 125_000_000;                   -- input clock speed in Hz
-  constant LCD_BUS_CLK        : integer := 50_000;                        -- lcd clock speed
+  constant LCD_BUS_CLK        : integer := 100_000;                        -- lcd clock speed
 end Common;
 
 package body Common is

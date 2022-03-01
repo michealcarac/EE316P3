@@ -1,4 +1,7 @@
-Running: xsim.dir/cora_wrapper_behav/xsimk -simmode gui -wdb cora_wrapper_behav.wdb -simrunnum 0 -socket 34039
+Running: xsim.dir/cora_wrapper_behav/xsimk -simmode gui -wdb cora_wrapper_behav.wdb -simrunnum 0 -socket 36873
 Design successfully loaded
-Design Loading Memory Usage: 32956 KB (Peak: 33076 KB)
-Design Loading CPU Usage: 30 ms
+Design Loading Memory Usage: 32964 KB (Peak: 33084 KB)
+Design Loading CPU Usage: 50 ms
+Simulation completed
+Simulation Memory Usage: 114700 KB (Peak: 172232 KB)
+Simulation CPU Usage: 50 ms
