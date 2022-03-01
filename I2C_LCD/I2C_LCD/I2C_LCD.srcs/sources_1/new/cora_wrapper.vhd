@@ -64,7 +64,11 @@ pulse <= (not r1 and r0);
 
 process(clk)
 begin
-    if rising_edge(clk) then 
+    if btn_n = '0' then
+        count <= 0;
+        selectMode_test <= x"0";
+        clockOutput_test<= '0';
+    elsif rising_edge(clk) then 
         if pulse = '1' then
             if count < 6 then
                 count <= count + 1;

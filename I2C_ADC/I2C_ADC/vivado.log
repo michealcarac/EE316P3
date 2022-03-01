@@ -235,3 +235,631 @@ launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): 
 add_force {/cora_wrapper/btn_n} -radix hex {1 0ns}
 add_force {/cora_wrapper/clk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
 run 5000 us
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.0/1.0/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.0/1.0/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au280_es1:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/au280/es1/1.1/1.1/board.xml as part xcu280-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128_es:part0:1.1 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu128/1.1/1.1/board.xml as part xcvu37p-fsvh2892-2l-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129_es:part0:1.0 available at /home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store/XilinxBoardStore/Vivado/2019.1/boards/Xilinx/vcu129/es/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e-es1 specified in board_part file is either invalid or not available
+create_project clock_gen /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen -part xc7z010clg400-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/spixy/XILINX/Vivado/2019.1/data/ip'.
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 7395.168 ; gain = 57.117 ; free physical = 136 ; free virtual = 8599
+set_property board_part digilentinc.com:cora-z7-10:part0:1.0 [current_project]
+add_files -norecurse /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top clock_gen [current_fileset]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+ERROR: [VRFC 10-1471] type error near clock_freq ; current type integer; expected type boolean [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:29]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:20]
+INFO: [VRFC 10-3070] VHDL file '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_runs synth_1 -jobs 4
+[Sun Feb 27 17:33:21 2022] Launched synth_1...
+Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.runs/synth_1/runme.log
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+ERROR: [VRFC 10-1471] type error near clock_freq ; current type integer; expected type boolean [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:31]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:20]
+INFO: [VRFC 10-3070] VHDL file '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'data_i' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xsim.dir/clock_gen_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xsim.dir/clock_gen_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Feb 27 17:44:52 2022. For additional details about this file, please refer to the WebTalk help file at /home/spixy/XILINX/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sun Feb 27 17:44:52 2022...
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7589.262 ; gain = 0.000 ; free physical = 506 ; free virtual = 8272
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "clock_gen_behav -key {Behavioral:sim_1:Functional:clock_gen} -tclbatch {clock_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source clock_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'clock_gen_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 7707.727 ; gain = 118.465 ; free physical = 482 ; free virtual = 8250
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/data_i} -radix hex {125 0ns}
+ERROR: [Simtcl 6-179] Couldn't add force for the following reason: Illegal value '125': Object size 8 does not match size of given value 125.
+add_force {/clock_gen/data_i} -radix unsigned {125 0ns}
+run 5000 us
+add_force {/clock_gen/reset_n} -radix hex {0 0ns}
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+run 5000 us
+run 5000 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'clk_freq' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:27]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 7733.742 ; gain = 26.016 ; free physical = 494 ; free virtual = 8265
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 5000 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7813.781 ; gain = 64.027 ; free physical = 469 ; free virtual = 8256
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7829.789 ; gain = 16.008 ; free physical = 466 ; free virtual = 8254
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 7861.805 ; gain = 32.016 ; free physical = 456 ; free virtual = 8245
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 5000 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7877.812 ; gain = 16.008 ; free physical = 449 ; free virtual = 8238
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 1 s
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 7877.812 ; gain = 0.000 ; free physical = 125 ; free virtual = 8254
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+ERROR: [VRFC 10-4982] syntax error near '.' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:25]
+ERROR: [VRFC 10-2989] 'clk_freq' is not declared [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:32]
+ERROR: [VRFC 10-2989] 'clk_freq' is not declared [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:33]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd:21]
+INFO: [VRFC 10-3070] VHDL file '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+file mkdir /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.srcs/sources_1/new
+close [ open /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.srcs/sources_1/new/math_real.vhd w ]
+add_files /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.srcs/sources_1/new/math_real.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.srcs/sources_1/new/math_real.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'math_real'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 1 s
+run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 8052.914 ; gain = 0.000 ; free physical = 133 ; free virtual = 7777
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8074.930 ; gain = 22.016 ; free physical = 367 ; free virtual = 7784
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 1 s
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 8074.930 ; gain = 0.000 ; free physical = 223 ; free virtual = 7768
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8095.938 ; gain = 21.008 ; free physical = 409 ; free virtual = 7827
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {30 0ns}
+run 1 s
+run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 8095.938 ; gain = 0.000 ; free physical = 190 ; free virtual = 7835
+add_force {/clock_gen/data_i} -radix hex {FF 0ns}
+run 1 s
+add_force {/clock_gen/data_i} -radix hex {0 0ns}
+run 1 s
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.srcs/sources_1/new/math_real.vhd] -no_script -reset -force -quiet
+remove_files  /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.srcs/sources_1/new/math_real.vhd
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 8253.016 ; gain = 64.027 ; free physical = 527 ; free virtual = 7687
+add_force {/clock_gen/clk_i} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/clock_gen/reset_n} -radix hex {1 0ns}
+add_force {/clock_gen/data_i} -radix hex {FF 0ns}
+run 1 s
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj clock_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_gen'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.sim/sim_1/behav/xsim'
+xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/spixy/XILINX/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 2b7549c656754af3b7bb2fcf988c5818 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot clock_gen_behav xil_defaultlib.clock_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.clock_gen
+Built simulation snapshot clock_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1

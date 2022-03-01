@@ -2,3 +2,6 @@ Running: xsim.dir/clock_gen_behav/xsimk -simmode gui -wdb clock_gen_behav.wdb -s
 Design successfully loaded
 Design Loading Memory Usage: 32880 KB (Peak: 32880 KB)
 Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 118716 KB (Peak: 172148 KB)
+Simulation CPU Usage: 2390 ms

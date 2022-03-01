@@ -280,3 +280,7 @@ Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE
 launch_runs impl_1 -jobs 4
 [Sun Feb 27 20:28:40 2022] Launched impl_1...
 Run output will be captured here: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/Clock_Gen/clock_gen/clock_gen.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Feb 27 21:05:16 2022...
