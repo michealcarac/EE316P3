@@ -31,10 +31,7 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-library work;
-use work.Common.all;
---USE ieee.std_logic_unsigned.all;
---use ieee.numeric_std.all;
+USE ieee.std_logic_unsigned.all;
 
 ENTITY i2c_master IS
   GENERIC(
@@ -55,10 +52,7 @@ ENTITY i2c_master IS
 END i2c_master;
 
 ARCHITECTURE logic OF i2c_master IS
-  
-
-  --constant divider : integer := (input_clk/bus_clk)/4; --number of clocks in 1/4 cycle of scl (USE THIS FOR IMPL!)
-  constant divider : integer := (125_000_000/50_000)/4; -- USE THIS FOR SIMULATION!
+  CONSTANT divider  :  INTEGER := (input_clk/bus_clk)/4; --number of clocks in 1/4 cycle of scl
   TYPE machine IS(ready, start, command, slv_ack1, wr, rd, slv_ack2, mstr_ack, stop); --needed states
   SIGNAL state         : machine;                        --state machine
   SIGNAL data_clk      : STD_LOGIC;                      --data clock for sda
@@ -72,13 +66,7 @@ ARCHITECTURE logic OF i2c_master IS
   SIGNAL data_rx       : STD_LOGIC_VECTOR(7 DOWNTO 0);   --data received from slave
   SIGNAL bit_cnt       : INTEGER RANGE 0 TO 7 := 7;      --tracks bit number in transaction
   SIGNAL stretch       : STD_LOGIC := '0';               --identifies if slave is stretching scl
-
-  
-  
 BEGIN
-
-    
-
 
   --generate the timing for the bus clock (scl_clk) and the data clock (data_clk)
   PROCESS(clk, reset_n)

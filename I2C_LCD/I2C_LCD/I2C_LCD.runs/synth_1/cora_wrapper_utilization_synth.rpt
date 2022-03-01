@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Tue Mar  1 11:53:48 2022
+| Date         : Tue Mar  1 12:02:30 2022
 | Host         : fedora running 64-bit Fedora release 35 (Thirty Five)
 | Command      : report_utilization -file cora_wrapper_utilization_synth.rpt -pb cora_wrapper_utilization_synth.pb
 | Design       : cora_wrapper

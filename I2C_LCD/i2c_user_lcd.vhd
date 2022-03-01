@@ -112,13 +112,13 @@ architecture behavioral of i2c_user_lcd is
 		if rising_edge(clk_i) then
 			if reset_n = '0' then
 				next_state  <= start; -- Initial: FSM State = start
-				byteSel     <= 0;     -- Initial: Byte Counter  = 0
+				byteSel     <=  0;    -- Initial: Byte Counter  = 0
 				nibble_sel  <= '0';   -- Initial: Nibble Select = 0
 				lcd_RS      <= '0';   -- Initial: LCD RS = 0
 				lcd_EN      <= '0';   -- Initial: LCD EN = 0
-				lcd_count   <= 0;     -- Initial: LCD Count = 0
-				lcd_delay   <= 0;
-				skip_nibble <= '0';
+				lcd_count   <=  0;    -- Initial: LCD Count = 0
+				lcd_delay   <=  0;    -- Initial: LCD Delay = 0
+				skip_nibble <= '0';   -- Initial: Skip Nibble = 0
 			else
 				case(state) is 
 					when start =>
@@ -162,7 +162,7 @@ architecture behavioral of i2c_user_lcd is
                             lcd_delay_cnst <= input_clk/1000; -- 1 ms delay
                             skip_nibble <= '1'; -- These writes dont have a lower nibble
                         elsif bytesel = 41 then
-                            lcd_delay_cnst <= input_clk/5;      -- 20 ms delay (Before resetting screen)
+                            lcd_delay_cnst <= input_clk/5;      -- 200 ms delay (Before resetting screen)
                         else 
                             lcd_delay_cnst <= input_clk/10000;  -- 100 us delay
                             skip_nibble <= '0';
@@ -177,13 +177,13 @@ architecture behavioral of i2c_user_lcd is
                                 if byteSel < 41 then             --If we're not at the top
                                     byteSel <= byteSel + 1;      --increment 
                                 else                             --otherwise, this is a normal repeat
-                                    byteSel <= 6;               --so go back to the repeating bytes
+                                    byteSel <= 6;                --so go back to the repeating bytes
                                 end if;
-                                nibble_sel <= '0';
+                                nibble_sel <= '0';               -- Progress to high nibble write
                             else
-                                nibble_sel <= NOT nibble_sel;
+                                nibble_sel <= NOT nibble_sel;    -- Not the nibble select 
                             end if;
-                            lcd_delay <= 0;
+                            lcd_delay <= 0;                      -- Reset counter
                             next_state <= start;
                         end if;
 				end case;
@@ -224,7 +224,7 @@ architecture behavioral of i2c_user_lcd is
 	       when 6  => lcd_data  <= '0'& X"01"; -- clear screen, move cursor home
 	       when 7  => lcd_data  <= '0'& X"0F"; -- turn on display, cursor blinking
 	       when 8  => lcd_data  <= '1'& first_line(to_integer(unsigned(selectMode)))(127 downto 120);
-	       when 9 => lcd_data   <= '1'& first_line(to_integer(unsigned(selectMode)))(119 downto 112);
+	       when 9  => lcd_data  <= '1'& first_line(to_integer(unsigned(selectMode)))(119 downto 112);
        	   when 10 => lcd_data  <= '1'& first_line(to_integer(unsigned(selectMode)))(111 downto 104);
        	   when 11 => lcd_data  <= '1'& first_line(to_integer(unsigned(selectMode)))(103 downto  96);
        	   when 12 => lcd_data  <= '1'& first_line(to_integer(unsigned(selectMode)))(95  downto  88);

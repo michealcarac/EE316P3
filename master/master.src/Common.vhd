@@ -19,9 +19,9 @@ package Common is
   constant IPWM_DATA_WIDTH    : integer := 8;
   constant CLOCK_SPEED        : integer := 125_000_000;                   -- input clock speed in Hz
   constant CP_ns              : integer := 1/CLOCK_SPEED * 10**9;         -- input clock period in nanoseconds
-  constant LCD_BUS_CLK        : integer := 50_000;                        -- lcd clock speed
-  constant ADC_BUS_CLK        : integer := 90_000;                        -- adc clock speed
-  constant DEBOUNCE_COUNT_MAX : unsigned(15 downto 0) := X"000F"; -- button debouncer counter max, X"000F" for sim, X"FFFF" for impl
+  constant LCD_BUS_CLK        : integer := 100_000;                        -- lcd clock speed
+  constant ADC_BUS_CLK        : integer := 100_000;                        -- adc clock speed
+  constant DEBOUNCE_COUNT_MAX : unsigned(15 downto 0) := X"FFFF"; -- button debouncer counter max, X"000F" for sim, X"FFFF" for impl
 
   type adc_state is (ch0, ch1, ch2, ch3);
 end Common;

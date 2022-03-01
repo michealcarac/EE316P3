@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Mar  1 11:53:50 2022
-# Process ID: 214898
+# Start of session at: Tue Mar  1 12:02:32 2022
+# Process ID: 221129
 # Current directory: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.runs/impl_1
 # Command line: vivado -log cora_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source cora_wrapper.tcl -notrace
 # Log file: /home/spixy/Documents/College/EE316/EE316P3/EE316P3/I2C_LCD/I2C_LCD/I2C_LCD.runs/impl_1/cora_wrapper.vdi

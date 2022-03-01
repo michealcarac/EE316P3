@@ -48,8 +48,8 @@ Inst_top_level: I2C_User_LCD
 			clk_i   => clk, 
 			selectMode 	=> selectMode_test,	
 			clockOutput	=> clockOutput_test,
-			SDA     => ja(3),
-			SCL     => ja(2)
+			SDA     => jb(1),
+			SCL     => jb(0)
 		);
 
 rising_edge_detector : process(clk)

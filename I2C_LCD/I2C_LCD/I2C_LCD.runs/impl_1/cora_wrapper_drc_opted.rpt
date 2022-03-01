@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Tue Mar  1 11:54:28 2022
+| Date         : Tue Mar  1 12:03:09 2022
 | Host         : fedora running 64-bit Fedora release 35 (Thirty Five)
 | Command      : report_drc -file cora_wrapper_drc_opted.rpt -pb cora_wrapper_drc_opted.pb -rpx cora_wrapper_drc_opted.rpx
 | Design       : cora_wrapper
@@ -42,7 +42,7 @@ Related violations: <none>
 
 RPBF-3#1 Warning
 IO port buffering is incomplete  
-Device port ja[3] expects both input and output buffering but the buffers are incomplete.
+Device port jb[1] expects both input and output buffering but the buffers are incomplete.
 Related violations: <none>
 
 ZPS7-1#1 Warning

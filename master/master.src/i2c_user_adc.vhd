@@ -1,18 +1,21 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+library work;
+use work.Common.all;
+
 entity i2c_user_adc is
 	generic(
         input_clk : integer := 125_000_000; -- System Clock Speed
         bus_clk   : integer := 90_000);     -- bus_clk/9 = I2C_ADC Sampling Rate (9 bits per read) (1 start (Low), 7 data, 1 stop (High))
 	port(
-		clk_i    : in    std_logic;                     -- clock input
-		reset_n  : in    std_logic;                     -- active-low reset
-		data_i 	 : in    std_logic_vector(3 downto 0);  -- Data to be sent. 0x0 = CH0(LDR), 0x1 = CH1(TEMP), 0x2 = CH2(ANALOG), 0x3 = CH3(POT)
-		data_o 	 : out   std_logic_vector(7 downto 0) := X"00";  -- Data to be read
+		clk_i    : in    std_logic;                     --clock input
+		reset_n  : in    std_logic;                     --active-low reset
+		data_i 	 : in    std_logic_vector(3 downto 0); -- Data to be sent
+		data_o 	 : out   std_logic_vector(7 downto 0);  -- Data to be read
 		
-		sda      : inout std_logic;                     -- i2c data
-		scl      : inout std_logic                      -- i2c clock
+		sda      : inout std_logic;                     --i2c data
+		scl      : inout std_logic                      --i2c clock
 	);
 end i2c_user_adc;
 
