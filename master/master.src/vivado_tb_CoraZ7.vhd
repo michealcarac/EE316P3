@@ -36,11 +36,7 @@ begin
   main : process
   begin
     -- BEGIN TEST CODE --
-    
-    btn(0) <= '1';
-    wait for 20*8 ns;
 
-    btn(0) <= '0';
     wait for 20*8 ns;
 
     btn(1) <= '1';
@@ -65,6 +61,7 @@ begin
     
 
     wait for 1000*8 ns;
+    wait for 2000 ms;
    
 
     --wait for 64*8 ns;

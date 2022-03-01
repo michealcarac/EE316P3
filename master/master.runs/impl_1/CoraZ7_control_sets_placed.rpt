@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Tue Mar  1 13:29:47 2022
-| Host         : fedora running 64-bit Fedora release 35 (Thirty Five)
+| Date         : Tue Mar  1 15:59:32 2022
+| Host         : fedora running 64-bit unknown
 | Command      : report_control_sets -verbose -file CoraZ7_control_sets_placed.rpt
 | Design       : CoraZ7
 | Device       : xc7z010
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    16 |
-|    Minimum number of control sets                        |    16 |
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    54 |
+| Unused register locations in slices containing registers |    65 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    16 |
+| Total control sets |    19 |
 | >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     2 |
+| >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     6 |
+| >= 16              |     8 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,37 +58,40 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              34 |           19 |
-| No           | No                    | Yes                    |              38 |           17 |
-| No           | Yes                   | No                     |              50 |           15 |
-| Yes          | No                    | No                     |              17 |            7 |
-| Yes          | No                    | Yes                    |              24 |           10 |
-| Yes          | Yes                   | No                     |              47 |           11 |
+| No           | No                    | No                     |              31 |           17 |
+| No           | No                    | Yes                    |              69 |           29 |
+| No           | Yes                   | No                     |              50 |           14 |
+| Yes          | No                    | No                     |              37 |           15 |
+| Yes          | No                    | Yes                    |              24 |           12 |
+| Yes          | Yes                   | No                     |              52 |           10 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------------------------------------------------------------------+----------------------------------------------------------+------------------+----------------+
-|  Clock Signal  |                                   Enable Signal                                  |                     Set/Reset Signal                     | Slice Load Count | Bel Load Count |
-+----------------+----------------------------------------------------------------------------------+----------------------------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | inst_top_level/oPWM_LP_i_1_n_0                                                   |                                                          |                1 |              1 |
-|  clk_IBUF_BUFG | inst_top_level/oPWM_i_1_n_0                                                      |                                                          |                1 |              1 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/E[0]                            | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]   |                1 |              4 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_next_state_reg[0][0] | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]   |                1 |              5 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/addr_rw0                        |                                                          |                2 |              6 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/byteSel[5]_i_1_n_0                              | inst_top_level/inst_reset_deb/reset_sig                  |                4 |              6 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/busy1                           | inst_top_level/inst_reset_deb/reset_sig                  |                4 |              7 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/data_rd[7]_i_1_n_0              | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]   |                2 |              8 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/lcd_delay_cnst_0                                |                                                          |                3 |              9 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/busy1                           | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]   |                4 |              9 |
-|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_deb/btn_cntr[15]_i_1__0_n_0    |                4 |             16 |
-|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_control_btn_deb/btn_cntr[15]_i_1_n_0 |                4 |             16 |
-|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]   |                7 |             19 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/lcd_delay[31]_i_1_n_0                           | inst_top_level/inst_reset_deb/reset_sig                  |                5 |             32 |
-|  clk_IBUF_BUFG |                                                                                  |                                                          |               19 |             34 |
-|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_deb/reset_sig                  |               17 |             37 |
-+----------------+----------------------------------------------------------------------------------+----------------------------------------------------------+------------------+----------------+
++----------------+----------------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+|  Clock Signal  |                                   Enable Signal                                  |                       Set/Reset Signal                      | Slice Load Count | Bel Load Count |
++----------------+----------------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | inst_top_level/oPWM_i_1_n_0                                                      |                                                             |                1 |              1 |
+|  clk_IBUF_BUFG | inst_top_level/FSM_onehot_adc_state_sig_reg_n_0_[3]                              |                                                             |                1 |              1 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/E[0]                            | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                1 |              4 |
+|  clk_IBUF_BUFG | inst_top_level/inst_control_btn_deb/E[0]                                         | inst_top_level/inst_reset_delay/SR[0]                       |                1 |              5 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_next_state_reg[0][0] | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                2 |              5 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/addr_rw0                        |                                                             |                3 |              6 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/byteSel[5]_i_1_n_0                              | inst_top_level/inst_reset_delay/SR[0]                       |                2 |              6 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/busy1                           | inst_top_level/inst_reset_delay/SR[0]                       |                2 |              7 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/data_rd[7]_i_1_n_0              | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                7 |              8 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/busy1                           | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                3 |              9 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/lcd_delay_cnst_0                                |                                                             |                5 |              9 |
+|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_deb/btn_cntr[15]_i_1_n_0          |                4 |             16 |
+|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_control_btn_deb/btn_cntr[15]_i_1__0_n_0 |                4 |             16 |
+|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                9 |             18 |
+|  clk_IBUF_BUFG | inst_top_level/inst_reset_delay/sel                                              |                                                             |                5 |             20 |
+|  clk_IBUF_BUFG |                                                                                  |                                                             |               17 |             31 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/lcd_delay[31]_i_1_n_0                           | inst_top_level/inst_reset_delay/SR[0]                       |                4 |             32 |
+|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_delay/AR[0]                       |               10 |             33 |
+|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_delay/SR[0]                       |               16 |             36 |
++----------------+----------------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
 
 

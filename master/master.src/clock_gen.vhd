@@ -15,6 +15,7 @@ entity clock_gen is
 		clk_i      	: in    std_logic;                     	--clock input
 		reset_n     : in    std_logic;                     	--active-low reset
         data_i      : in    std_logic_vector(data_width-1 downto 0); -- N bit data in 
+        en          : in    std_logic;
 
 		-- INOUT
 		clk_o       : out    std_logic
@@ -38,10 +39,10 @@ architecture behavioral of clock_gen is
 	
     process(clk_i)
     begin 
-        if reset_n = '0' then
+        if reset_n = '0' or en = '0' then
             count <=  0;
             temp  <= '0';
-        elsif rising_edge(clk_i) then
+        elsif rising_edge(clk_i) and en = '1' then
             count <= count + 1;
             if count > clk_divider/2 then
                 temp  <= NOT temp;

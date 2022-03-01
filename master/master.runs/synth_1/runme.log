@@ -15,73 +15,77 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 266910 
+INFO: Helper process launched with PID 552242 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2049.289 ; gain = 152.719 ; free physical = 935 ; free virtual = 4685
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1972.324 ; gain = 154.688 ; free physical = 796 ; free virtual = 13753
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'CoraZ7' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/CoraZ7.vhd:19]
-INFO: [Synth 8-3491] module 'top_level' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:8' bound to instance 'inst_top_level' of component 'top_level' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/CoraZ7.vhd:42]
-INFO: [Synth 8-638] synthesizing module 'top_level' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'CoraZ7' [/home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd:19]
+INFO: [Synth 8-3491] module 'top_level' declared at '/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:8' bound to instance 'inst_top_level' of component 'top_level' [/home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'top_level' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:28]
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 100000 - type: integer 
-INFO: [Synth 8-3491] module 'i2c_user_lcd' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:6' bound to instance 'inst_i2c_user_lcd' of component 'i2c_user_lcd' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:159]
-INFO: [Synth 8-638] synthesizing module 'i2c_user_lcd' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:23]
-	Parameter input_clk bound to: 125000000 - type: integer 
-	Parameter bus_clk bound to: 100000 - type: integer 
-	Parameter input_clk bound to: 125000000 - type: integer 
-	Parameter bus_clk bound to: 100000 - type: integer 
-INFO: [Synth 8-3491] module 'i2c_master' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:39' bound to instance 'Inst_i2c_master' of component 'i2c_master' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:83]
-INFO: [Synth 8-638] synthesizing module 'i2c_master' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:57]
-	Parameter input_clk bound to: 125000000 - type: integer 
-	Parameter bus_clk bound to: 100000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'i2c_master' (1#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:57]
-WARNING: [Synth 8-614] signal 'first_line' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:215]
-WARNING: [Synth 8-614] signal 'selectMode' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:215]
-WARNING: [Synth 8-614] signal 'second_line' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:215]
-WARNING: [Synth 8-614] signal 'clockOutput' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:215]
-INFO: [Synth 8-256] done synthesizing module 'i2c_user_lcd' (2#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_lcd.vhd:23]
-	Parameter input_clk bound to: 125000000 - type: integer 
-	Parameter bus_clk bound to: 100000 - type: integer 
-INFO: [Synth 8-3491] module 'i2c_user_adc' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:7' bound to instance 'inst_i2c_user_adc' of component 'i2c_user_adc' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:170]
-INFO: [Synth 8-638] synthesizing module 'i2c_user_adc' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:22]
+INFO: [Synth 8-3491] module 'i2c_user_lcd' declared at '/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:6' bound to instance 'inst_i2c_user_lcd' of component 'i2c_user_lcd' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'i2c_user_lcd' [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:23]
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 100000 - type: integer 
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 100000 - type: integer 
-INFO: [Synth 8-3491] module 'i2c_master' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/I2C_Master.vhd:39' bound to instance 'Inst_i2c_master' of component 'i2c_master' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:70]
-INFO: [Synth 8-226] default block is never used [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:178]
-WARNING: [Synth 8-614] signal 'byteSel' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:176]
-WARNING: [Synth 8-614] signal 'cmd' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:176]
-INFO: [Synth 8-256] done synthesizing module 'i2c_user_adc' (3#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/i2c_user_adc.vhd:22]
-INFO: [Synth 8-3491] module 'pwm' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/PWM.vhd:8' bound to instance 'inst_pwm' of component 'pwm' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:181]
-INFO: [Synth 8-638] synthesizing module 'pwm' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/PWM.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'pwm' (4#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/PWM.vhd:21]
+INFO: [Synth 8-3491] module 'i2c_master' declared at '/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:39' bound to instance 'Inst_i2c_master' of component 'i2c_master' [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'i2c_master' [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:57]
+	Parameter input_clk bound to: 125000000 - type: integer 
+	Parameter bus_clk bound to: 100000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'i2c_master' (1#1) [/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:57]
+WARNING: [Synth 8-614] signal 'first_line' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+WARNING: [Synth 8-614] signal 'selectMode' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+WARNING: [Synth 8-614] signal 'second_line' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+WARNING: [Synth 8-614] signal 'clockOutput' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:217]
+INFO: [Synth 8-256] done synthesizing module 'i2c_user_lcd' (2#1) [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd:23]
+	Parameter input_clk bound to: 125000000 - type: integer 
+	Parameter bus_clk bound to: 100000 - type: integer 
+INFO: [Synth 8-3491] module 'i2c_user_adc' declared at '/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:7' bound to instance 'inst_i2c_user_adc' of component 'i2c_user_adc' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'i2c_user_adc' [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:22]
+	Parameter input_clk bound to: 125000000 - type: integer 
+	Parameter bus_clk bound to: 100000 - type: integer 
+	Parameter input_clk bound to: 125000000 - type: integer 
+	Parameter bus_clk bound to: 100000 - type: integer 
+INFO: [Synth 8-3491] module 'i2c_master' declared at '/home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd:39' bound to instance 'Inst_i2c_master' of component 'i2c_master' [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:70]
+INFO: [Synth 8-226] default block is never used [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:178]
+WARNING: [Synth 8-614] signal 'byteSel' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:176]
+WARNING: [Synth 8-614] signal 'cmd' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:176]
+INFO: [Synth 8-256] done synthesizing module 'i2c_user_adc' (3#1) [/home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd:22]
+INFO: [Synth 8-3491] module 'pwm' declared at '/home/cameron/Projects/EE316P3/master/master.src/PWM.vhd:8' bound to instance 'inst_pwm' of component 'pwm' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:199]
+INFO: [Synth 8-638] synthesizing module 'pwm' [/home/cameron/Projects/EE316P3/master/master.src/PWM.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'pwm' (4#1) [/home/cameron/Projects/EE316P3/master/master.src/PWM.vhd:21]
 	Parameter data_width bound to: 8 - type: integer 
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter low_freq bound to: 500 - type: integer 
 	Parameter high_freq bound to: 1500 - type: integer 
-INFO: [Synth 8-3491] module 'clock_gen' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/clock_gen.vhd:8' bound to instance 'inst_clock_gen' of component 'clock_gen' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:191]
-INFO: [Synth 8-638] synthesizing module 'clock_gen' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/clock_gen.vhd:24]
+INFO: [Synth 8-3491] module 'clock_gen' declared at '/home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd:8' bound to instance 'inst_clock_gen' of component 'clock_gen' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:209]
+INFO: [Synth 8-638] synthesizing module 'clock_gen' [/home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd:25]
 	Parameter data_width bound to: 8 - type: integer 
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter low_freq bound to: 500 - type: integer 
 	Parameter high_freq bound to: 1500 - type: integer 
-WARNING: [Synth 8-614] signal 'reset_n' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/clock_gen.vhd:39]
-WARNING: [Synth 8-614] signal 'temp' is read in the process but is not in the sensitivity list [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/clock_gen.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'clock_gen' (5#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/clock_gen.vhd:24]
+WARNING: [Synth 8-614] signal 'reset_n' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd:40]
+WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd:40]
+WARNING: [Synth 8-614] signal 'temp' is read in the process but is not in the sensitivity list [/home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'clock_gen' (5#1) [/home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd:25]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
-INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/btn_debounce_toggle.vhd:33' bound to instance 'inst_reset_deb' of component 'btn_debounce_toggle' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:202]
-INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/btn_debounce_toggle.vhd:43]
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at '/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd:33' bound to instance 'inst_reset_deb' of component 'btn_debounce_toggle' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:220]
+INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd:43]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
-INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (6#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/btn_debounce_toggle.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (6#1) [/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd:43]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
-INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/btn_debounce_toggle.vhd:33' bound to instance 'inst_control_btn_deb' of component 'btn_debounce_toggle' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:211]
-WARNING: [Synth 8-3848] Net oClk_gen in module/entity top_level does not have driver. [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'top_level' (7#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:28]
-INFO: [Synth 8-256] done synthesizing module 'CoraZ7' (8#1) [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/CoraZ7.vhd:19]
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at '/home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd:33' bound to instance 'inst_control_btn_deb' of component 'btn_debounce_toggle' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:229]
+INFO: [Synth 8-3491] module 'Reset_Delay' declared at '/home/cameron/Projects/EE316P3/master/master.src/reset_delay.vhd:12' bound to instance 'inst_reset_delay' of component 'Reset_Delay' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:238]
+INFO: [Synth 8-638] synthesizing module 'Reset_Delay' [/home/cameron/Projects/EE316P3/master/master.src/reset_delay.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'Reset_Delay' (7#1) [/home/cameron/Projects/EE316P3/master/master.src/reset_delay.vhd:21]
+INFO: [Synth 8-4471] merging register 'adc_data_i_sig_reg[3:0]' into 'lcd_selectMode_sig_reg[3:0]' [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:192]
+WARNING: [Synth 8-6014] Unused sequential element adc_data_i_sig_reg was removed.  [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:192]
+INFO: [Synth 8-256] done synthesizing module 'top_level' (8#1) [/home/cameron/Projects/EE316P3/master/master.src/top_level.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'CoraZ7' (9#1) [/home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd:19]
 WARNING: [Synth 8-3331] design i2c_user_lcd has unconnected port selectMode[3]
 WARNING: [Synth 8-3331] design i2c_user_lcd has unconnected port selectMode[2]
-WARNING: [Synth 8-3331] design top_level has unconnected port oClk_gen
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[7]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[6]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[5]
@@ -92,7 +96,7 @@ WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[6]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[5]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2105.039 ; gain = 208.469 ; free physical = 951 ; free virtual = 4703
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2028.074 ; gain = 210.438 ; free physical = 813 ; free virtual = 13770
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -105,44 +109,45 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2108.008 ; gain = 211.438 ; free physical = 947 ; free virtual = 4699
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2031.043 ; gain = 213.406 ; free physical = 789 ; free virtual = 13769
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2108.008 ; gain = 211.438 ; free physical = 947 ; free virtual = 4699
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2031.043 ; gain = 213.406 ; free physical = 789 ; free virtual = 13769
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]
-Finished Parsing XDC File [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CoraZ7_propImpl.xdc].
+Parsing XDC File [/home/cameron/Projects/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]
+Finished Parsing XDC File [/home/cameron/Projects/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/cameron/Projects/EE316P3/master/master.src/Cora-Z7-10-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CoraZ7_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/CoraZ7_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2292.633 ; gain = 0.000 ; free physical = 848 ; free virtual = 4601
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2214.699 ; gain = 0.000 ; free physical = 704 ; free virtual = 13671
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2292.633 ; gain = 0.000 ; free physical = 848 ; free virtual = 4601
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2214.699 ; gain = 0.000 ; free physical = 704 ; free virtual = 13671
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 920 ; free virtual = 4674
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 782 ; free virtual = 13745
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 920 ; free virtual = 4674
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 782 ; free virtual = 13745
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 920 ; free virtual = 4674
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 782 ; free virtual = 13745
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_master'
 INFO: [Synth 8-802] inferred FSM for state register 'next_state_reg' in module 'i2c_user_adc'
+INFO: [Synth 8-802] inferred FSM for state register 'adc_state_sig_reg' in module 'top_level'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -167,8 +172,18 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                   repeat |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'next_state_reg' using encoding 'one-hot' in module 'i2c_user_adc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset |                            00001 |                              000
+                     ch0 |                            00010 |                              001
+                     ch1 |                            00100 |                              010
+                     ch2 |                            01000 |                              011
+                     ch3 |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'adc_state_sig_reg' using encoding 'one-hot' in module 'top_level'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 910 ; free virtual = 4665
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 769 ; free virtual = 13733
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -185,7 +200,7 @@ Detailed RTL Component Info :
 	   2 Input     31 Bit       Adders := 2     
 	   2 Input     29 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 2     
-	   2 Input     12 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 2     
@@ -196,13 +211,13 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 2     
-	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
 	                8 Bit    Registers := 9     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 4     
-	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 39    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 41    
 +---Muxes : 
 	   4 Input    128 Bit        Muxes := 1     
 	   2 Input    128 Bit        Muxes := 1     
@@ -210,25 +225,26 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 4     
 	   2 Input     31 Bit        Muxes := 3     
 	   2 Input     29 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 2     
 	   9 Input      9 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 18    
 	   6 Input      8 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 7     
 	   2 Input      6 Bit        Muxes := 2     
+	   7 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 4     
 	   9 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 8     
-	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 20    
 	   3 Input      1 Bit        Muxes := 2     
 	   9 Input      1 Bit        Muxes := 14    
 	   6 Input      1 Bit        Muxes := 6     
 	   7 Input      1 Bit        Muxes := 6     
 	   8 Input      1 Bit        Muxes := 2     
 	  10 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 12    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -239,16 +255,16 @@ Hierarchical RTL Component report
 Module i2c_master 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 	                8 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 8     
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 	   9 Input      9 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 9     
 	   6 Input      8 Bit        Muxes := 1     
@@ -327,15 +343,20 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
+Module Reset_Delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
 Module top_level 
 Detailed RTL Component Info : 
 +---Registers : 
 	                4 Bit    Registers := 1     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
+	   7 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -352,14 +373,11 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3936] Found unconnected internal register 'inst_top_level/lcd_selectMode_sig_reg' and it is trimmed from '4' to '2' bits. [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:163]
-INFO: [Synth 8-4471] merging register 'inst_top_level/lcd_selectMode_sig_reg[1:0]' into 'inst_top_level/adc_data_i_sig_reg[1:0]' [/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/top_level.vhd:163]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[7]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[6]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[5]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[4]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[3]
-WARNING: [Synth 8-3331] design CoraZ7 has unconnected port ja[2]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[7]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[6]
 WARNING: [Synth 8-3331] design CoraZ7 has unconnected port jb[5]
@@ -411,7 +429,7 @@ INFO: [Synth 8-3886] merging instance 'inst_top_level/inst_i2c_user_adc/Inst_i2c
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_top_level/inst_i2c_user_adc/Inst_i2c_master/addr_rw_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_top_level/inst_i2c_user_adc/Inst_i2c_master/addr_rw_reg[5] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 892 ; free virtual = 4650
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 750 ; free virtual = 13717
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -423,13 +441,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 777 ; free virtual = 4535
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 657 ; free virtual = 13600
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 762 ; free virtual = 4520
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 630 ; free virtual = 13573
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -443,7 +461,7 @@ Start Technology Mapping
 WARNING: [Synth 8-3332] Sequential element (inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/FSM_onehot_state_reg[7]) is unused and will be removed from module CoraZ7.
 WARNING: [Synth 8-3332] Sequential element (inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/FSM_onehot_state_reg[6]) is unused and will be removed from module CoraZ7.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 761 ; free virtual = 4519
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13573
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -467,7 +485,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -480,7 +498,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -492,25 +510,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -527,60 +545,63 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    27|
+|2     |CARRY4 |   202|
 |3     |LUT1   |    13|
-|4     |LUT2   |   133|
-|5     |LUT3   |    38|
-|6     |LUT4   |    61|
-|7     |LUT5   |    34|
-|8     |LUT6   |   117|
-|9     |FDCE   |    50|
-|10    |FDPE   |    12|
-|11    |FDRE   |   147|
-|12    |FDSE   |     1|
-|13    |IBUF   |     3|
-|14    |IOBUF  |     3|
-|15    |OBUF   |     2|
-|16    |OBUFT  |     7|
+|4     |LUT2   |   515|
+|5     |LUT3   |    92|
+|6     |LUT4   |   147|
+|7     |LUT5   |   133|
+|8     |LUT6   |   128|
+|9     |MUXF7  |     1|
+|10    |FDCE   |    81|
+|11    |FDPE   |    12|
+|12    |FDRE   |   168|
+|13    |FDSE   |     2|
+|14    |IBUF   |     3|
+|15    |IOBUF  |     3|
+|16    |OBUF   |     3|
+|17    |OBUFT  |     6|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------+----------------------+------+
 |      |Instance                 |Module                |Cells |
 +------+-------------------------+----------------------+------+
-|1     |top                      |                      |   649|
-|2     |  inst_top_level         |top_level             |   633|
-|3     |    inst_control_btn_deb |btn_debounce_toggle   |    48|
-|4     |    inst_i2c_user_adc    |i2c_user_adc          |   173|
-|5     |      Inst_i2c_master    |i2c_master_1          |   147|
-|6     |    inst_i2c_user_lcd    |i2c_user_lcd          |   333|
-|7     |      Inst_i2c_master    |i2c_master            |   176|
-|8     |    inst_pwm             |pwm                   |    24|
-|9     |    inst_reset_deb       |btn_debounce_toggle_0 |    44|
+|1     |top                      |                      |  1510|
+|2     |  inst_top_level         |top_level             |  1494|
+|3     |    inst_clock_gen       |clock_gen             |   658|
+|4     |    inst_control_btn_deb |btn_debounce_toggle   |    49|
+|5     |    inst_i2c_user_adc    |i2c_user_adc          |   347|
+|6     |      Inst_i2c_master    |i2c_master_1          |   321|
+|7     |    inst_i2c_user_lcd    |i2c_user_lcd          |   320|
+|8     |      Inst_i2c_master    |i2c_master            |   164|
+|9     |    inst_pwm             |pwm                   |    24|
+|10    |    inst_reset_deb       |btn_debounce_toggle_0 |    45|
+|11    |    inst_reset_delay     |Reset_Delay           |    36|
 +------+-------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 760 ; free virtual = 4518
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 629 ; free virtual = 13571
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2292.633 ; gain = 211.438 ; free physical = 815 ; free virtual = 4573
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2292.633 ; gain = 396.062 ; free physical = 815 ; free virtual = 4573
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2214.699 ; gain = 213.406 ; free physical = 685 ; free virtual = 13627
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2214.699 ; gain = 397.062 ; free physical = 685 ; free virtual = 13627
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 30 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 206 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2292.633 ; gain = 0.000 ; free physical = 769 ; free virtual = 4527
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2225.676 ; gain = 0.000 ; free physical = 645 ; free virtual = 13588
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-89 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+94 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2292.633 ; gain = 622.242 ; free physical = 865 ; free virtual = 4623
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2292.633 ; gain = 0.000 ; free physical = 865 ; free virtual = 4623
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2225.676 ; gain = 630.281 ; free physical = 741 ; free virtual = 13684
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2225.676 ; gain = 0.000 ; free physical = 741 ; free virtual = 13684
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/CoraZ7.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/cameron/Projects/EE316P3/master/master.runs/synth_1/CoraZ7.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CoraZ7_utilization_synth.rpt -pb CoraZ7_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar  1 13:28:58 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  1 15:58:46 2022...

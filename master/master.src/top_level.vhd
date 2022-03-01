@@ -87,7 +87,7 @@ architecture Behavioral of top_level is
 		clk_i      	: in    std_logic;                     	--clock input
 		reset_n     : in    std_logic;                     	--active-low reset
     data_i      : in    std_logic_vector(data_width-1 downto 0); -- N bit data in 
-
+    en          : in    std_logic;
 		-- INOUT
 		clk_o       : out    std_logic
 	);
@@ -105,6 +105,14 @@ architecture Behavioral of top_level is
       TOGGLE_O : out  std_logic
     );
   end component;
+
+  component Reset_Delay is
+    port (
+        SIGNAL iCLK : IN std_logic;	
+        SIGNAL oRESET : OUT std_logic
+	  );	
+  end component;
+
 
   -- general signals
   signal reset_sig            : std_logic;
@@ -130,19 +138,25 @@ architecture Behavioral of top_level is
   -- clock gen signals
   signal clock_gen_data_i_sig : std_logic_vector(GEN_WIDTH-1 downto 0);
   signal clock_gen_clk_o_sig  : std_logic;
+  signal clock_gen_en_sig     : std_logic;
+
+  -- reset debouncer signals
+  signal reset_btn_sig        : std_logic;
+
+  -- reset delay signals
+  signal reset_delay_out_sig : std_logic := '1';
 
   -- FSM & control signals
-  signal adc_state_sig       : adc_state := ch0;
+  signal adc_state_sig       : adc_state := reset;
   signal clock_gen_state_sig : std_logic := '0';      -- '0' = clock gen off, '1' = clock gen on
   signal control_btn_sig     : std_logic;             -- signal for BTN(1)
+  signal control_btn_pressed_sig : std_logic;
   
 
 begin
 
-  -- FOR SIMULATION ONLY!!
-  --adc_data_o_sig <= X"00";
-
   -- permanent signal ties
+  reset_sig <= reset_btn_sig or reset_delay_out_sig;
   reset_n_sig  <= not reset_sig;              -- create an active low reset for some components
 
   lcd_clockOutput_sig <= clock_gen_state_sig; -- tie the clock gen state to the lcd's clock gen message output
@@ -155,6 +169,10 @@ begin
   pwm_data_i_sig <= adc_data_o_sig;           -- tie adc data output to pwm data input
 
   clock_gen_data_i_sig <= adc_data_o_sig;
+
+  oClk_gen <= clock_gen_clk_o_sig;
+
+  clock_gen_en_sig <= clock_gen_state_sig;
 
   inst_i2c_user_lcd : i2c_user_lcd
     port map(
@@ -194,7 +212,7 @@ begin
       clk_i => iClk,
       reset_n => reset_n_sig,
       data_i => clock_gen_data_i_sig,
-
+      en => clock_gen_en_sig,
       -- INOUT
       clk_o => clock_gen_clk_o_sig
     );
@@ -203,7 +221,7 @@ begin
     port map(
       BTN_I     => iReset,
       CLK 	    => iClk,
-      BTN_O     => reset_sig,
+      BTN_O     => reset_btn_sig,
 			pulse_O   => open,
       TOGGLE_O  => open
     );
@@ -212,46 +230,64 @@ begin
     port map(
       BTN_I    => iControlBtn,
       CLK      => iClk,
-      BTN_O    => open,
-      pulse_O  => control_btn_sig,
+      BTN_O    => control_btn_sig,
+      pulse_O  => open,
       TOGGLE_O => open
     );
+
+    inst_reset_delay : Reset_Delay
+     port map(
+       iClk    => iClk,
+       oReset  => reset_delay_out_sig
+     );
 
   
   adc_state_process : process(iClk, control_btn_sig)
   begin
-    if (iClk'EVENT and iClk = '1' and control_btn_sig = '1') then
-      case adc_state_sig is
-        when ch0 => 
-          if (clock_gen_state_sig = '1') then
-            adc_state_sig <= ch1;
-            clock_gen_state_sig <= '0';
-          else
-            clock_gen_state_sig <= '1';
-          end if;
-        when ch1 => 
-          if (clock_gen_state_sig = '1') then
-            adc_state_sig <= ch2;
-            clock_gen_state_sig <= '0';
-          else
-            clock_gen_state_sig <= '1';
-          end if;
-        when ch2 => 
-          if (clock_gen_state_sig = '1') then
-            adc_state_sig <= ch3;
-            clock_gen_state_sig <= '0';
-          else
-            clock_gen_state_sig <= '1';
-          end if;
-        when ch3 => 
-          if (clock_gen_state_sig = '1') then
+    if (iClk'EVENT and rising_edge(iClk)) then
+      if (control_btn_sig = '0') then
+        control_btn_pressed_sig <= '0';
+      end if;
+
+      if(reset_sig = '1') then
+        adc_state_sig <= reset;
+        clock_gen_state_sig <= '0';
+      elsif (control_btn_sig = '1' and control_btn_pressed_sig /= '1') then
+        control_btn_pressed_sig <= '1';
+
+        case adc_state_sig is
+          when reset => 
             adc_state_sig <= ch0;
             clock_gen_state_sig <= '0';
-          else
-            clock_gen_state_sig <= '1';
-          end if;
-    
-      end case;
+          when ch0 => 
+            if (clock_gen_state_sig = '1') then
+              adc_state_sig <= ch1;
+              clock_gen_state_sig <= '0';
+            else
+              clock_gen_state_sig <= '1';
+            end if;
+          when ch1 => 
+            if (clock_gen_state_sig = '1') then
+              adc_state_sig <= ch2;
+              clock_gen_state_sig <= '0';
+            else
+              clock_gen_state_sig <= '1';
+            end if;
+          when ch2 => 
+              adc_state_sig <= ch3;
+              clock_gen_state_sig <= '0';
+           
+          when ch3 => 
+            if (clock_gen_state_sig = '1') then
+              adc_state_sig <= ch0;
+              clock_gen_state_sig <= '0';
+            else
+              clock_gen_state_sig <= '1';
+            end if;
+        end case;
+      elsif (adc_state_sig = reset) then
+        adc_state_sig <= ch0;
+      end if;
     end if;
   end process;
 
@@ -259,6 +295,10 @@ begin
   begin
     if (iClk'EVENT and iClk = '1') then
       case adc_state_sig is
+        when reset =>
+          lcd_selectMode_sig <= X"0";
+          adc_data_i_sig <= X"0";
+          oPWM <= '0';
         when ch0 =>
           lcd_selectMode_sig <= X"0";
           adc_data_i_sig <= X"0";

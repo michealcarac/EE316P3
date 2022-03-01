@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -69,16 +68,16 @@ set rc [catch {
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 2
   create_project -in_memory -part xc7z010clg400-1
-  set_property board_part_repo_paths {/home/spixy/.Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+  set_property board_part_repo_paths {/root/.Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
   set_property board_part digilentinc.com:cora-z7-10:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.cache/wt [current_project]
-  set_property parent.project_path /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.xpr [current_project]
-  set_property ip_output_repo /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/cameron/Projects/EE316P3/master/master.cache/wt [current_project]
+  set_property parent.project_path /home/cameron/Projects/EE316P3/master/master.xpr [current_project]
+  set_property ip_output_repo /home/cameron/Projects/EE316P3/master/master.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.runs/synth_1/CoraZ7.dcp
-  read_xdc /home/spixy/Documents/College/EE316/EE316P3/EE316P3/master/master.src/Cora-Z7-10-Master.xdc
+  add_files -quiet /home/cameron/Projects/EE316P3/master/master.runs/synth_1/CoraZ7.dcp
+  read_xdc /home/cameron/Projects/EE316P3/master/master.src/Cora-Z7-10-Master.xdc
   link_design -top CoraZ7 -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]

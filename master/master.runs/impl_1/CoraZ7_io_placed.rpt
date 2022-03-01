@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date                      : Tue Mar  1 13:29:47 2022
-| Host                      : fedora running 64-bit Fedora release 35 (Thirty Five)
+| Date                      : Tue Mar  1 15:59:32 2022
+| Host                      : fedora running 64-bit unknown
 | Command                   : report_io -file CoraZ7_io_placed.rpt
 | Design                    : CoraZ7
 | Device                    : xc7z010
@@ -430,7 +430,7 @@ Table of Contents
 | Y13        |             |            | NC                      | Not Connected |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | Y14        | jb[1]       | High Range | IO_L8N_T1_34            | BIDIR         | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y15        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| Y16        | ja[2]       | High Range | IO_L7P_T1_34            | TRISTATE      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| Y16        | ja[2]       | High Range | IO_L7P_T1_34            | OUTPUT        | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y17        | ja[3]       | High Range | IO_L7N_T1_34            | TRISTATE      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y18        | ja[0]       | High Range | IO_L17P_T2_34           | OUTPUT        | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y19        | ja[1]       | High Range | IO_L17N_T2_34           | OUTPUT        | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |

@@ -22,8 +22,9 @@ package Common is
   constant LCD_BUS_CLK        : integer := 100_000;                        -- lcd clock speed
   constant ADC_BUS_CLK        : integer := 100_000;                        -- adc clock speed
   constant DEBOUNCE_COUNT_MAX : unsigned(15 downto 0) := X"FFFF"; -- button debouncer counter max, X"000F" for sim, X"FFFF" for impl
+  constant RESET_DELAY_MAX    : unsigned(19 downto 0) := X"FFFFF"; -- reset delay length. X"00001" for sim, X"FFFFF" for impl
 
-  type adc_state is (ch0, ch1, ch2, ch3);
+  type adc_state is (reset, ch0, ch1, ch2, ch3);
 end Common;
 
 package body Common is
