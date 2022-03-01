@@ -15,6 +15,7 @@ entity top_level is
     -- OUTS
     oPWM        : out std_logic;   -- Tie this to a regular output pin
     oPWM_LP     : out std_logic;   -- Tie this to an output pin that leads to the low-pass filter (used when ADC CH2 is being read)
+    oClk_gen    : out std_logic;   -- Clock generation output
 
     -- INOUTS
     LCD_SDA     : inout std_logic;
@@ -61,20 +62,35 @@ architecture Behavioral of top_level is
   end component;
 
   component pwm is
-    generic(
-      IDATA_WIDTH : integer := IPWM_DATA_WIDTH
-    );
     port (
       --INS
       clk_i 		  : in std_logic;
       reset 	    : in std_logic := '0';
       en 	        : in std_logic;
-      data_i      : in std_logic_vector(IDATA_WIDTH-1 downto 0);
+      data_i      : in std_logic_vector(IPWM_DATA_WIDTH-1 downto 0);
       
       --OUTS
       pwm_o		    : out std_logic
     );
   
+  end component;
+  
+  component clock_gen is
+  generic(
+    data_width: integer := GEN_WIDTH;
+    input_clk : integer := GEN_CLK_FREQ;
+    low_freq  : integer := GEN_LOW_FREQ;
+    high_freq : integer := GEN_HIGH_FREQ
+  );
+	port(
+		-- IN
+		clk_i      	: in    std_logic;                     	--clock input
+		reset_n     : in    std_logic;                     	--active-low reset
+    data_i      : in    std_logic_vector(data_width-1 downto 0); -- N bit data in 
+
+		-- INOUT
+		clk_o       : out    std_logic
+	);
   end component;
 
   component btn_debounce_toggle is
@@ -91,25 +107,29 @@ architecture Behavioral of top_level is
   end component;
 
   -- general signals
-  signal reset_sig   : std_logic;
-  signal reset_n_sig : std_logic;
+  signal reset_sig            : std_logic;
+  signal reset_n_sig          : std_logic;
 
   -- lcd signals
-  signal lcd_selectMode_sig  : std_logic_vector(3 downto 0);
-  signal lcd_clockOutput_sig : std_logic;
-  signal lcd_sda_sig         : std_logic;
-  signal lcd_scl_sig         : std_logic;
+  signal lcd_selectMode_sig   : std_logic_vector(3 downto 0);
+  signal lcd_clockOutput_sig  : std_logic;
+  signal lcd_sda_sig          : std_logic;
+  signal lcd_scl_sig          : std_logic;
   
   -- adc signals
-  signal adc_data_i_sig      : std_logic_vector(3 downto 0);
-  signal adc_data_o_sig      : std_logic_vector(7 downto 0);
-  signal adc_sda_sig         : std_logic;
-  signal adc_scl_sig         : std_logic;
+  signal adc_data_i_sig       : std_logic_vector(3 downto 0);
+  signal adc_data_o_sig       : std_logic_vector(7 downto 0);
+  signal adc_sda_sig          : std_logic;
+  signal adc_scl_sig          : std_logic;
 
   -- pwm signals
-  signal pwm_en_sig          : std_logic := '1';
-  signal pwm_data_i_sig      : std_logic_vector(IPWM_DATA_WIDTH-1 downto 0);
-  signal pwm_o_sig           : std_logic;
+  signal pwm_en_sig           : std_logic := '1';
+  signal pwm_data_i_sig       : std_logic_vector(IPWM_DATA_WIDTH-1 downto 0);
+  signal pwm_o_sig            : std_logic;
+
+  -- clock gen signals
+  signal clock_gen_data_i_sig : std_logic_vector(GEN_WIDTH-1 downto 0);
+  signal clock_gen_clk_o_sig  : std_logic;
 
   -- FSM & control signals
   signal adc_state_sig       : adc_state := ch0;
@@ -118,14 +138,23 @@ architecture Behavioral of top_level is
   
 
 begin
+
+  -- FOR SIMULATION ONLY!!
+  --adc_data_o_sig <= X"00";
+
   -- permanent signal ties
   reset_n_sig  <= not reset_sig;              -- create an active low reset for some components
-  pwm_data_i_sig <= adc_data_o_sig;           -- tie adc data output to pwm data input
+
   lcd_clockOutput_sig <= clock_gen_state_sig; -- tie the clock gen state to the lcd's clock gen message output
   LCD_SDA <= lcd_sda_sig;
   LCD_SCL <= lcd_scl_sig;
+
   ADC_SDA <= adc_sda_sig;
   ADC_SCL <= adc_scl_sig;
+
+  pwm_data_i_sig <= adc_data_o_sig;           -- tie adc data output to pwm data input
+
+  clock_gen_data_i_sig <= adc_data_o_sig;
 
   inst_i2c_user_lcd : i2c_user_lcd
     port map(
@@ -159,6 +188,17 @@ begin
       pwm_o      => pwm_o_sig
     );
 
+  inst_clock_gen : clock_gen
+    port map(
+      -- IN
+      clk_i => iClk,
+      reset_n => reset_n_sig,
+      data_i => clock_gen_data_i_sig,
+
+      -- INOUT
+      clk_o => clock_gen_clk_o_sig
+    );
+
   inst_reset_deb : btn_debounce_toggle
     port map(
       BTN_I     => iReset,
@@ -172,9 +212,9 @@ begin
     port map(
       BTN_I    => iControlBtn,
       CLK      => iClk,
-      BTN_O    => control_btn_sig,
-      pulse_O  => open,
-      TOGGLE_O => clock_gen_state_sig
+      BTN_O    => open,
+      pulse_O  => control_btn_sig,
+      TOGGLE_O => open
     );
 
   
@@ -182,10 +222,34 @@ begin
   begin
     if (iClk'EVENT and iClk = '1' and control_btn_sig = '1') then
       case adc_state_sig is
-        when ch0 => adc_state_sig <= ch1;
-        when ch1 => adc_state_sig <= ch2;
-        when ch2 => adc_state_sig <= ch3;
-        when ch3 => adc_state_sig <= ch0;
+        when ch0 => 
+          if (clock_gen_state_sig = '1') then
+            adc_state_sig <= ch1;
+            clock_gen_state_sig <= '0';
+          else
+            clock_gen_state_sig <= '1';
+          end if;
+        when ch1 => 
+          if (clock_gen_state_sig = '1') then
+            adc_state_sig <= ch2;
+            clock_gen_state_sig <= '0';
+          else
+            clock_gen_state_sig <= '1';
+          end if;
+        when ch2 => 
+          if (clock_gen_state_sig = '1') then
+            adc_state_sig <= ch3;
+            clock_gen_state_sig <= '0';
+          else
+            clock_gen_state_sig <= '1';
+          end if;
+        when ch3 => 
+          if (clock_gen_state_sig = '1') then
+            adc_state_sig <= ch0;
+            clock_gen_state_sig <= '0';
+          else
+            clock_gen_state_sig <= '1';
+          end if;
     
       end case;
     end if;
@@ -211,8 +275,8 @@ begin
           lcd_selectMode_sig <= X"3";
           adc_data_i_sig <= X"3";
           oPWM <= pwm_o_sig;
-
       end case;
+      
     end if;
 
 

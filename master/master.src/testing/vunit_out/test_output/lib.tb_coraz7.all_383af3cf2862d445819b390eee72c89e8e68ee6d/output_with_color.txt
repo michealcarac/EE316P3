@@ -1,4 +1,5 @@
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@0ms:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 ../../src/ieee2008/numeric_std-body.vhdl:3036:7:@8ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-/home/cameron/Projects/EE316P3/master/master.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/ghdl/tb_coraz7-tb:error: bound check failure at /home/cameron/Projects/EE316P3/master/master.src/PWM.vhd:39
+/home/cameron/Projects/EE316P3/master/master.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/ghdl/tb_coraz7-tb:error: bound check failure at /home/cameron/Projects/EE316P3/master/master.src/PWM.vhd:36
 in process .tb_coraz7(tb).dut@coraz7(behavioral).inst_top_level@top_level(behavioral).inst_pwm@pwm(behavioral).pwm_process
 /home/cameron/Projects/EE316P3/master/master.src/testing/vunit_out/test_output/lib.tb_coraz7.all_383af3cf2862d445819b390eee72c89e8e68ee6d/ghdl/tb_coraz7-tb:error: simulation failed

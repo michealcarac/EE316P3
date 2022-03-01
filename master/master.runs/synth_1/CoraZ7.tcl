@@ -17,9 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 2
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,6 +36,7 @@ read_vhdl -library work {
   /home/cameron/Projects/EE316P3/master/master.src/I2C_Master.vhd
   /home/cameron/Projects/EE316P3/master/master.src/PWM.vhd
   /home/cameron/Projects/EE316P3/master/master.src/btn_debounce_toggle.vhd
+  /home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd
   /home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd
   /home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd
   /home/cameron/Projects/EE316P3/master/master.src/top_level.vhd
