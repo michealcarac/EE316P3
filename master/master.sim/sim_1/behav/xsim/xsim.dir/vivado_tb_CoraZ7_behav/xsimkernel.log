@@ -1,7 +1,0 @@
-Running: xsim.dir/vivado_tb_CoraZ7_behav/xsimk -simmode gui -wdb vivado_tb_CoraZ7_behav.wdb -simrunnum 0 -socket 38631
-Design successfully loaded
-Design Loading Memory Usage: 33012 KB (Peak: 33132 KB)
-Design Loading CPU Usage: 70 ms
-Simulation completed
-Simulation Memory Usage: 122948 KB (Peak: 172280 KB)
-Simulation CPU Usage: 17570 ms
