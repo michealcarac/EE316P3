@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 2
 create_project -in_memory -part xc7z010clg400-1
 
@@ -40,9 +39,9 @@ read_vhdl -library work {
   /home/cameron/Projects/EE316P3/master/master.src/clock_gen.vhd
   /home/cameron/Projects/EE316P3/master/master.src/i2c_user_adc.vhd
   /home/cameron/Projects/EE316P3/master/master.src/i2c_user_lcd.vhd
+  /home/cameron/Projects/EE316P3/master/master.src/reset_delay.vhd
   /home/cameron/Projects/EE316P3/master/master.src/top_level.vhd
   /home/cameron/Projects/EE316P3/master/master.src/CoraZ7.vhd
-  /home/cameron/Projects/EE316P3/master/master.src/reset_delay.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

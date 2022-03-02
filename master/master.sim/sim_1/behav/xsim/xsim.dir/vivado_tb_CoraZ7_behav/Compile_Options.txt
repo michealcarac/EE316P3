@@ -1,1 +1,0 @@
--wto "bade65d856d84da2aa0cba8b2edf716b" --incr --debug "typical" --relax --mt "8" -L "work" -L "secureip" --snapshot "vivado_tb_CoraZ7_behav" "work.vivado_tb_CoraZ7" -log "elaborate.log" 

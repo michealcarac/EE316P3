@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Tue Mar  1 15:59:32 2022
+| Date         : Tue Mar  1 17:20:55 2022
 | Host         : fedora running 64-bit unknown
 | Command      : report_control_sets -verbose -file CoraZ7_control_sets_placed.rpt
 | Design       : CoraZ7
@@ -73,19 +73,19 @@ Table of Contents
 +----------------+----------------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
 |  Clock Signal  |                                   Enable Signal                                  |                       Set/Reset Signal                      | Slice Load Count | Bel Load Count |
 +----------------+----------------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | inst_top_level/oPWM_i_1_n_0                                                      |                                                             |                1 |              1 |
 |  clk_IBUF_BUFG | inst_top_level/FSM_onehot_adc_state_sig_reg_n_0_[3]                              |                                                             |                1 |              1 |
+|  clk_IBUF_BUFG | inst_top_level/oPWM_i_1_n_0                                                      |                                                             |                1 |              1 |
 |  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/E[0]                            | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                1 |              4 |
-|  clk_IBUF_BUFG | inst_top_level/inst_control_btn_deb/E[0]                                         | inst_top_level/inst_reset_delay/SR[0]                       |                1 |              5 |
 |  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/FSM_onehot_next_state_reg[0][0] | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                2 |              5 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/addr_rw0                        |                                                             |                3 |              6 |
+|  clk_IBUF_BUFG | inst_top_level/inst_control_btn_deb/E[0]                                         | inst_top_level/inst_reset_delay/SR[0]                       |                1 |              5 |
 |  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/byteSel[5]_i_1_n_0                              | inst_top_level/inst_reset_delay/SR[0]                       |                2 |              6 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/addr_rw0                        |                                                             |                3 |              6 |
 |  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/Inst_i2c_master/busy1                           | inst_top_level/inst_reset_delay/SR[0]                       |                2 |              7 |
 |  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/data_rd[7]_i_1_n_0              | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                7 |              8 |
-|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/busy1                           | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                3 |              9 |
 |  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_lcd/lcd_delay_cnst_0                                |                                                             |                5 |              9 |
-|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_deb/btn_cntr[15]_i_1_n_0          |                4 |             16 |
+|  clk_IBUF_BUFG | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/busy1                           | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                3 |              9 |
 |  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_control_btn_deb/btn_cntr[15]_i_1__0_n_0 |                4 |             16 |
+|  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_reset_deb/btn_cntr[15]_i_1_n_0          |                4 |             16 |
 |  clk_IBUF_BUFG |                                                                                  | inst_top_level/inst_i2c_user_adc/Inst_i2c_master/AR[0]      |                9 |             18 |
 |  clk_IBUF_BUFG | inst_top_level/inst_reset_delay/sel                                              |                                                             |                5 |             20 |
 |  clk_IBUF_BUFG |                                                                                  |                                                             |               17 |             31 |
